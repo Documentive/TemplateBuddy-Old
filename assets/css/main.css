@@ -6,10 +6,18 @@
     box-sizing: border-box;
 }
 
+button, input:focus {
+    outline: none;
+}
+
+/* Whole page setting */
+
 .wrapper {
     position: relative;
     min-height: 100vh;
 }
+
+/* For the logo and button */
 
 header {
     width: 100vw;
@@ -20,13 +28,21 @@ header {
     background-color: #e7717d;
 }
 
+header a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
 header button {
     font-size: large;
     padding: 9px 9px;
-    background: white;
-    border: 1px white solid;
+    background: #ffffff;
+    border: 1px #ffffff solid;
     border-radius: 18px;
+    cursor: pointer;
 }
+
+/* All content goes here */
 
 .container {
     width: 90%;
@@ -52,6 +68,16 @@ header button {
     border-radius: 18px;
     width: 150px;
     text-align: center;
+    cursor: pointer;
+}
+
+.tabs a:hover {
+    transform: scale(1.2);
+    background: turquoise;
+}
+
+.tabs a.active {
+    background: turquoise;
 }
 
 /* Footer */
