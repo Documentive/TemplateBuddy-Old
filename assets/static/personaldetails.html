@@ -30,8 +30,8 @@
 
             <!-- Navigate to different pages -->
             <div class="tabs">
-                <a href="#" class="active">Personal Info</a>
-                <a href="#">Education</a>
+              <a href="../static/personaldetails.html" class="active">Personal Info</a>
+              <a href="../static/education.html">Education</a>
                 <a href="#">Experience</a>
                 <a href="#">Skills</a>
                 <a href="#">Projects</a>
@@ -41,6 +41,7 @@
             <h1>PERSONAL DETAILS</h1>
 
             <div class="formbox">
+
                 <form>
                     
                     <!-- Name -->
@@ -77,7 +78,7 @@
                         </div>
 
                     </div>
-
+                    
 
                     <!-- Address -->
                     <div class="form-group">
@@ -92,7 +93,7 @@
 
                     <div class="form-row">
 
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-5">
                           <label for="inputCity">City</label>
                           <input type="text" class="form-control" id="inputCity">
                         </div>
@@ -102,7 +103,7 @@
                           <input type="text" class="form-control" id="state">
                         </div>
 
-                        <div class="form-group col-md-2">
+                        <div class="form-group col-md-3">
                           <label for="zip">Zip</label>
                           <input type="text" class="form-control" id="zip">
                         </div>
@@ -191,10 +192,7 @@
                                                     
                         </div>
 
-                        <!-- <div class="form-group">
-                            <label for="">Summary (About you)</label><br>
-                            <textarea name="" id="" cols="92" rows="4"></textarea>
-                        </div> -->
+                        <!-- Summary -->
                         <div class="form-group">
                             <label for="validationTextarea">Summary</label>
                             <textarea class="form-control" id="validationTextarea" placeholder="Enter between 100-150 words" rows="4"></textarea>
@@ -202,7 +200,11 @@
 
                     </div>
 
+                    <!-- Save Information -->
+                    <button type="button" class="btn btn-primary btn-lg btn-block">Save Information</button>
+
                 </form>
+
             </div>
 
         </div>
