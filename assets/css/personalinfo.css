@@ -20,7 +20,6 @@ button, input:focus {
 /* For the logo and button */
 
 header {
-    width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,6 +50,8 @@ header button {
     padding-bottom: 2.5rem;
 }
 
+/* Tab bar navigation */
+
 .tabs {
     width: 100%;
     display: flex;
@@ -80,13 +81,30 @@ header button {
     background: turquoise;
 }
 
+/* Form Area */
+
+.formbox {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 /* Footer */
 
 footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 2.5rem;
     background: #e7717d;
 }
 
@@ -99,7 +117,7 @@ footer p {
 }
 
 /*For the heart beating icon*/
-.fa{
+.fa-heart{
     color: #E90606;
     margin: 0 3px;
     font-size: 10px;
