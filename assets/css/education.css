@@ -85,11 +85,15 @@ header button {
 /* Form Area */
 
 .formbox {
-    width: 90%;
+    width: 75%;
     margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+div form {
+    width: 100%;
 }
 
 h1 {
