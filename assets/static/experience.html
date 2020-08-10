@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS File -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/experience.css">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Work Experience</title>
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <!-- Add logo here -->
+        <header>
+            <a href="#"><img src="" alt="Logo"></a>
+            <button>Logout</button>
+        </header>
+
+        <!-- All content goes here -->
+        <div class="container">
+
+            <!-- Navigate to different pages -->
+            <div class="tabs">
+                <a href="../static/personaldetails.html">Personal Info</a>
+                <a href="../static/education.html">Education</a>
+                <a href="../static/experience.html" class="active">Experience</a>
+                <a href="#">Skills</a>
+                <a href="#">Projects</a>
+                <a href="#">Additional Info</a>
+            </div>
+
+            <h1>WORK EXPERIENCE</h1>
+
+            <div class="formbox">
+
+                <form>
+                    <!-- Job Title -->
+                    <div class="form-group">
+                        <label for="jtitle">Job Title</label>
+                        <input type="text" class="form-control" id="jtitle" placeholder="Ex: Software Developer">
+                    </div>
+
+                    <!-- Company Name -->
+                    <div class="form-group">
+                        <label for="cname">Company</label>
+                        <input type="text" class="form-control" id="cname" placeholder="Ex: Microsoft">
+                    </div>
+                    
+                    <!-- Company Location -->
+                    <div class="form-row">
+    
+                        <div class="form-group col-md-6">
+                          <label for="city">City</label>
+                          <input type="text" class="form-control" id="city">
+                        </div>
+    
+                        <div class="form-group col-md-6">
+                          <label for="country">Country</label>
+                          <input type="text" class="form-control" id="country">
+                        </div>
+    
+                    </div>
+                    
+                    <!-- Tenure -->
+                    <div class="form-row">
+    
+                        <div class="form-group col-md-6">
+                          <label for="sdate">Start Date</label>
+                          <input type="date" class="form-control" id="sdate">
+                        </div>
+    
+                        <div class="form-group col-md-6">
+                          <label for="edate">End Date</label>
+                          <input type="date" class="form-control" id="edate">
+                        </div>
+    
+                    </div>
+
+                    <!-- Description -->
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" id="description" placeholder="Enter between 100-150 words" rows="4"></textarea>
+                    </div>
+
+                    <!-- Save Information -->
+                    <button type="button" class="btn btn-primary btn-lg btn-block">Save Information</button>
+
+                </form>
+
+        <!-- Footer -->
+        <footer>
+            <p>Made with <i class="fa fa-heart pulse"></i> by Developers of Documentive</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
