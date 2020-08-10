@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS File -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/experience.css">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Additional Details</title>
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <!-- Add logo here -->
+        <header>
+            <a href="#"><img src="" alt="Logo"></a>
+            <button>Logout</button>
+        </header>
+
+        <!-- All content goes here -->
+        <div class="container">
+
+            <!-- Navigate to different pages -->
+            <div class="tabs">
+                <a href="../static/personaldetails.html">Personal Info</a>
+                <a href="../static/education.html">Education</a>
+                <a href="../static/experience.html">Experience</a>
+                <a href="#">Skills</a>
+                <a href="../static/projects.html">Projects</a>
+                <a href="../static/additional.html" class="active">Additional Info</a>
+            </div>
+
+            <h3>COURSES & CERTIFICATION</h3>
+
+            <div class="formbox">
+
+                <form>
+                    
+                    <!-- Course Name -->
+                    <div class="form-group">
+                        <label for="course">Course/Certificate Name</label>
+                        <input type="text" class="form-control" id="course" placeholder="Ex: Complete Web Developer Course">
+                    </div>
+
+                    <!-- Issuer and Date of issuing/completion -->
+                    <div class="form-row">
+    
+                        <div class="form-group col-md-6">
+                          <label for="issuer">Issuer</label>
+                          <input type="text" class="form-control" id="issuer" placeholder="Ex: Coursera, Oracle">
+                        </div>
+    
+                        <div class="form-group col-md-6">
+                          <label for="idate">Issued On</label>
+                          <input type="date" class="form-control" id="idate">
+                        </div>
+    
+                    </div>
+
+                    <!-- Save Information -->
+                    <button type="button" class="btn btn-primary btn-lg btn-block">Save Information</button>
+
+                </form>
+        
+            </div>
+
+            <h3>PUBLICATIONS</h3>
+
+            <div class="formbox">
+
+                <form>
+                    
+                    <!-- paper Title -->
+                    <div class="form-group">
+                        <label for="ptitle">Paper Title</label>
+                        <input type="text" class="form-control" id="ptitle">
+                    </div>
+
+                    <!-- Publication and Date of publishing -->
+                    <div class="form-row">
+    
+                        <div class="form-group col-md-6">
+                          <label for="publisher">Publisher/Publication</label>
+                          <input type="text" class="form-control" id="publisher">
+                        </div>
+    
+                        <div class="form-group col-md-6">
+                          <label for="pdate">Published On</label>
+                          <input type="date" class="form-control" id="pdate">
+                        </div>
+    
+                    </div>
+
+                    <!-- Save Information -->
+                    <button type="button" class="btn btn-primary btn-lg btn-block">Save Information</button>
+
+                </form>
+        
+            </div>
+
+            <h3>HONORS & AWARDS</h3>
+
+            <div class="formbox">
+
+                <form>
+                    
+                    <!-- Award/Honor Name -->
+                    <div class="form-group">
+                        <label for="htitle">Title</label>
+                        <input type="text" class="form-control" id="htitle">
+                    </div>
+
+                    <!-- Issuer and Date of issuing/completion -->
+                    <div class="form-row">
+    
+                        <div class="form-group col-md-6">
+                          <label for="hissuer">Issuer</label>
+                          <input type="text" class="form-control" id="hissuer">
+                        </div>
+    
+                        <div class="form-group col-md-6">
+                          <label for="hdate">Issued On</label>
+                          <input type="date" class="form-control" id="hdate">
+                        </div>
+    
+                    </div>
+
+                    <!-- Save Information -->
+                    <button type="button" class="btn btn-primary btn-lg btn-block">Save Information</button>
+
+                </form>
+        
+            </div>
+
+            <h3>INTERESTS & HOBBIES</h3>
+
+            <div class="formbox">
+
+                <form>
+                    
+                    <!-- Add Interest/Hobbies Used -->
+                    <div class="form-group">
+                        <label for="">Interests/Hobbies</label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" aria-describedby="hobbies">
+                            <div class="input-group-append">
+                              <button class="btn btn-outline-secondary" type="button" id="hobbies">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Save Information -->
+                    <button type="button" class="btn btn-primary btn-lg btn-block">Save Information</button>
+
+                </form>
+        
+            </div>
+    
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Made with <i class="fa fa-heart pulse"></i> by Developers of Documentive</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
