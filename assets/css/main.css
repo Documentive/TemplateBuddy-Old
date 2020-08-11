@@ -109,6 +109,17 @@ form button {
     padding-bottom: 15px;
 }
 
+/* For the skills container */
+.containSkill {
+    /* display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    text-align: center;
+    margin-top: 2rem;
+}
+
 /* Footer */
 
 footer {
