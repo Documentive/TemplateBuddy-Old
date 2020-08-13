@@ -43,52 +43,63 @@
             <div class="formbox">
 
                 <form>
-                    <!-- Job Title -->
-                    <div class="form-group">
-                        <label for="jtitle">Job Title</label>
-                        <input type="text" class="form-control" id="jtitle" placeholder="Ex: Software Developer">
+                    
+                    <div class="outerDiv">
+
+                        <!-- Job Title -->
+                        <div class="form-group">
+                            <label for="jtitle">Job Title</label>
+                            <input type="text" class="form-control addTitle" id="jtitle" placeholder="Ex: Software Developer">
+                        </div>
+
+                        <!-- Company Name -->
+                        <div class="form-group">
+                            <label for="cname">Company</label>
+                            <input type="text" class="form-control addCname" id="cname" placeholder="Ex: Microsoft">
+                        </div>
+                        
+                        <!-- Company Location -->
+                        <div class="form-row">
+        
+                            <div class="form-group col-md-6">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control addCity" id="city">
+                            </div>
+        
+                            <div class="form-group col-md-6">
+                            <label for="country">Country</label>
+                            <input type="text" class="form-control addCountry" id="country">
+                            </div>
+        
+                        </div>
+                        
+                        <!-- Tenure -->
+                        <div class="form-row">
+        
+                            <div class="form-group col-md-6">
+                            <label for="sdate">Start Date</label>
+                            <input type="date" class="form-control addSdate" id="sdate">
+                            </div>
+        
+                            <div class="form-group col-md-6">
+                            <label for="edate">End Date</label>
+                            <input type="date" class="form-control addEdate" id="edate">
+                            </div>
+        
+                        </div>
+
+                        <!-- Description -->
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea class="form-control addDesc" id="description" placeholder="Enter between 100-150 words" rows="4"></textarea>
+                        </div>
+
+                        <button type="button" class="btn btn-success addBtn">ADD</button>
+
                     </div>
 
-                    <!-- Company Name -->
-                    <div class="form-group">
-                        <label for="cname">Company</label>
-                        <input type="text" class="form-control" id="cname" placeholder="Ex: Microsoft">
-                    </div>
-                    
-                    <!-- Company Location -->
-                    <div class="form-row">
-    
-                        <div class="form-group col-md-6">
-                          <label for="city">City</label>
-                          <input type="text" class="form-control" id="city">
-                        </div>
-    
-                        <div class="form-group col-md-6">
-                          <label for="country">Country</label>
-                          <input type="text" class="form-control" id="country">
-                        </div>
-    
-                    </div>
-                    
-                    <!-- Tenure -->
-                    <div class="form-row">
-    
-                        <div class="form-group col-md-6">
-                          <label for="sdate">Start Date</label>
-                          <input type="date" class="form-control" id="sdate">
-                        </div>
-    
-                        <div class="form-group col-md-6">
-                          <label for="edate">End Date</label>
-                          <input type="date" class="form-control" id="edate">
-                        </div>
-    
-                    </div>
+                    <div class="containExp">
 
-                    <!-- Description -->
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea class="form-control" id="description" placeholder="Enter between 100-150 words" rows="4"></textarea>
                     </div>
 
                     <!-- Save Information -->
@@ -107,6 +118,7 @@
 
     </div>
 
+    <script src="../js/experience.js"></script>
 
 </body>
 </html>
