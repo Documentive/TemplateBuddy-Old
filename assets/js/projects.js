@@ -40,6 +40,7 @@ class item {
         // inputDescription.type = "text";
 
         let outerdiv = document.createElement('div');
+        outerdiv.classList.add('outerDiv');
 
         let titleDiv = document.createElement('div');
         titleDiv.classList.add('form-group');
@@ -62,15 +63,15 @@ class item {
 
         containProject.appendChild(outerdiv);
         outerdiv.appendChild(titleDiv);
-        outerdiv.appendChild(descriptionDiv);
-        outerdiv.appendChild(dateDiv);
         titleDiv.appendChild(inputTitle);
+        outerdiv.appendChild(descriptionDiv);
         descriptionDiv.appendChild(inputDescription);
+        outerdiv.appendChild(dateDiv);    
         dateDiv.appendChild(sdateDiv);
-        dateDiv.appendChild(edateDiv);
         sdateDiv.appendChild(inputSDate);
+        dateDiv.appendChild(edateDiv);
         edateDiv.appendChild(inputEDate);
-        containProject.appendChild(removeBtn);
+        outerdiv.appendChild(removeBtn);
 
         removeBtn.addEventListener('click', () => this.remove(outerdiv));
 
