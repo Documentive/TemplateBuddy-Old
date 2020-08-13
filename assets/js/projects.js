@@ -1,7 +1,10 @@
+// Select the add button
 const addButton = document.querySelector('.addBtn');
 
+// Select the container to store the projects
 const containProject = document.querySelector('.containProject')
 
+// Fetch the data from the user
 var addtitle = document.querySelector('.addTitle');
 var adddescp = document.querySelector('.adddescp');
 var addsdate = document.querySelector('.addsdate');
@@ -39,6 +42,7 @@ class item {
         inputDescription.classList.add('form-control');
         // inputDescription.type = "text";
 
+        // Create the html stucture according to the display
         let outerdiv = document.createElement('div');
         outerdiv.classList.add('outerDiv');
 
@@ -61,6 +65,7 @@ class item {
         removeBtn.innerHTML = "Remove";
         removeBtn.classList.add('btn', 'btn-outline-secondary', 'remBtn');
 
+        // Add the elements in the respective position and hierarchy
         containProject.appendChild(outerdiv);
         outerdiv.appendChild(titleDiv);
         titleDiv.appendChild(inputTitle);
@@ -73,16 +78,19 @@ class item {
         edateDiv.appendChild(inputEDate);
         outerdiv.appendChild(removeBtn);
 
+        // To remove the project data
         removeBtn.addEventListener('click', () => this.remove(outerdiv));
 
     }
 
+    // Remove function
     remove(item) {
         containProject.removeChild(item);
     }
 
 }
 
+// To check if the inputs field are empty or not.
 function check() {
     if(addtitle.value != "" && adddescp.value != "" && addsdate.value != "" && addedate != "") {
         new item (addtitle.value, adddescp.value, addsdate.value, addedate.value);
@@ -93,4 +101,5 @@ function check() {
     }
 }
 
+// Add button to add the project information
 addButton.addEventListener('click', check);
