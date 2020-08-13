@@ -1,0 +1,55 @@
+/* #titleform
+{
+    text-align: center;
+}
+ */
+
+ body{
+     margin: 0px;
+ }
+
+#titleform  h1
+{
+        text-align: center;
+        color: white;
+        background-color: Blue;
+}
+
+#titleform label{
+    font-size: 20px;
+}
+
+#register{
+     text-align: center;
+}
+
+ #submit{
+
+    background-color: green;
+    color: white;
+
+ }
+
+ .selection{
+    color: black;
+    background-color: palegoldenrod;
+    width: 100%;
+    font-size: 17px
+
+ }
+
+ #img1{
+   
+    height: 65vh;
+    background-image: url(resume-building1.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    background-attachment: fixed;
+ }
+
+#content{
+
+    color: wheat;
+
+}
