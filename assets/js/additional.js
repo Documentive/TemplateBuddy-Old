@@ -7,51 +7,51 @@
 // // Select the container to store the interests/hobbies
 // const containHobby = document.querySelector('.containHobby');
 
-// class item {
-//     constructor(itemName) {
-//         // Create the item div
-//         this.createDiv(itemName);
-//     }
+class item {
+    constructor(itemName) {
+        // Create the item div
+        this.createDiv(itemName);
+    }
 
-//     createDiv(itemName) {
+    createDiv(itemName) {
 
-//         let input = document.createElement('input');
-//         input.value = itemName;
-//         input.disabled = true;
-//         input.classList.add('form-control');
-//         input.type = "text";
+        let input = document.createElement('input');
+        input.value = itemName;
+        input.disabled = true;
+        input.classList.add('form-control');
+        input.type = "text";
 
-//         // Create the divs according to the bootstrap forms
-//         let itemBox1 = document.createElement('div');
-//         itemBox1.classList.add('form-group');
+        // Create the divs according to the bootstrap forms
+        let itemBox1 = document.createElement('div');
+        itemBox1.classList.add('form-group');
 
-//         let itemBox2 = document.createElement('div');
-//         itemBox2.classList.add('input-group', 'mb3');
+        let itemBox2 = document.createElement('div');
+        itemBox2.classList.add('input-group', 'mb3');
 
-//         let itemBox3 = document.createElement('div');
-//         itemBox3.classList.add('input-group-append');
+        let itemBox3 = document.createElement('div');
+        itemBox3.classList.add('input-group-append');
 
-//         let removeBtn = document.createElement('button');
-//         removeBtn.innerHTML = "Remove";
-//         removeBtn.classList.add('btn', 'btn-outline-secondary', 'remBtn');
+        let removeBtn = document.createElement('button');
+        removeBtn.innerHTML = "Remove";
+        removeBtn.classList.add('btn', 'btn-outline-secondary', 'remBtn');
 
-//         // Add the respective elements in proper order and hierarchy
-//         containHobby.appendChild(itemBox1);
-//         itemBox1.appendChild(itemBox2);
-//         itemBox2.appendChild(input);
-//         itemBox2.appendChild(itemBox3);
-//         itemBox3.appendChild(removeBtn);
+        // Add the respective elements in proper order and hierarchy
+        containHobby.appendChild(itemBox1);
+        itemBox1.appendChild(itemBox2);
+        itemBox2.appendChild(input);
+        itemBox2.appendChild(itemBox3);
+        itemBox3.appendChild(removeBtn);
 
-//         // To remove the skill
-//         removeBtn.addEventListener('click', () => this.remove(itemBox1));
+        // To remove the skill
+        removeBtn.addEventListener('click', () => this.remove(itemBox1));
 
-//     }
+    }
 
-//     // Remove function
-//     remove(item) {
-//         containHobby.removeChild(item);
-//     }
-// }
+    // Remove function
+    remove(item) {
+        containHobby.removeChild(item);
+    }
+}
 
 // // To check if the input field is empty or not.
 // function check() {
@@ -66,9 +66,13 @@
 
 const coursebtn = document.querySelector('.coursebtn');
 const publishbtn = document.querySelector('.publishbtn');
+const awardbtn = document.querySelector('.awardbtn');
+const hobbybtn = document.querySelector('.hobbybtn');
 
 const containcourse = document.querySelector('.containcourse');
 const containpublish = document.querySelector('.containpublish');
+const containaward = document.querySelector('.containaward');
+const containhobby = document.querySelector('.containhobby')
 
 var course = document.querySelector('#course');
 var issuer = document.querySelector('#issuer');
@@ -76,6 +80,10 @@ var idate = document.querySelector('#idate');
 var ptitle = document.querySelector('#ptitle');
 var publisher = document.querySelector('#publisher');
 var pdate = document.querySelector('#pdate');
+var htitle = document.querySelector('#htitle');
+var hissuer = document.querySelector('#hissuer');
+var hdate = document.querySelector('#hdate');
+var hobbyname = document.querySelector('.addhobby');
 
 class courses {
     constructor(course, issuer, idate) {
@@ -208,6 +216,113 @@ class publishes {
 
 }
 
+class awards {
+    constructor(htitle, hissuer, hdate) {
+        this.createcourse(htitle, hissuer, hdate);
+    }
+
+    createcourse(htitle, hissuer, hdate) {
+
+        let inputhtitle = document.createElement('input');
+        let inputhissuer = document.createElement('input');
+        let inputhdate = document.createElement('input');
+
+        inputhtitle.value = htitle;
+        inputhtitle.type = "text";
+        inputhtitle.disabled = true;
+        inputhtitle.classList.add('form-control');
+
+        inputhissuer.value = hissuer;
+        inputhissuer.type = "text";
+        inputhissuer.disabled = true;
+        inputhissuer.classList.add('form-control');
+
+        inputhdate.value = hdate;
+        inputhdate.type = "date";
+        inputhdate.disabled = true;
+        inputhdate.classList.add('form-control');
+
+        let outeraward = document.createElement('div');
+        outeraward.classList.add('outeraward');
+
+        let htitlediv = document.createElement('div');
+        htitlediv.classList.add('form-group');
+
+        let hissuedetails = document.createElement('div');
+        hissuedetails.classList.add('form-row');
+
+        let hissuerdiv = document.createElement('div');
+        hissuerdiv.classList.add('form-group', 'col-md-6');
+
+        let hdatediv = document.createElement('div');
+        hdatediv.classList.add('form-group', 'col-md-6');
+
+        let removeaward = document.createElement('button');
+        removeaward.innerHTML = "Remove";
+        removeaward.classList.add('btn', 'btn-outline-secondary', 'remBtn');
+
+        containaward.appendChild(outeraward);
+        outeraward.appendChild(htitlediv);
+        htitlediv.appendChild(inputhtitle);
+        outeraward.appendChild(hissuedetails);
+        hissuedetails.appendChild(hissuerdiv);
+        hissuerdiv.appendChild(inputhissuer);
+        hissuedetails.appendChild(hdatediv);
+        hdatediv.appendChild(inputhdate);
+        outeraward.appendChild(removeaward);
+
+        removeaward.addEventListener('click', () => this.remove(outeraward));
+
+    }
+
+    remove(awards) {
+        containaward.removeChild(awards);
+    }
+
+}
+
+class hobbies {
+    constructor(hobby) {
+        this.createhobby(hobby);
+    }
+
+    createhobby(hobby) {
+
+        let inputhobby = document.createElement('input');
+        inputhobby.value = hobby;
+        inputhobby.disabled = true;
+        inputhobby.classList.add('form-control');
+        inputhobby.type = "text";
+
+        let itemBox1 = document.createElement('div');
+        itemBox1.classList.add('form-group');
+
+        let itemBox2 = document.createElement('div');
+        itemBox2.classList.add('input-group', 'mb3');
+
+        let itemBox3 = document.createElement('div');
+        itemBox3.classList.add('input-group-append');
+
+        let removehobby = document.createElement('button');
+        removehobby.innerHTML = "Remove";
+        removehobby.classList.add('btn', 'btn-outline-secondary', 'remBtn');
+
+        containhobby.appendChild(itemBox1);
+        itemBox1.appendChild(itemBox2);
+        itemBox2.appendChild(inputhobby);
+        itemBox2.appendChild(itemBox3);
+        itemBox3.appendChild(removehobby);
+
+        removehobby.addEventListener('click', () => this.remove(itemBox1));
+
+    }
+
+    remove(hobby) {
+        containHobby.removeChild(hobby);
+    }
+
+}
+
 function checkcourse() {
     if(course.value != "" && issuer.value != "" && idate.value != "") {
         new courses (course.value, issuer.value, idate.value);
@@ -226,5 +341,23 @@ function checkpublish() {
     }
 }
 
+function checkaward() {
+    if(htitle.value != "" && hissuer.value != "" && hdate.value != "") {
+        new awards (htitle.value, hissuer.value, hdate.value);
+            htitle.value = "";
+            hissuer.value = "";
+            hdate.value = "";
+    }
+}
+
+function checkhobby() {
+    if(hobbyname.value != ""){
+        new hobbies(hobbyname.value);
+        hobbyname.value = "";
+    }
+}
+
 coursebtn.addEventListener('click', checkcourse);
 publishbtn.addEventListener('click', checkpublish);
+awardbtn.addEventListener('click', checkaward);
+hobbybtn.addEventListener('click', checkhobby);
