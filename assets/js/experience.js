@@ -131,6 +131,14 @@ class item {
 
 }
 
+// To convert an input to color
+function change_color_on_empty(element) {
+  if(element.value.length == 0)
+    element.style.background = "#ffcccc";
+  else
+    element.style.background = "#ffffff";
+}
+
 // To check if the inputs field are empty or not.
 function check() {
     if(jtitle.value != "" && cname.value != "" && city.value != "" && country.value != "" && sdate.value != "" && edate.value != "" && description.value != "") {
@@ -142,6 +150,14 @@ function check() {
         sdate.value = "";
         edate.value = "";
         description.value = "";
+    } else {
+      change_color_on_empty(jtitle);
+      change_color_on_empty(cname);
+      change_color_on_empty(city);
+      change_color_on_empty(country);
+      change_color_on_empty(sdate);
+      change_color_on_empty(edate);
+      change_color_on_empty(description);
     }
 }
 

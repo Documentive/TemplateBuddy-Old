@@ -71,7 +71,7 @@ class item {
         titleDiv.appendChild(inputTitle);
         outerdiv.appendChild(descriptionDiv);
         descriptionDiv.appendChild(inputDescription);
-        outerdiv.appendChild(dateDiv);    
+        outerdiv.appendChild(dateDiv);
         dateDiv.appendChild(sdateDiv);
         sdateDiv.appendChild(inputSDate);
         dateDiv.appendChild(edateDiv);
@@ -90,6 +90,14 @@ class item {
 
 }
 
+// To convert an input to color
+function change_color_on_empty(element) {
+  if(element.value.length == 0)
+    element.style.background = "#ffcccc";
+  else
+    element.style.background = "#ffffff";
+}
+
 // To check if the inputs field are empty or not.
 function check() {
     if(addtitle.value != "" && adddescp.value != "" && addsdate.value != "" && addedate != "") {
@@ -98,6 +106,11 @@ function check() {
         adddescp.value = "";
         addsdate.value = "";
         addedate.value = "";
+    } else {
+      change_color_on_empty(addtitle);
+      change_color_on_empty(adddescp);
+      change_color_on_empty(addsdate);
+      change_color_on_empty(addedate);
     }
 }
 

@@ -53,11 +53,21 @@ class item {
     }
 }
 
+// To convert an input to color
+function change_color_on_empty(element) {
+  if(element.value.length == 0)
+    element.style.background = "#ffcccc";
+  else
+    element.style.background = "#ffffff";
+}
+
 // To check if the input field is empty or not.
 function check() {
     if(takeInput.value != ""){
         new item(takeInput.value);
         takeInput.value = "";
+    } else {
+      change_color_on_empty(takeInput);
     }
 }
 
