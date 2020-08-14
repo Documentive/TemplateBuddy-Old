@@ -1,7 +1,10 @@
+// Select the add button
 const addButton = document.querySelector('.addBtn');
 
+// Select the container to store the experiences
 const containExp = document.querySelector('.containExp');
 
+// Fetch the data from the user
 var jtitle = document.querySelector('.addTitle');
 var cname = document.querySelector('.addCname');
 var city = document.querySelector('.addCity');
@@ -17,6 +20,7 @@ class item {
 
     createDiv(jtitle, cname, city, country, sdate, edate, description) {
 
+        // Create the elements
         let inputjtitle = document.createElement('input');
         let inputcname = document.createElement('input');
         let inputcity = document.createElement('input');
@@ -25,6 +29,7 @@ class item {
         let inputedate = document.createElement('input');
         let inputdescription = document.createElement('textarea');
 
+        // Assign the values
         inputjtitle.value = jtitle;
         inputjtitle.disabled = true;
         inputjtitle.classList.add('form-control');
@@ -59,6 +64,7 @@ class item {
         inputdescription.disabled = true;
         inputdescription.classList.add('form-control');
 
+        // Create the html stucture according to the display
         let outerdiv = document.createElement('div');
         outerdiv.classList.add('outerDiv');
 
@@ -93,6 +99,7 @@ class item {
         removeBtn.innerHTML = "Remove";
         removeBtn.classList.add('btn', 'btn-outline-secondary', 'remBtn');
 
+        // Add the elements in the respective position and hierarchy
         containExp.appendChild(outerdiv);
         outerdiv.appendChild(titleDiv);
         titleDiv.appendChild(inputjtitle);
@@ -112,16 +119,19 @@ class item {
         descpDiv.appendChild(inputdescription);
         outerdiv.appendChild(removeBtn);
 
+        // To remove the experience
         removeBtn.addEventListener('click', () => this.remove(outerdiv));
 
     }
 
+    // Remove function
     remove(item) {
         containExp.removeChild(item);
     }
 
 }
 
+// To check if the inputs field are empty or not.
 function check() {
     if(jtitle.value != "" && cname.value != "" && city.value != "" && country.value != "" && sdate.value != "" && edate.value != "" && description.value != "") {
         new item (jtitle.value, cname.value, city.value, country.value, sdate.value, edate.value, description.value);
@@ -135,4 +145,5 @@ function check() {
     }
 }
 
+// Add button to add the project information
 addButton.addEventListener('click', check);
