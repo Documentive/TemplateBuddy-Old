@@ -164,6 +164,14 @@ class item {
 
 }
 
+// To convert an input to color
+function change_color_on_empty(element) {
+  if(element.value.length == 0)
+    element.style.background = "#ffcccc";
+  else
+    element.style.background = "#ffffff";
+}
+
 // To check if the input fields are empty or not.
 function check() {
     if(iname.value != ""  && city.value != "" && country.value != ""  && degree.value != "" && fos.value != "" && sdate.value != "" && edate.value != "" && selectType.value != "" && gradeval.value != "") {
@@ -177,6 +185,16 @@ function check() {
         edate.value = "";
         selectType.value = "";
         gradeval.value = "";
+    } else {
+      change_color_on_empty(iname);
+      change_color_on_empty(city);
+      change_color_on_empty(country);
+      change_color_on_empty(degree);
+      change_color_on_empty(fos);
+      change_color_on_empty(sdate);
+      change_color_on_empty(edate);
+      change_color_on_empty(selectType);
+      change_color_on_empty(gradeval);
     }
 }
 

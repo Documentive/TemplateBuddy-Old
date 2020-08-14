@@ -275,6 +275,7 @@ class hobbies {
 
         // Assign the values to each element
         inputhobby.value = hobby;
+        inputhobby.style.background = "#ffffff";
         inputhobby.disabled = true;
         inputhobby.classList.add('form-control');
         inputhobby.type = "text";
@@ -312,6 +313,14 @@ class hobbies {
 
 }
 
+// To convert an input to color
+function change_color_on_empty(element) {
+  if(element.value.length == 0)
+    element.style.background = "#ffcccc";
+  else
+    element.style.background = "#ffffff";
+}
+
 // Check function for courses and awards
 function checkcourse() {
     if(course.value != "" && issuer.value != "" && idate.value != "") {
@@ -319,6 +328,10 @@ function checkcourse() {
             course.value = "";
             issuer.value = "";
             idate.value = "";
+    } else {
+      change_color_on_empty(course);
+      change_color_on_empty(issuer);
+      change_color_on_empty(idate);
     }
 }
 
@@ -329,6 +342,10 @@ function checkpublish() {
             ptitle.value = "";
             publisher.value = "";
             pdate.value = "";
+    } else {
+      change_color_on_empty(ptitle);
+      change_color_on_empty(publisher);
+      change_color_on_empty(pdate);
     }
 }
 
@@ -339,6 +356,10 @@ function checkaward() {
             htitle.value = "";
             hissuer.value = "";
             hdate.value = "";
+    } else {
+      change_color_on_empty(htitle);
+      change_color_on_empty(hissuer);
+      change_color_on_empty(hdate);
     }
 }
 
@@ -347,6 +368,8 @@ function checkhobby() {
     if(hobbyname.value != ""){
         new hobbies(hobbyname.value);
         hobbyname.value = "";
+    } else {
+      change_color_on_empty(hobbyname);
     }
 }
 
