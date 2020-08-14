@@ -44,25 +44,35 @@
 
                 <form>
                     
-                    <!-- Course Name -->
-                    <div class="form-group">
-                        <label for="course">Course/Certificate Name</label>
-                        <input type="text" class="form-control" id="course" placeholder="Ex: Complete Web Developer Course">
+                    <div class="course">
+
+                        <!-- Course Name -->
+                        <div class="form-group">
+                            <label for="course">Course/Certificate Name</label>
+                            <input type="text" class="form-control" id="course" placeholder="Ex: Complete Web Developer Course">
+                        </div>
+
+                        <!-- Issuer and Date of issuing/completion -->
+                        <div class="form-row">
+        
+                            <div class="form-group col-md-6">
+                            <label for="issuer">Issuer</label>
+                            <input type="text" class="form-control" id="issuer" placeholder="Ex: Coursera, Oracle">
+                            </div>
+        
+                            <div class="form-group col-md-6">
+                            <label for="idate">Issued On</label>
+                            <input type="date" class="form-control" id="idate">
+                            </div>
+        
+                        </div>
+
+                        <button type="button" class="btn btn-success coursebtn">ADD</button>
+
                     </div>
 
-                    <!-- Issuer and Date of issuing/completion -->
-                    <div class="form-row">
-    
-                        <div class="form-group col-md-6">
-                          <label for="issuer">Issuer</label>
-                          <input type="text" class="form-control" id="issuer" placeholder="Ex: Coursera, Oracle">
-                        </div>
-    
-                        <div class="form-group col-md-6">
-                          <label for="idate">Issued On</label>
-                          <input type="date" class="form-control" id="idate">
-                        </div>
-    
+                    <div class="containcourse">
+
                     </div>
 
                     <!-- Save Information -->
@@ -99,6 +109,12 @@
     
                     </div>
 
+                    <button type="button" class="btn btn-success publishbtn">ADD</button>
+
+                    <div class="containpublish">
+
+                    </div>
+
                     <!-- Save Information -->
                     <button type="button" class="btn btn-primary btn-lg btn-block">Save Information</button>
 
@@ -133,6 +149,12 @@
     
                     </div>
 
+                    <button type="button" class="btn btn-success awardbtn">ADD</button>
+
+                    <div class="containaward">
+
+                    </div>
+
                     <!-- Save Information -->
                     <button type="button" class="btn btn-primary btn-lg btn-block">Save Information</button>
 
@@ -150,24 +172,14 @@
                     <div class="form-group">
                         <label for="">Interests/Hobbies</label>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control addText" aria-describedby="hobbies" placeholder="Enter your Hobbies and Interests..">
+                            <input type="text" class="form-control addhobby" aria-describedby="hobbies" placeholder="Enter your Hobbies and Interests..">
                             <div class="input-group-append">
-                              <button class="btn btn-outline-secondary addBtn" type="button" id="hobbies">Add</button>
+                              <button class="btn btn-outline-secondary addbtn" type="button" id="hobbies">Add</button>
                             </div>
                         </div>
                     </div>
 
-                    <div class="containHobby">
-
-                        <!-- <div class="form-group">
-                            <label for="">Interests/Hobbies</label>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" aria-describedby="hobbies">
-                                <div class="input-group-append">
-                                  <button class="btn btn-outline-secondary rembtn" type="button" id="hobbies">Remove</button>
-                                </div>
-                            </div>
-                        </div> -->
+                    <div class="containHobby">                        
 
                     </div>
 
