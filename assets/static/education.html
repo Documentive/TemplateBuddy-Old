@@ -43,70 +43,81 @@
             <div class="formbox">
 
                 <form>
-                    <!-- Institute Name -->
-                    <div class="form-group">
-                        <label for="institute">Institute Name</label>
-                        <input type="text" class="form-control" id="institute" placeholder="Ex: Harvard Business School">
-                    </div>
                     
-                    <!-- Institute Location -->
-                    <div class="form-row">
-    
-                        <div class="form-group col-md-6">
-                          <label for="city">City</label>
-                          <input type="text" class="form-control" id="city">
+                    <div class="outerDiv">
+
+                        <!-- Institute Name -->
+                        <div class="form-group">
+                            <label for="institute">Institute Name</label>
+                            <input type="text" class="form-control" id="institute" placeholder="Ex: Harvard Business School">
                         </div>
-    
-                        <div class="form-group col-md-6">
-                          <label for="country">Country</label>
-                          <input type="text" class="form-control" id="country">
+                        
+                        <!-- Institute Location -->
+                        <div class="form-row">
+        
+                            <div class="form-group col-md-6">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control" id="city">
+                            </div>
+        
+                            <div class="form-group col-md-6">
+                            <label for="country">Country</label>
+                            <input type="text" class="form-control" id="country">
+                            </div>
+        
                         </div>
-    
-                    </div>
-                    
-                    <!-- Degree Information -->
-                    <div class="form-row">
-    
-                        <div class="form-group col-md-6">
-                          <label for="degree">Degree</label>
-                          <input type="text" class="form-control" id="degree" placeholder="Ex: Bachelors's">
+                        
+                        <!-- Degree Information -->
+                        <div class="form-row">
+        
+                            <div class="form-group col-md-6">
+                            <label for="degree">Degree</label>
+                            <input type="text" class="form-control" id="degree" placeholder="Ex: Bachelors's">
+                            </div>
+        
+                            <div class="form-group col-md-6">
+                            <label for="fos">Field of Study</label>
+                            <input type="text" class="form-control" id="fos" placeholder="Ex: Computer Science">
+                            </div>
+        
                         </div>
-    
-                        <div class="form-group col-md-6">
-                          <label for="fos">Field of Study</label>
-                          <input type="text" class="form-control" id="fos" placeholder="Ex: Computer Science">
+
+                        <!-- Tenure -->
+                        <div class="form-row">
+        
+                            <div class="form-group col-md-6">
+                            <label for="sdate">Start Date</label>
+                            <input type="date" class="form-control" id="sdate">
+                            </div>
+        
+                            <div class="form-group col-md-6">
+                            <label for="edate">End Date</label>
+                            <input type="date" class="form-control" id="edate">
+                            </div>
+        
                         </div>
-    
+
+                        <!-- Grade type and grade -->
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="grade">Grade Type</label>
+                                <select class="custom-select" id="selectType">
+                                    <option value="GPA" selected>GPA</option>
+                                    <option value="Percentage">Percentage</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="gradeval">Grade</label>
+                                <input type="text" class="form-control" id="gradeval">
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-success addBtn">ADD</button>
+
                     </div>
 
-                    <!-- Tenure -->
-                    <div class="form-row">
-    
-                        <div class="form-group col-md-6">
-                          <label for="sdate">Start Date</label>
-                          <input type="date" class="form-control" id="sdate">
-                        </div>
-    
-                        <div class="form-group col-md-6">
-                          <label for="edate">End Date</label>
-                          <input type="date" class="form-control" id="edate">
-                        </div>
-    
-                    </div>
+                    <div class="containEducation">
 
-                    <!-- Grade type and grade -->
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="grade">Grade Type</label>
-                            <select class="custom-select">
-                                <option value="1" selected>GPA</option>
-                                <option value="2">Percentage</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="gradeval">Grade</label>
-                            <input type="text" class="form-control" id="gradeval">
-                          </div>
                     </div>
 
                     <!-- Save Information -->
@@ -124,6 +135,8 @@
         </footer>
 
     </div>
+
+    <script src="../js/education.js"></script>
 
 </body>
 </html>
