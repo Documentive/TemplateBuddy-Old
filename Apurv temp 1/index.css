@@ -1,0 +1,103 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(1, 2fr 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 10px;
+    width: 100vw;
+    height: 100vh;
+    
+    
+}
+.grid-container{
+   
+    padding:5px;
+}
+
+.header{
+    grid-column: 1/3;
+    align-self: start;
+    border-bottom: 1px solid black;
+    
+}
+.h1, .des{
+    text-align: center;
+}
+.h1{
+    font-size:50px;
+}
+.education, .experience, .projects{
+    justify-self: center;
+    padding: 0px 0px 0px 20px;
+}
+.education{
+    margin: 0px 0px 0px -360px;
+}
+.edu, .exp, .prj, .sk, .course{
+    font-family: Courier New;
+    font-size: 30px;
+}
+.univ_name, .exp_topic, .prj_topic, .sk_top{
+   font-size: 20px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.edu_des, .prj_des{
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.exp_date, .prj_date {
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ }
+ .exp_detail, .prj_detail{
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0px 0px 10px 20px;
+}
+.skills {
+    justify-self: start;
+}
+.sk_det, .course_det{
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.sk_det1{
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    margin: -10px;
+}
+.aw{
+    font-family: Courier New;
+    font-size: 30px;
+    margin : 35px 0px 0px 0px;
+}
+.aw_det{
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    margin : 5px 0px 0px 0px;
+}
+.coursework{
+    justify-self: start;
+    
+    margin : -50px 0px 0px 0px;
+}
+.tc, .act{
+    font-family: Courier New;
+    font-size: 30px; 
+    margin: 10px 0px 0px 0px;
+}
+.tc_det, .act_det{
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.skills li{
+    float: left;
+    margin: 0px 10px;
+}
