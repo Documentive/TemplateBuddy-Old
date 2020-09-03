@@ -4,18 +4,15 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/css/login-registration.css">
 
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../static/css/login-registration.css">
 
     <title>Template Buddy</title>
 
 </head>
 <body class="bg">
-  
+
   <div class="container">
     <!--Back box-->
     <div class="back">
@@ -45,29 +42,35 @@
       <div class="login">
         <h2>LOG IN</h2>
         <div class="inputbox">
-          <input type="text" name="email" placeholder="  EMAIL">
-          <input type="password" name="password" placeholder="  PASSWORD">
+          <input type="text" id="email-login" placeholder="  EMAIL">
+          <input type="password" id="password-login" placeholder="  PASSWORD">
         </div>
-        <button>LOG IN</button>
+        <button type="button" id="login-button">LOG IN</button>
       </div>
 
       <div class="signup hide">
         <h2>SIGN UP</h2>
         <div class="inputbox">
-          <input type="text" name="fullname" placeholder="  FULLNAME">
-          <input type="text" name="email" placeholder="  EMAIL">
-          <input type="password" name="password" placeholder="  PASSWORD">
+          <input type="text" id="fullname" placeholder="  FULLNAME">
+          <input type="text" id="email" placeholder="  EMAIL">
+          <input type="password" id="password" placeholder="  PASSWORD">
         </div>
-        <button>SIGN UP</button>
+        <button type="button" id="signup-button">SIGN UP</button>
       </div>
 
     </div>
     <!--Front box ends here-->
 
   </div>
-  
+
+  <!-- jQuery -->
+  <script src="../static/js/jquery.min.js"></script>
+
+  <!-- Sweet Alert 2 -->
+  <script src="../static/js/sweetalert.min.js"></script>
+
   <!-- JS for Login/Registration Page -->
-  <script src="./assets/js/login-registration.js"></script>
+  <script src="../static/js/login-registration.js"></script>
 
 </body>
 </html>
