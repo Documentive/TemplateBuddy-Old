@@ -11,7 +11,7 @@ $('#signupbtn1').on('click', function() {
 
   $signup.toggleClass('hide');
   $login.toggleClass('hide');
-})
+});
 
 $('#loginbtn1').on('click', function() {
   $loginMsg.toggleClass("visible");
@@ -20,7 +20,12 @@ $('#loginbtn1').on('click', function() {
 
   $signup.toggleClass('hide');
   $login.toggleClass('hide');
-})
+});
+
+function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
 
 $("#signup-button").click(function() {
   var fullname = $("#fullname").val();
@@ -32,6 +37,12 @@ $("#signup-button").click(function() {
       icon: "error",
       title: "Error",
       text: "All fields are required!"
+    });
+  } else if(!validateEmail(email)) {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: "Invalid email address!"
     });
   } else {
     $.ajax({
@@ -62,6 +73,12 @@ $("#login-button").click(function() {
       icon: "error",
       title: "Error",
       text: "All fields are required!"
+    });
+  } else if(!validateEmail(email)) {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: "Invalid email address!"
     });
   } else {
     $.ajax({
