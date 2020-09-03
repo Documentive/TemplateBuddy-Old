@@ -30,7 +30,8 @@ def index():
         # Return index.html from templates
         return render_template("index.html")
 
-@app.route("/signup", methods=['POST'])
+
+@app.route("/signup", methods=["POST"])
 def signup():
     """
     Signup (/signup) route
@@ -40,12 +41,12 @@ def signup():
         : Sign up a new user if account does not exist already
     """
 
-    if request.method == 'POST':
-        fullname = request.form['fullname']
-        email = request.form['email']
-        password = request.form['password']
+    if request.method == "POST":
+        fullname = request.form["fullname"]
+        email = request.form["email"]
+        password = request.form["password"]
 
-        conn = sqlite3.connect('local.db')
+        conn = sqlite3.connect("local.db")
 
         cursor = conn.execute(f'SELECT id FROM users WHERE email = "{email}"')
         row = cursor.fetchone()
@@ -53,17 +54,33 @@ def signup():
         password = hashlib.sha512(password.encode())
         password = password.hexdigest()
 
-        if(row != None):
-            return jsonify({"icon": "error", "title": "Error", "text": "User with this email already exists!"})
+        if row != None:
+            return jsonify(
+                {
+                    "icon": "error",
+                    "title": "Error",
+                    "text": "User with this email already exists!",
+                }
+            )
 
-        conn.execute(f'INSERT INTO users(name, email, password) VALUES("{fullname}", "{email}", "{password}")')
+        conn.execute(
+            f'INSERT INTO users(name, email, password) VALUES("{fullname}", "{email}",'
+            f' "{password}")'
+        )
         conn.commit()
 
         conn.close()
 
-        return jsonify({"icon": "success", "title": "Success", "text": "Signed up successfully! Login to continue!"})
+        return jsonify(
+            {
+                "icon": "success",
+                "title": "Success",
+                "text": "Signed up successfully! Login to continue!",
+            }
+        )
 
-@app.route('/login', methods=['POST'])
+
+@app.route("/login", methods=["POST"])
 def login():
     """
     Login (/login) route
@@ -73,24 +90,38 @@ def login():
         : Logs in a user if account exists
     """
 
-    if request.method == 'POST':
-        email = request.form['email']
-        password = request.form['password']
+    if request.method == "POST":
+        email = request.form["email"]
+        password = request.form["password"]
 
-        conn = sqlite3.connect('local.db')
+        conn = sqlite3.connect("local.db")
 
         cursor = conn.execute(f'SELECT password FROM users WHERE email = "{email}"')
         row = cursor.fetchone()
 
-        if(row == None):
-            return jsonify({"icon": "error", "title": "Error", "text": "Account does not exist, sign up first!"})
+        if row == None:
+            return jsonify(
+                {
+                    "icon": "error",
+                    "title": "Error",
+                    "text": "Account does not exist, sign up first!",
+                }
+            )
 
         password = hashlib.sha512(password.encode())
         password = password.hexdigest()
 
-        if(row[0] != password):
-            return jsonify({"icon": "error", "title": "Error", "text": "Incorrect email or password!"})
+        if row[0] != password:
+            return jsonify(
+                {
+                    "icon": "error",
+                    "title": "Error",
+                    "text": "Incorrect email or password!",
+                }
+            )
 
         conn.close()
 
-        return jsonify({"icon": "success", "title": "Success", "text": "Logged in successfully!!"})
+        return jsonify(
+            {"icon": "success", "title": "Success", "text": "Logged in successfully!!"}
+        )
