@@ -109,13 +109,47 @@ form button {
     padding-bottom: 15px;
 }
 
-/* For the skills container */
+form button.addBtn, button.remBtn {
+    float: right;
+}
+
+/* For the containers */
+.containProject {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.containExp {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.containEducation {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.containcourse {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.containpublish {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.containaward {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.containhobby {
+    text-align: center;
+    margin-top: 2rem;
+}
+
 .containSkill {
-    /* display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     text-align: center;
     margin-top: 2rem;
 }
