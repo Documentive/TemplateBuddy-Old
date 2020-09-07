@@ -91,6 +91,9 @@ $("#login-button").click(function() {
           icon: result.icon,
           title: result.title,
           text: result.text
+        }).then(function() {
+          if(result.icon == 'success')
+            location.href = '/personal';
         });
       }
     })

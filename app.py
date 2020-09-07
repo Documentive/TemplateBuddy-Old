@@ -1,5 +1,5 @@
 # Import required libraries
-from flask import Flask, request, render_template, redirect, flash, jsonify
+from flask import Flask, request, render_template, redirect, flash, jsonify, session
 import sqlite3
 import hashlib
 
@@ -96,7 +96,7 @@ def login():
 
         conn = sqlite3.connect("local.db")
 
-        cursor = conn.execute(f'SELECT password FROM users WHERE email = "{email}"')
+        cursor = conn.execute(f'SELECT id, password FROM users WHERE email = "{email}"')
         row = cursor.fetchone()
 
         if row == None:
@@ -111,7 +111,7 @@ def login():
         password = hashlib.sha512(password.encode())
         password = password.hexdigest()
 
-        if row[0] != password:
+        if row[1] != password:
             return jsonify(
                 {
                     "icon": "error",
@@ -120,8 +120,49 @@ def login():
                 }
             )
 
+        session['id'] = row[0]
+
         conn.close()
 
         return jsonify(
             {"icon": "success", "title": "Success", "text": "Logged in successfully!!"}
         )
+
+@app.route('/personal', methods=['GET', 'POST'])
+def personal():
+
+    if request.method == 'GET':
+        return render_template('personaldetails.html')
+
+    elif request.method == 'POST':
+        firstname = request.form['firstname']
+        middlename = request.form['middlename']
+        lastname = request.form['lastname']
+        email = request.form['email']
+        mobile = request.form['mobile']
+        address_1 = request.form['address_1']
+        address_2 = request.form['address_2']
+        city = request.form['city']
+        state = request.form['state']
+        zip = request.form['zip']
+        headline = request.form['headline']
+        github = request.form['github']
+        linkedin = request.form['linkedin']
+        twitter = request.form['twitter']
+        website = request.form['website']
+        behance = request.form['behance']
+        dribble = request.form['dribble']
+        summary = request.form['summary']
+
+        
+
+        conn.execute(f"""INSERT INTO resume_details(uid, firstname, middlename, lastname, email, mobile, address_1,
+                     lastname, email, mobile, address_1, address_2, city, state, zip, profile_picture, headline,
+                     github, linkedin, twitter, website, behance, dribble, summary) VALUES('{uid}', '{firstname}',
+                     '{middlename}', '{lastname}', '{emai}', '{mobile}', '{address_1}', '{address_2}',
+                     '{city}', '{state}', '{zip}', 'test', '{headline}', '{github}', '{linkedin}', '{twitter}',
+                     '{website}', '{behance}', '{dribble}', '{summary}')""")
+
+        conn.commit()
+
+        return jsonify({"icon": "success", "title": "Success", "text": "Data updated successfully!"})
