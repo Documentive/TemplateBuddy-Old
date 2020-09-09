@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap CSS File -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../static/css/main.css">
 
     <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css">
 
     <title>Education Details</title>
 </head>
 <body>
-    
+
     <div class="wrapper">
 
         <!-- Add logo here -->
@@ -30,12 +30,12 @@
 
             <!-- Navigate to different pages -->
             <div class="tabs">
-                <a href="../static/personaldetails.html">Personal Info</a>
-                <a href="../static/education.html" class="active">Education</a>
-                <a href="../static/experience.html">Experience</a>
-                <a href="../static/skills.html">Skills</a>
-                <a href="../static/projects.html">Projects</a>
-                <a href="../static/additional.html">Additional Info</a>
+              <a href="/personal">Personal Info</a>
+              <a href="/education" class="active">Education</a>
+              <a href="/experience">Experience</a>
+              <a href="/skills">Skills</a>
+              <a href="/projects">Projects</a>
+              <a href="/additional">Additional Info</a>
             </div>
 
             <h1>EDUCATION DETAILS</h1>
@@ -43,7 +43,7 @@
             <div class="formbox">
 
                 <form>
-                    
+
                     <div class="outerDiv">
 
                         <!-- Institute Name -->
@@ -51,50 +51,50 @@
                             <label for="institute">Institute Name</label>
                             <input type="text" class="form-control" id="institute" placeholder="Ex: Harvard Business School">
                         </div>
-                        
+
                         <!-- Institute Location -->
                         <div class="form-row">
-        
+
                             <div class="form-group col-md-6">
                             <label for="city">City</label>
                             <input type="text" class="form-control" id="city">
                             </div>
-        
+
                             <div class="form-group col-md-6">
                             <label for="country">Country</label>
                             <input type="text" class="form-control" id="country">
                             </div>
-        
+
                         </div>
-                        
+
                         <!-- Degree Information -->
                         <div class="form-row">
-        
+
                             <div class="form-group col-md-6">
                             <label for="degree">Degree</label>
                             <input type="text" class="form-control" id="degree" placeholder="Ex: Bachelors's">
                             </div>
-        
+
                             <div class="form-group col-md-6">
                             <label for="fos">Field of Study</label>
                             <input type="text" class="form-control" id="fos" placeholder="Ex: Computer Science">
                             </div>
-        
+
                         </div>
 
                         <!-- Tenure -->
                         <div class="form-row">
-        
+
                             <div class="form-group col-md-6">
                             <label for="sdate">Start Date</label>
                             <input type="date" class="form-control" id="sdate">
                             </div>
-        
+
                             <div class="form-group col-md-6">
                             <label for="edate">End Date</label>
                             <input type="date" class="form-control" id="edate">
                             </div>
-        
+
                         </div>
 
                         <!-- Grade type and grade -->
@@ -136,7 +136,14 @@
 
     </div>
 
-    <script src="../js/education.js"></script>
+    <!-- jQuery -->
+    <script src="../static/js/jquery.min.js"></script>
+
+    <!-- Sweet Alert 2 -->
+    <script src="../static/js/sweetalert.min.js"></script>
+
+    <!-- JS for Personal Details Page -->
+    <script src="../static/js/education.js"></script>
 
 </body>
 </html>

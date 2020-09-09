@@ -189,6 +189,12 @@ def personal():
 
         return jsonify({"icon": "success", "title": "Success", "text": "Data updated successfully!"})
 
+@app.route('/education', methods=['GET', 'POST'])
+def education():
+
+    if request.method == 'GET':
+        return render_template('education.html')
+
 @app.route('/logout', methods=['GET'])
 def logout():
 
