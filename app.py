@@ -122,9 +122,6 @@ def login():
 
         session['id'] = row[0]
 
-        print(row)
-        print(session['id'])
-
         conn.close()
 
         return jsonify(
@@ -137,7 +134,8 @@ def personal():
     if request.method == 'GET':
         uid = session['id']
 
-        print(uid)
+        if(uid == -1):
+            return redirect('/')
 
         conn = sqlite3.connect("local.db")
         cursor = conn.execute(f"SELECT * FROM resume_details WHERE uid={uid}")
