@@ -37,7 +37,16 @@ conn.execute(
         website TEXT,
         behance TEXT,
         dribble TEXT,
-        summary TEXT
+        summary TEXT,
+        institute_names TEXT,
+        cities TEXT,
+        countries TEXT,
+        degrees TEXT,
+        fields_of_study TEXT,
+        start_dates DATE,
+        end_dates DATE,
+        grade_types TEXT,
+        grades TEXT
     )"""
 )
 

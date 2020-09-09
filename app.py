@@ -195,6 +195,31 @@ def education():
     if request.method == 'GET':
         return render_template('education.html')
 
+    if request.method == 'POST':
+        uid = session['id']
+        institute_names = request.form['institute_names']
+        cities = request.form['cities']
+        countries = request.form['countries']
+        degrees = request.form['degrees']
+        fields_of_study = request.form['fields_of_study']
+        start_dates = request.form['start_dates']
+        end_dates = request.form['end_dates']
+        grade_types = request.form['grade_types']
+        grades = request.form['grades']
+
+        conn = sqlite3.connect("local.db")
+
+        conn.execute(f"""UPDATE resume_details SET institute_names='{institute_names}', cities='{cities}',
+                     countries='{countries}', degrees='{degrees}', fields_of_study='{fields_of_study}',
+                     start_dates='{start_dates}', end_dates='{end_dates}', grade_types='{grade_types}',
+                     grades='{grades}' WHERE uid={uid}""")
+
+        conn.commit()
+
+        conn.close()
+
+        return jsonify({"icon": "success", "title": "Success", "text": "Data updated successfully!"})
+
 @app.route('/logout', methods=['GET'])
 def logout():
 

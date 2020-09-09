@@ -37,46 +37,55 @@ class item {
         inputiname.value = iname;
         inputiname.disabled = true;
         inputiname.classList.add('form-control');
+        inputiname.classList.add('institute_names');
         inputiname.type = "text";
 
         inputcity.value = city;
         inputcity.disabled = true;
         inputcity.classList.add('form-control');
+        inputcity.classList.add('cities');
         inputcity.type = "text";
 
         inputcountry.value = country;
         inputcountry.disabled = true;
         inputcountry.classList.add('form-control');
+        inputcountry.classList.add('countries');
         inputcountry.type = "text";
 
         inputdegree.value = degree;
         inputdegree.disabled = true;
         inputdegree.classList.add('form-control');
+        inputdegree.classList.add('degrees');
         inputdegree.type = "text";
 
         inputfos.value = fos;
         inputfos.disabled = true;
         inputfos.classList.add('form-control');
+        inputfos.classList.add('fields_of_study');
         inputfos.type = "text";
 
         inputsdate.value = sdate;
         inputsdate.disabled = true;
         inputsdate.classList.add('form-control');
+        inputsdate.classList.add('start_dates');
         inputsdate.type = "date";
 
         inputedate.value = edate;
         inputedate.disabled = true;
         inputedate.classList.add('form-control');
+        inputedate.classList.add('end_dates');
         inputedate.type = "date";
 
         inputselectType.value = selectType;
         inputselectType.disabled = true;
         inputselectType.classList.add('form-control');
+        inputselectType.classList.add('grade_types');
         inputselectType.type = "text";
 
         inputgradeval.value = gradeval;
         inputgradeval.disabled = true;
         inputgradeval.classList.add('form-control');
+        inputgradeval.classList.add('grades');
         inputgradeval.type = "text";
 
         // Create the html stucture according to the display
@@ -200,3 +209,39 @@ function check() {
 
 // Add button to add the project information
 addButton.addEventListener('click', check);
+
+function get_inputs_by_classname(classname) {
+  var value = "";
+  $('.' + classname).each(function() {
+    value += $(this).val() + "~~~";
+  });
+
+  return value;
+}
+
+$("#education-save").click(function() {
+  var institute_names = get_inputs_by_classname("institute_names");
+  var cities = get_inputs_by_classname("cities");
+  var countries = get_inputs_by_classname("countries");
+  var degrees = get_inputs_by_classname("degrees");
+  var fields_of_study = get_inputs_by_classname("fields_of_study");
+  var start_dates = get_inputs_by_classname("start_dates");
+  var end_dates = get_inputs_by_classname("end_dates");
+  var grade_types = get_inputs_by_classname("grade_types");
+  var grades = get_inputs_by_classname("grades");
+
+  $.ajax({
+    url: "/education",
+    type: "post",
+    data: {"institute_names": institute_names, "cities": cities, "countries": countries, "degrees": degrees,
+           "fields_of_study": fields_of_study, "start_dates": start_dates, "end_dates": end_dates, "grade_types": grade_types,
+           "grades": grades},
+    success: function(result) {
+      Swal.fire({
+        icon: result.icon,
+        title: result.title,
+        text: result.text
+      });
+    }
+  });
+});

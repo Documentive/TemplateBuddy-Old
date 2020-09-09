@@ -49,7 +49,7 @@
                         <!-- Institute Name -->
                         <div class="form-group">
                             <label for="institute">Institute Name</label>
-                            <input type="text" class="form-control" id="institute" placeholder="Ex: Harvard Business School">
+                            <input type="text" class="form-control institute_names" id="institute" placeholder="Ex: Harvard Business School">
                         </div>
 
                         <!-- Institute Location -->
@@ -57,12 +57,12 @@
 
                             <div class="form-group col-md-6">
                             <label for="city">City</label>
-                            <input type="text" class="form-control" id="city">
+                            <input type="text" class="form-control cities" id="city">
                             </div>
 
                             <div class="form-group col-md-6">
                             <label for="country">Country</label>
-                            <input type="text" class="form-control" id="country">
+                            <input type="text" class="form-control countries" id="country">
                             </div>
 
                         </div>
@@ -72,12 +72,12 @@
 
                             <div class="form-group col-md-6">
                             <label for="degree">Degree</label>
-                            <input type="text" class="form-control" id="degree" placeholder="Ex: Bachelors's">
+                            <input type="text" class="form-control degrees" id="degree" placeholder="Ex: Bachelors's">
                             </div>
 
                             <div class="form-group col-md-6">
                             <label for="fos">Field of Study</label>
-                            <input type="text" class="form-control" id="fos" placeholder="Ex: Computer Science">
+                            <input type="text" class="form-control fields_of_study" id="fos" placeholder="Ex: Computer Science">
                             </div>
 
                         </div>
@@ -87,12 +87,12 @@
 
                             <div class="form-group col-md-6">
                             <label for="sdate">Start Date</label>
-                            <input type="date" class="form-control" id="sdate">
+                            <input type="date" class="form-control start_dates" id="sdate">
                             </div>
 
                             <div class="form-group col-md-6">
                             <label for="edate">End Date</label>
-                            <input type="date" class="form-control" id="edate">
+                            <input type="date" class="form-control end_dates" id="edate">
                             </div>
 
                         </div>
@@ -101,14 +101,14 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="grade">Grade Type</label>
-                                <select class="custom-select" id="selectType">
+                                <select class="custom-select grade_types" id="selectType">
                                     <option value="GPA" selected>GPA</option>
                                     <option value="Percentage">Percentage</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="gradeval">Grade</label>
-                                <input type="text" class="form-control" id="gradeval">
+                                <input type="text" class="form-control grades" id="gradeval">
                             </div>
                         </div>
 
@@ -121,7 +121,7 @@
                     </div>
 
                     <!-- Save Information -->
-                    <button type="button" class="btn btn-primary btn-lg btn-block">Save Information</button>
+                    <button type="button" id="education-save" class="btn btn-primary btn-lg btn-block">Save Information</button>
 
                 </form>
 
