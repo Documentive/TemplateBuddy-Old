@@ -1,4 +1,6 @@
-# Contributing to TemplateBuddy
+# Contributing to TemplateBuddy    
+
+### Please star (⭐) the repository to show your support to the project.   
 
 ## Pull Requests (PRs)
 
