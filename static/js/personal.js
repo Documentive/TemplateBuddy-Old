@@ -38,3 +38,20 @@ $("#personal-tab-submit").click(function() {
      }
   });
 });
+
+$("#logout").click(function() {
+  $.ajax({
+    url: "/logout",
+    type: "get",
+    success: function(result) {
+      Swal.fire({
+        icon: result.icon,
+        title: result.title,
+        text: result.text
+      }).then(function() {
+        if(result.icon == 'success')
+          location.href = '/';
+      });
+    }
+  });
+});

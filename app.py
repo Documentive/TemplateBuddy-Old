@@ -190,3 +190,11 @@ def personal():
         conn.close()
 
         return jsonify({"icon": "success", "title": "Success", "text": "Data updated successfully!"})
+
+@app.route('/logout', methods=['GET'])
+def logout():
+
+    if request.method == 'GET':
+        session['id'] = -1
+
+        return jsonify({"icon": "success", "title": "Success", "text": "Logged out successfully!"})
