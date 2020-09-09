@@ -122,6 +122,9 @@ def login():
 
         session['id'] = row[0]
 
+        print(row)
+        print(session['id'])
+
         conn.close()
 
         return jsonify(
@@ -132,9 +135,28 @@ def login():
 def personal():
 
     if request.method == 'GET':
-        return render_template('personaldetails.html')
+        uid = session['id']
+
+        print(uid)
+
+        conn = sqlite3.connect("local.db")
+        cursor = conn.execute(f"SELECT * FROM resume_details WHERE uid={uid}")
+        row = cursor.fetchone()
+
+        conn.close()
+
+        if row == None:
+            return render_template('personaldetails.html')
+
+        print(row[20])
+
+        return render_template('personaldetails.html', firstname=row[2], middlename=row[3], lastname=row[4],
+                               email=row[5], mobile=row[6], address_1=row[7], address_2=row[8], city=row[9],
+                               state=row[10], zip=row[11], headline=row[13], github=row[14], linkedin=row[15],
+                               twitter=row[16], website=row[17], behance=row[18], dribble=row[19], summary=row[20])
 
     elif request.method == 'POST':
+        uid = session['id']
         firstname = request.form['firstname']
         middlename = request.form['middlename']
         lastname = request.form['lastname']
@@ -154,15 +176,17 @@ def personal():
         dribble = request.form['dribble']
         summary = request.form['summary']
 
-        
+        conn = sqlite3.connect("local.db")
 
         conn.execute(f"""INSERT INTO resume_details(uid, firstname, middlename, lastname, email, mobile, address_1,
-                     lastname, email, mobile, address_1, address_2, city, state, zip, profile_picture, headline,
+                     address_2, city, state, zip, profile_picture, headline,
                      github, linkedin, twitter, website, behance, dribble, summary) VALUES('{uid}', '{firstname}',
-                     '{middlename}', '{lastname}', '{emai}', '{mobile}', '{address_1}', '{address_2}',
+                     '{middlename}', '{lastname}', '{email}', '{mobile}', '{address_1}', '{address_2}',
                      '{city}', '{state}', '{zip}', 'test', '{headline}', '{github}', '{linkedin}', '{twitter}',
                      '{website}', '{behance}', '{dribble}', '{summary}')""")
 
         conn.commit()
+
+        conn.close()
 
         return jsonify({"icon": "success", "title": "Success", "text": "Data updated successfully!"})

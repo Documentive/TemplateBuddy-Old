@@ -49,17 +49,17 @@
 
                         <div class="form-group col-md-4">
                           <label for="fname">First Name</label>
-                          <input type="text" class="form-control" id="firstname">
+                          <input type="text" class="form-control" id="firstname" value="{{firstname}}">
                         </div>
 
                         <div class="form-group col-md-4">
                             <label for="mname">Middle Name</label>
-                            <input type="text" class="form-control" id="middlename">
+                            <input type="text" class="form-control" id="middlename" value="{{middlename}}">
                         </div>
 
                         <div class="form-group col-md-4">
                           <label for="lname">Last Name</label>
-                          <input type="text" class="form-control" id="lastname">
+                          <input type="text" class="form-control" id="lastname" value="{{lastname}}">
                         </div>
 
                     </div>
@@ -69,12 +69,12 @@
 
                         <div class="form-group col-md-6">
                           <label for="email">Email</label>
-                          <input type="email" class="form-control" id="email">
+                          <input type="email" class="form-control" id="email" value="{{email}}">
                         </div>
 
                         <div class="form-group col-md-6">
                           <label for="mobile">Mobile No.</label>
-                          <input type="text" class="form-control" id="mobile">
+                          <input type="text" class="form-control" id="mobile" value="{{mobile}}">
                         </div>
 
                     </div>
@@ -83,29 +83,29 @@
                     <!-- Address -->
                     <div class="form-group">
                         <label for="inputAddress">Address Line 1</label>
-                        <input type="text" class="form-control" id="address_1" placeholder="Apartment/Flat/House">
+                        <input type="text" class="form-control" id="address_1" value="{{address_1}}" placeholder="Apartment/Flat/House">
                     </div>
 
                     <div class="form-group">
                         <label for="inputAddress2">Address Line 2</label>
-                        <input type="text" class="form-control" id="address_2" placeholder="Locality/Area">
+                        <input type="text" class="form-control" id="address_2" value="{{address_2}}" placeholder="Locality/Area">
                     </div>
 
                     <div class="form-row">
 
                         <div class="form-group col-md-5">
                           <label for="inputCity">City</label>
-                          <input type="text" class="form-control" id="city">
+                          <input type="text" class="form-control" id="city" value="{{city}}">
                         </div>
 
                         <div class="form-group col-md-4">
                           <label for="state">State</label>
-                          <input type="text" class="form-control" id="state">
+                          <input type="text" class="form-control" id="state" value="{{state}}">
                         </div>
 
                         <div class="form-group col-md-3">
                           <label for="zip">Zip</label>
-                          <input type="text" class="form-control" id="zip">
+                          <input type="text" class="form-control" id="zip" value="{{zip}}">
                         </div>
 
                     </div>
@@ -114,7 +114,7 @@
                     <div class="form-group">
                         <label for="profile">Profile Picture</label>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="profile">
+                            <input type="file" class="custom-file-input" id="profile" value="{{profile}}">
                             <label class="custom-file-label" for="profile">Choose file</label>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                     <!-- Resume Headline -->
                     <div class="form-group">
                         <label for="headline">Head Line</label>
-                        <input type="text" class="form-control" id="headline" placeholder="Ex: Web Developer, Software Engineer,...">
+                        <input type="text" class="form-control" id="headline" value="{{headline}}" placeholder="Ex: Web Developer, Software Engineer,...">
                     </div>
 
                     <!-- Links for Social Accounts (Github, linkedin, website, twwiter, behance, dribble) -->
@@ -136,7 +136,7 @@
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="fa fa-github" aria-hidden="true"></i></div>
                                 </div>
-                                <input type="text" class="form-control" id="github" placeholder="Ex: /dhairyaj">
+                                <input type="text" class="form-control" id="github" value="{{github}}" placeholder="Ex: /dhairyaj">
                               </div>
                             </div>
 
@@ -146,7 +146,7 @@
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
                                 </div>
-                                <input type="text" class="form-control" id="linkedin" placeholder="Ex: /in/dhairyajain29">
+                                <input type="text" class="form-control" id="linkedin" value="{{linkedin}}" placeholder="Ex: /in/dhairyajain29">
                               </div>
                             </div>
 
@@ -156,7 +156,7 @@
                                   <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fa fa-twitter" aria-hidden="true"></i></div>
                                   </div>
-                                  <input type="text" class="form-control" id="twitter" placeholder="Ex: /dhairyajn">
+                                  <input type="text" class="form-control" id="twitter" value="{{twitter}}" placeholder="Ex: /dhairyajn">
                                 </div>
                             </div>
 
@@ -166,7 +166,7 @@
                                   <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fa fa-link" aria-hidden="true"></i></div>
                                   </div>
-                                  <input type="text" class="form-control" id="website" placeholder="Website URL">
+                                  <input type="text" class="form-control" id="website" value="{{website}}" placeholder="Website URL">
                                 </div>
                               </div>
 
@@ -176,7 +176,7 @@
                                   <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fa fa-behance" aria-hidden="true"></i></div>
                                   </div>
-                                  <input type="text" class="form-control" id="behance" placeholder="Ex: /dhairyaj">
+                                  <input type="text" class="form-control" id="behance" value="{{behance}}" placeholder="Ex: /dhairyaj">
                                 </div>
                               </div>
 
@@ -186,7 +186,7 @@
                                   <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fa fa-dribbble" aria-hidden="true"></i></div>
                                   </div>
-                                  <input type="text" class="form-control" id="dribble" placeholder="Ex: /dhairyaj">
+                                  <input type="text" class="form-control" id="dribble" value="{{dribble}}" placeholder="Ex: /dhairyaj">
                                 </div>
                               </div>
 
@@ -195,7 +195,7 @@
                         <!-- Summary -->
                         <div class="form-group">
                             <label for="summary">Summary</label>
-                            <textarea class="form-control" id="summary" placeholder="Enter between 100-150 words" rows="4"></textarea>
+                            <textarea class="form-control" id="summary" placeholder="Enter between 100-150 words" rows="4">{{summary}}</textarea>
                           </div>
 
                     </div>

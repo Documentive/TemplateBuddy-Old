@@ -8,7 +8,7 @@ $("#personal-tab-submit").click(function() {
   var address_2 = $("#address_2").val();
   var city = $("#city").val();
   var state = $("#state").val();
-  var zip = $("#state").val();
+  var zip = $("#zip").val();
   var headline = $("#headline").val();
   var github = $("#github").val();
   var linkedin = $("#linkedin").val();
@@ -23,15 +23,18 @@ $("#personal-tab-submit").click(function() {
     type: "post",
     data: {"firstname": firstname, "middlename": middlename, "lastname": lastname, "email": email,
            "mobile": mobile, "address_1": address_1, "address_2": address_2, "city": city, "state": state,
-           "zip": zip, "github": github, "linkedin": linkedin, "twitter": twitter, "website": website,
+           "zip": zip, "headline": headline, "github": github, "linkedin": linkedin, "twitter": twitter, "website": website,
            "behance": behance, "dribble": dribble, "summary": summary},
-     dataType: "json",
      success: function(result) {
        Swal.fire({
          icon: result.icon,
          title: result.title,
          text: result.text
        });
+     },
+     error: function(j, e) {
+       console.log(j.responseText);
+       console.log(e);
      }
   });
 });
