@@ -2,6 +2,7 @@
 from flask import Flask, request, render_template, redirect, flash, jsonify, session
 import sqlite3
 import hashlib
+from werkzeug.utils import secure_filename
 
 # Instantiate flask app
 app = Flask(__name__)
@@ -154,38 +155,56 @@ def personal():
                                twitter=row[16], website=row[17], behance=row[18], dribble=row[19], summary=row[20])
 
     elif request.method == 'POST':
+        values = list(dict(request.form).values())[0].split("name=")
+
+        image = values[-2:]
+        values = values[:-2]
+        values = [value.split('-')[0].split("\r\n")[-2] for value in values]
+
+        file = request.files['profile_picture']
+
         uid = session['id']
-        firstname = request.form['firstname']
-        middlename = request.form['middlename']
-        lastname = request.form['lastname']
-        email = request.form['email']
-        mobile = request.form['mobile']
-        address_1 = request.form['address_1']
-        address_2 = request.form['address_2']
-        city = request.form['city']
-        state = request.form['state']
-        zip = request.form['zip']
-        headline = request.form['headline']
-        github = request.form['github']
-        linkedin = request.form['linkedin']
-        twitter = request.form['twitter']
-        website = request.form['website']
-        behance = request.form['behance']
-        dribble = request.form['dribble']
-        summary = request.form['summary']
+        firstname = values[0]
+        middlename = values[1]
+        lastname = values[2]
+        email = values[3]
+        mobile = values[4]
+        address_1 = values[5]
+        address_2 = values[6]
+        city = values[7]
+        state = values[8]
+        zip = values[9]
+        headline = values[10]
+        github = values[11]
+        linkedin = values[12]
+        twitter = values[13]
+        website = values[14]
+        behance = values[15]
+        dribble = values[16]
+        summary = values[17]
 
-        conn = sqlite3.connect("local.db")
-
-        conn.execute(f"""INSERT INTO resume_details(uid, firstname, middlename, lastname, email, mobile, address_1,
-                     address_2, city, state, zip, profile_picture, headline,
-                     github, linkedin, twitter, website, behance, dribble, summary) VALUES('{uid}', '{firstname}',
-                     '{middlename}', '{lastname}', '{email}', '{mobile}', '{address_1}', '{address_2}',
-                     '{city}', '{state}', '{zip}', 'test', '{headline}', '{github}', '{linkedin}', '{twitter}',
-                     '{website}', '{behance}', '{dribble}', '{summary}')""")
-
-        conn.commit()
-
-        conn.close()
+        # conn = sqlite3.connect("local.db")
+        #
+        # cursor = conn.execute(f"SELECT id FROM resume_details WHERE uid={uid}")
+        # row = cursor.fetchone()
+        #
+        # if row == None:
+        #     conn.execute(f"""INSERT INTO resume_details(uid, firstname, middlename, lastname, email, mobile, address_1,
+        #                  address_2, city, state, zip, profile_picture, headline,
+        #                  github, linkedin, twitter, website, behance, dribble, summary) VALUES('{uid}', '{firstname}',
+        #                  '{middlename}', '{lastname}', '{email}', '{mobile}', '{address_1}', '{address_2}',
+        #                  '{city}', '{state}', '{zip}', 'test', '{headline}', '{github}', '{linkedin}', '{twitter}',
+        #                  '{website}', '{behance}', '{dribble}', '{summary}')""")
+        # else:
+        #     conn.execute(f"""UPDATE resume_details SET firstname='{firstname}', middlename='{middlename}', lastname='{lastname}',
+        #                  email='{email}', mobile='{mobile}', address_1='{address_1}', address_2='{address_2}', city='{city}',
+        #                  state='{state}', zip='{zip}', profile_picture='test', headline='{headline}', github='{github}',
+        #                  linkedin='{linkedin}', twitter='{twitter}', website='{website}', behance='{behance}', dribble='{dribble}',
+        #                  summary='{summary}' WHERE uid={uid}""")
+        #
+        # conn.commit()
+        #
+        # conn.close()
 
         return jsonify({"icon": "success", "title": "Success", "text": "Data updated successfully!"})
 

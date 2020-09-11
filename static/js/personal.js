@@ -18,13 +18,32 @@ $("#personal-tab-submit").click(function() {
   var dribble = $("#dribble").val();
   var summary = $("#summary").val();
 
+  var all_data = new FormData();
+  all_data.append('firstname', firstname);
+  all_data.append('middlename', middlename);
+  all_data.append('lastname', lastname);
+  all_data.append('email', email);
+  all_data.append('mobile', mobile);
+  all_data.append('address_1', address_1);
+  all_data.append('address_2', address_2);
+  all_data.append('city', city);
+  all_data.append('state', state);
+  all_data.append('zip', zip);
+  all_data.append('headline', headline);
+  all_data.append('github', github);
+  all_data.append('linkedin', linkedin);
+  all_data.append('twitter', twitter);
+  all_data.append('website', website);
+  all_data.append('behance', behance);
+  all_data.append('dribble', dribble);
+  all_data.append('summary', summary);
+  all_data.append('profile_picture', $("#profile_picture")[0].files[0]);
+
   $.ajax({
-    url: "/personal",
-    type: "post",
-    data: {"firstname": firstname, "middlename": middlename, "lastname": lastname, "email": email,
-           "mobile": mobile, "address_1": address_1, "address_2": address_2, "city": city, "state": state,
-           "zip": zip, "headline": headline, "github": github, "linkedin": linkedin, "twitter": twitter, "website": website,
-           "behance": behance, "dribble": dribble, "summary": summary},
+     url: "/personal",
+     type: "post",
+     data: all_data,
+     processData: false,
      success: function(result) {
        Swal.fire({
          icon: result.icon,
