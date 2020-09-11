@@ -104,13 +104,46 @@ h1, h3 {
     padding-bottom: 10px;
 }
 
-form button {
+/* form button {
+    margin-bottom: 4%;
+    padding-bottom: 15px;
+} */
+
+input[type=file] {
+    width: 74%;
+    border-bottom: 1px black solid;
+}
+
+form button#personal-tab-submit {
     margin-bottom: 4%;
     padding-bottom: 15px;
 }
 
 form button.addBtn, button.remBtn {
     float: right;
+}
+
+.upload-file button {
+    color: black;
+    background-color:#e7717d;
+    padding: 6px 6px;
+    font-size: medium;
+    border-radius: 18px;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.upload-file button:hover {
+    transform: scale(1.05);
+    background: turquoise;
+    outline: none;
+}
+
+.upload-file button#viewPic {
+    margin-left: 5px;
 }
 
 /* For the containers */
