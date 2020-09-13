@@ -121,6 +121,7 @@ form button#personal-tab-submit {
 
 form button.addBtn, button.remBtn {
     float: right;
+    margin-bottom: 4%;
 }
 
 .upload-file button {
@@ -144,6 +145,11 @@ form button.addBtn, button.remBtn {
 
 .upload-file button#viewPic {
     margin-left: 5px;
+}
+
+form button#education-save {
+    margin-bottom: 4%;
+    padding-bottom: 15px;
 }
 
 /* For the containers */
