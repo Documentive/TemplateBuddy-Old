@@ -239,6 +239,30 @@ def education():
 
         return jsonify({"icon": "success", "title": "Success", "text": "Data updated successfully!"})
 
+@app.route("/experience", methods=['GET', 'POST'])
+def experience():
+
+    if request.method == 'GET':
+        return render_template('experience.html')
+
+@app.route("/skills", methods=['GET', 'POST'])
+def skills():
+
+    if request.method == 'GET':
+        return render_template('skills.html')
+
+@app.route("/projects", methods=['GET', 'POST'])
+def projects():
+
+    if request.method == 'GET':
+        return render_template('projects.html')
+
+@app.route("/additional", methods=['GET', 'POST'])
+def additional():
+
+    if request.method == 'GET':
+        return render_template('additional.html')
+
 @app.route('/logout', methods=['GET'])
 def logout():
 
