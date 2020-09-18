@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template 14</title>
+    <link rel="stylesheet" href="../../static/css/resume_templates/template1.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="header">
+            <h1>{{firstname}} {{middlename}} {{lastname}}</h1>
+            <h3>{{headline}}</h3>
+            <p>{{email}}</p>
+            <p>{{mobile}}</p>
+        </div>
+
+        <div class="summary">
+            <h3>SUMMARY</h3>
+            <hr>
+            <p>{{summary}}</p>
+        </div>
+
+        <div class="education">
+            <h3>EDUCATION</h3>
+            <hr>
+            <table>
+                <tr>
+                    <th>Course</th>
+                    <th>Institution</th>
+                    <th>Date of Completion</th>
+                    <th>GPA/Percentage</th>
+                </tr>
+                <tr>
+                    <td>{{degree}}({{fos}})</td>
+                    <td>{{Institution}}, {{city}}, {{Country}}</td>
+                    <td>{{edate}}</td>
+                    <td>{{gradeval}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="skills">
+            <h3>SKILLS</h3>
+            <hr>
+            <p>{{skills}}</p>
+        </div>
+
+        <div class="experience">
+
+            <h3>WORK EXPERIENCE</h3>
+            <hr>
+            <div>
+                <p id="dates">{{sdate}} - {{edate}}</p>
+                <h4>{{cname}}, {{city}}, {{country}}</h4>
+                
+            </div>
+            <p>{{description}}</p>
+
+        </div>
+
+        <div class="projects">
+
+            <h3>PROJECTS</h3>
+            <hr>
+            <h4>{{ptitle}}</h4>
+            <p>Duration: {{sdate}} - {{edate}}</p>
+            <p>{{description}}</p>
+
+        </div>
+
+        <div class="course">
+            <h3>COURSES</h3>
+            <hr>
+            <ul>
+                <li>{{course}}, issued by {{issuer}}</li>
+            </ul>
+        </div>
+
+        <div class="publication">
+            <h3>PUBLICATIONS</h3>
+            <hr>
+            <ul>
+                <li>{{ptitle}}, published by {{publisher}}</li>
+            </ul>
+        </div>
+
+        <div class="achievements">
+            <h3>HONORS & AWARDS</h3>
+            <hr>
+            <ul>
+                <li>{{htitle}}, given by {{hissuer}}</li>
+            </ul>
+        </div>
+
+        <div class="interests">
+            <h3>INTERESTS & HOBBIES</h3>
+            <hr>
+            <ul>
+                <li>{{hobbies}}</li>
+            </ul>
+        </div>
+
+        <div class="social">
+            <h3>SOCIAL PROFILE</h3>
+            <hr>
+            <table>
+                <tr>
+                    <td>Github</td>
+                    <td>{{github}}</td>
+                </tr>
+                <tr>
+                    <td>Linkedin</td>
+                    <td>{{linkedin}}</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>
