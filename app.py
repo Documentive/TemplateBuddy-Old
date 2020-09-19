@@ -662,6 +662,41 @@ def honors():
             }
         )
 
+@app.route("/hobby", methods=['POST'])
+def hobby():
+
+    if request.method == 'POST':
+        uid = session["id"]
+        hobbies = request.form["hobbies"]
+
+        conn = sqlite3.connect("local.db")
+
+        cursor = conn.execute(f"SELECT id FROM resume_details WHERE uid={uid}")
+        row = cursor.fetchone()
+
+        if row == None:
+            conn.execute(
+                f"""INSERT INTO resume_details(uid, hobbies, honor_issuers, honor_issued_dates)
+                        VALUES('{uid}', '{hobbies}')"""
+            )
+        else:
+            conn.execute(
+                f"""UPDATE resume_details SET hobbies='{hobbies}'
+                        WHERE uid={uid}"""
+            )
+
+        conn.commit()
+
+        conn.close()
+
+        return jsonify(
+            {
+                "icon": "success",
+                "title": "Success",
+                "text": "Data updated successfully!",
+            }
+        )
+
 @app.route("/logout", methods=["GET"])
 def logout():
 

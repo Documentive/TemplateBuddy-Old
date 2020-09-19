@@ -287,6 +287,7 @@ class hobbies {
         inputhobby.style.background = "#ffffff";
         inputhobby.disabled = true;
         inputhobby.classList.add('form-control');
+        inputhobby.classList.add('hobbies');
         inputhobby.type = "text";
 
         // Create the respective container divs for each element
@@ -450,6 +451,23 @@ $("#honor-save").click(function() {
     url: "/honors",
     type: "post",
     data: {"honor_titles": honor_titles, "honor_issuers": honor_issuers, "honor_issued_dates": honor_issued_dates},
+    success: function(result) {
+      Swal.fire({
+        icon: result.icon,
+        title: result.title,
+        text: result.text
+      });
+    }
+  });
+});
+
+$("#hobby-save").click(function() {
+  var hobbies = get_inputs_by_classname("hobbies");
+
+  $.ajax({
+    url: "/hobby",
+    type: "post",
+    data: {"hobbies": hobbies},
     success: function(result) {
       Swal.fire({
         icon: result.icon,
