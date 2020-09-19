@@ -542,7 +542,48 @@ def projects():
 def additional():
 
     if request.method == "GET":
-        return render_template("additional.html")
+        uid = session["id"]
+
+        if uid == -1:
+            return redirect("/")
+
+        conn = sqlite3.connect("local.db")
+        cursor = conn.execute(f"SELECT * FROM resume_details WHERE uid={uid}")
+        row = cursor.fetchone()
+
+        conn.close()
+
+        if row == None:
+            return render_template("additional.html", has_data=False)
+
+        course_names = row[42].split("~~~")[:-1]
+        issuers = row[43].split("~~~")[:-1]
+        issues_on_dates = row[44].split("~~~")[:-1]
+
+        paper_titles = row[45].split("~~~")[:-1]
+        publications = row[46].split("~~~")[:-1]
+        published_on_dates = row[47].split("~~~")[:-1]
+
+        honor_titles = row[48].split("~~~")[:-1]
+        honor_issuers = row[49].split("~~~")[:-1]
+        honor_issued_dates = row[50].split("~~~")[:-1]
+
+        hobbies = row[51].split("~~~")[:-1]
+
+        return render_template(
+            "additional.html",
+            has_data=True,
+            course_names=course_names,
+            issuers=issuers,
+            issues_on_dates=issues_on_dates,
+            paper_titles=paper_titles,
+            publications=publications,
+            published_on_dates=published_on_dates,
+            honor_titles=honor_titles,
+            honor_issuers=honor_issuers,
+            honor_issued_dates=honor_issued_dates,
+            hobbies=hobbies,
+        )
 
 
 @app.route("/courses", methods=['POST'])
