@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template2</title>
+    <link rel="stylesheet" href="../../static/css/resume_templates/template2.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>{{firstname}} {{middlename}} {{lastname}}</h1>
+            <p><i>{{headline}}</i></p>
+        </div>
+
+        <div class="personal">
+            <h3>PERSONAL DETAILS</h3><hr>
+            <table>
+                <tr>
+                    <td><i>Address</i></td>
+                    <td>{{address_1}}, {{address_2}}, {{city}}, {{country}}</td>
+                </tr>
+                <tr>
+                    <td><i>Phone</i></td>
+                    <td>{{mobile}}</td>
+                </tr>
+                <tr>
+                    <td><i>Mail</i></td>
+                    <td>{{email}}</td>
+                </tr>
+                <tr>
+                    <td><i>Github</i></td>
+                    <td>{{github}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="education">
+            <h3>EDUCATION</h3><hr>
+            <div id="edu">
+                <p id="dates">{{sdate}} - {{edate}}</p>
+                <h4>{{degree}}, {{fos}}</h4>
+            </div>
+            <div id="grade">
+                <p>GPA/Percentage - {{gradeval}}</p>
+                <h4>{{institute}}, {{city}}</h4>
+            </div>
+        </div>
+
+        <div class="workexp">
+            <h3>WORK EXPERIENCE</h3><hr>
+            <div id="jobdetail">
+                <p id="dates">{{sdate}} - {{edate}}</p>
+                <h4>{{jtitle}}</h4>
+            </div>
+            <p id="company"><i>{{cname}} - {{city}}, {{country}}</i></p>
+            <p id="summary">{{description}}</p>
+        </div>
+
+        <div class="skills">
+            <h3>SKILLS</h3><hr>
+            <div class="skilllist">
+                <p>{{skills}}</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
