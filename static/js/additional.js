@@ -212,16 +212,19 @@ class awards {
         inputhtitle.type = "text";
         inputhtitle.disabled = true;
         inputhtitle.classList.add('form-control');
+        inputhtitle.classList.add('honor_titles');
 
         inputhissuer.value = hissuer;
         inputhissuer.type = "text";
         inputhissuer.disabled = true;
         inputhissuer.classList.add('form-control');
+        inputhissuer.classList.add('honor_issuers');
 
         inputhdate.value = hdate;
         inputhdate.type = "date";
         inputhdate.disabled = true;
         inputhdate.classList.add('form-control');
+        inputhdate.classList.add('honor_issued_dates');
 
         // Create the respective container divs for each element
         let outeraward = document.createElement('div');
@@ -424,14 +427,29 @@ $("#publication-save").click(function() {
   var publications = get_inputs_by_classname("publications");
   var published_on_dates = get_inputs_by_classname("published_on_dates");
 
-  console.log(paper_titles);
-  console.log(publications);
-  console.log(published_on_dates);
-
   $.ajax({
     url: "/publications",
     type: "post",
     data: {"paper_titles": paper_titles, "publications": publications, "published_on_dates": published_on_dates},
+    success: function(result) {
+      Swal.fire({
+        icon: result.icon,
+        title: result.title,
+        text: result.text
+      });
+    }
+  });
+});
+
+$("#honor-save").click(function() {
+  var honor_titles = get_inputs_by_classname("honor_titles");
+  var honor_issuers = get_inputs_by_classname("honor_issuers");
+  var honor_issued_dates = get_inputs_by_classname("honor_issued_dates");
+
+  $.ajax({
+    url: "/honors",
+    type: "post",
+    data: {"honor_titles": honor_titles, "honor_issuers": honor_issuers, "honor_issued_dates": honor_issued_dates},
     success: function(result) {
       Swal.fire({
         icon: result.icon,
