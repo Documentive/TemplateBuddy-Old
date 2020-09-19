@@ -42,8 +42,11 @@ $("#personal-tab-submit").click(function() {
   $.ajax({
      url: "/personal",
      type: "post",
+     dataType: 'json',
+		 cache: false,
+		 contentType: false,
+		 processData: false,
      data: all_data,
-     processData: false,
      success: function(result) {
        Swal.fire({
          icon: result.icon,
@@ -74,3 +77,7 @@ $("#logout").click(function() {
     }
   });
 });
+
+function open_image(file_path) {
+  window.open(file_path);
+}

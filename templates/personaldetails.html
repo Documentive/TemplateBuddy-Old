@@ -42,7 +42,7 @@
 
             <div class="formbox">
 
-                <form>
+                <form enctype="multipart/form-data">
 
                     <!-- Name -->
                     <div class="form-row">
@@ -121,9 +121,8 @@
                     <div class="upload-file">
                       <div class="form-group">
                         <label for="profile">Profile Picture</label><br>
-                        <input type="file" id="profile_picture" value="{{profile}}" accept="image/*">
-                        <button id="uploadPic">Upload</button>
-                        <button id="viewPic">View</button>
+                        <input type="file" id="profile_picture" accept="image/*">
+                        <button type="button" id="viewPic" onclick="open_image('{{profile}}')">View</button>
                       </div>
                     </div>
 
