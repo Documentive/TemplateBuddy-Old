@@ -19,6 +19,7 @@ conn.execute(
     """CREATE TABLE resume_details(
         id INTEGER PRIMARY KEY,
         uid INTEGER NOT NULL,
+
         firstname TEXT,
         middlename TEXT,
         lastname TEXT,
@@ -38,6 +39,7 @@ conn.execute(
         behance TEXT,
         dribble TEXT,
         summary TEXT,
+
         institute_names TEXT,
         cities TEXT,
         countries TEXT,
@@ -46,7 +48,15 @@ conn.execute(
         start_dates DATE,
         end_dates DATE,
         grade_types TEXT,
-        grades TEXT
+        grades TEXT,
+        
+        job_titles TEXT,
+        companies TEXT,
+        cities_exp TEXT,
+        countries_exp TEXT,
+        start_dates_exp TEXT,
+        end_dates_exp TEXT,
+        description TEXT
     )"""
 )
 

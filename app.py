@@ -284,7 +284,45 @@ def education():
 def experience():
 
     if request.method == 'GET':
+        uid = session['id']
+
+        if(uid == -1):
+            return redirect('/')
+
         return render_template('experience.html')
+
+    elif request.method == 'POST':
+        uid = session['id']
+        job_titles = request.form['job_titles']
+        companies = request.form['companies']
+        cities_exp = request.form['cities_exp']
+        countries_exp = request.form['countries_exp']
+        start_dates_exp = request.form['start_dates_exp']
+        end_dates_exp = request.form['end_dates_exp']
+        description = request.form['description']
+
+        conn = sqlite3.connect("local.db")
+
+        cursor = conn.execute(f"SELECT id FROM resume_details WHERE uid={uid}")
+        row = cursor.fetchone()
+
+        if row == None:
+            conn.execute(f"""INSERT INTO resume_details(uid, job_titles, companies, cities_exp, countries_exp,
+                         start_dates_exp, end_dates_exp, description)
+                         VALUES('{uid}', '{job_titles}', '{companies}',
+                         '{cities_exp}', '{countries_exp}', '{start_dates_exp}', '{end_dates_exp}',
+                         '{description}')""")
+        else:
+            conn.execute(f"""UPDATE resume_details SET job_titles='{job_titles}', companies='{companies}',
+                         cities_exp='{cities_exp}', countries_exp='{countries_exp}',
+                         start_dates_exp='{start_dates_exp}', end_dates_exp='{end_dates_exp}',
+                         description='{description}' WHERE uid={uid}""")
+
+        conn.commit()
+
+        conn.close()
+
+        return jsonify({"icon": "success", "title": "Success", "text": "Data updated successfully!"})
 
 @app.route("/skills", methods=['GET', 'POST'])
 def skills():
