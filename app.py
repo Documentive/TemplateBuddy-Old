@@ -149,8 +149,6 @@ def personal():
         if row == None:
             return render_template('personaldetails.html')
 
-        print(row[20])
-
         return render_template('personaldetails.html', firstname=row[2], middlename=row[3], lastname=row[4],
                                email=row[5], mobile=row[6], address_1=row[7], address_2=row[8], city=row[9],
                                state=row[10], zip=row[11], profile=row[12], headline=row[13], github=row[14], linkedin=row[15],
@@ -220,7 +218,34 @@ def personal():
 def education():
 
     if request.method == 'GET':
-        return render_template('education.html')
+        uid = session['id']
+
+        if(uid == -1):
+            return redirect('/')
+
+        conn = sqlite3.connect("local.db")
+        cursor = conn.execute(f"SELECT * FROM resume_details WHERE uid={uid}")
+        row = cursor.fetchone()
+
+        conn.close()
+
+        if row == None:
+            return render_template('education.html', has_data=False)
+
+        institute_names = row[21].split('~~~')[:-1]
+        cities = row[22].split('~~~')[:-1]
+        countries = row[23].split('~~~')[:-1]
+        degrees = row[24].split('~~~')[:-1]
+        fields_of_study = row[25].split('~~~')[:-1]
+        start_dates = row[26].split('~~~')[:-1]
+        end_dates = row[27].split('~~~')[:-1]
+        grade_types = row[28].split('~~~')[:-1]
+        grades = row[29].split('~~~')[:-1]
+
+
+        return render_template('education.html', has_data=True, institute_names=institute_names, cities=cities, countries=countries,
+                               degrees=degrees, fields_of_study=fields_of_study, start_dates=start_dates, end_dates=end_dates,
+                               grade_types=grade_types, grades=grades)
 
     if request.method == 'POST':
         uid = session['id']
@@ -236,10 +261,18 @@ def education():
 
         conn = sqlite3.connect("local.db")
 
-        conn.execute(f"""UPDATE resume_details SET institute_names='{institute_names}', cities='{cities}',
-                     countries='{countries}', degrees='{degrees}', fields_of_study='{fields_of_study}',
-                     start_dates='{start_dates}', end_dates='{end_dates}', grade_types='{grade_types}',
-                     grades='{grades}' WHERE uid={uid}""")
+        cursor = conn.execute(f"SELECT id FROM resume_details WHERE uid={uid}")
+        row = cursor.fetchone()
+
+        if row == None:
+            conn.execute(f"""INSERT INTO resume_details(uid, institute_names, cities, countries, degrees, fields_of_study,
+                         start_dates, end_dates, grade_types, grades) VALUES('{uid}', '{institute_names}', '{cities}',
+                         '{countries}', '{degrees}', '{fields_of_study}', '{start_dates}', '{end_dates}', '{grade_types}', '{grades}')""")
+        else:
+            conn.execute(f"""UPDATE resume_details SET institute_names='{institute_names}', cities='{cities}',
+                         countries='{countries}', degrees='{degrees}', fields_of_study='{fields_of_study}',
+                         start_dates='{start_dates}', end_dates='{end_dates}', grade_types='{grade_types}',
+                         grades='{grades}' WHERE uid={uid}""")
 
         conn.commit()
 
