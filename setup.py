@@ -63,7 +63,21 @@ conn.execute(
         project_title TEXT,
         description_proj TEXT,
         start_dates_proj TEXT,
-        end_dates_proj TEXT
+        end_dates_proj TEXT,
+
+        course_names TEXT,
+        issuers TEXT,
+        issues_on_dates TEXT,
+
+        paper_titles TEXT,
+        publications TEXT,
+        published_on_dates TEXT,
+
+        honor_titles TEXT,
+        honor_issuers TEXT,
+        honor_issued_dates TEXT,
+
+        hobbies TEXT
     )"""
 )
 

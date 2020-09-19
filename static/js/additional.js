@@ -59,16 +59,19 @@ class courses {
         inputcourse.type = "text";
         inputcourse.disabled = true;
         inputcourse.classList.add('form-control');
+        inputcourse.classList.add('course_names');
 
         inputissuer.value = issuer;
         inputissuer.type = "text";
         inputissuer.disabled = true;
         inputissuer.classList.add('form-control');
+        inputissuer.classList.add('issuers');
 
         inputidate.value = idate;
         inputidate.type = "date";
         inputidate.disabled = true;
         inputidate.classList.add('form-control');
+        inputidate.classList.add('issues_on_dates');
 
         // Create the respective container divs for each element
         let outercourse = document.createElement('div');
@@ -384,6 +387,34 @@ awardbtn.addEventListener('click', checkaward);
 
 // Add button click event for hobbies and interests
 hobbybtn.addEventListener('click', checkhobby);
+
+function get_inputs_by_classname(classname) {
+  var value = "";
+  $('.' + classname).each(function() {
+    value += $(this).val() + "~~~";
+  });
+
+  return value;
+}
+
+$("#course-save").click(function() {
+  var course_names = get_inputs_by_classname("course_names");
+  var issuers = get_inputs_by_classname("issuers");
+  var issues_on_dates = get_inputs_by_classname("issues_on_dates");
+
+  $.ajax({
+    url: "/courses",
+    type: "post",
+    data: {"course_names": course_names, "issuers": issuers, "issues_on_dates": issues_on_dates},
+    success: function(result) {
+      Swal.fire({
+        icon: result.icon,
+        title: result.title,
+        text: result.text
+      });
+    }
+  });
+});
 
 $("#logout").click(function() {
   $.ajax({

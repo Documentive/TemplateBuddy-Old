@@ -538,12 +538,51 @@ def projects():
         )
 
 
-@app.route("/additional", methods=["GET", "POST"])
+@app.route("/additional", methods=["GET"])
 def additional():
 
     if request.method == "GET":
         return render_template("additional.html")
 
+
+@app.route("/courses", methods=['POST'])
+def courses():
+
+    if request.method == 'POST':
+        uid = session["id"]
+        course_names = request.form["course_names"]
+        issuers = request.form["issuers"]
+        issues_on_dates = request.form["issues_on_dates"]
+
+        conn = sqlite3.connect("local.db")
+
+        cursor = conn.execute(f"SELECT id FROM resume_details WHERE uid={uid}")
+        row = cursor.fetchone()
+
+        if row == None:
+            conn.execute(
+                f"""INSERT INTO resume_details(uid, course_names, issuers, issues_on_dates)
+                        VALUES('{uid}', '{course_names}', '{issuers}',
+                        '{issues_on_dates}')"""
+            )
+        else:
+            conn.execute(
+                f"""UPDATE resume_details SET course_names='{course_names}',
+                        issuers='{issuers}', issues_on_dates='{issues_on_dates}'
+                        WHERE uid={uid}"""
+            )
+
+        conn.commit()
+
+        conn.close()
+
+        return jsonify(
+            {
+                "icon": "success",
+                "title": "Success",
+                "text": "Data updated successfully!",
+            }
+        )
 
 @app.route("/logout", methods=["GET"])
 def logout():

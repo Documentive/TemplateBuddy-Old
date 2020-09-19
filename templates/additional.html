@@ -48,7 +48,7 @@
                         <!-- Course Name -->
                         <div class="form-group">
                             <label for="course">Course/Certificate Name</label>
-                            <input type="text" class="form-control" id="course" placeholder="Ex: Complete Web Developer Course">
+                            <input type="text" class="form-control course_names" id="course" placeholder="Ex: Complete Web Developer Course">
                         </div>
 
                         <!-- Issuer and Date of issuing/completion -->
@@ -56,12 +56,12 @@
 
                             <div class="form-group col-md-6">
                             <label for="issuer">Issuer</label>
-                            <input type="text" class="form-control" id="issuer" placeholder="Ex: Coursera, Oracle">
+                            <input type="text" class="form-control issuers" id="issuer" placeholder="Ex: Coursera, Oracle">
                             </div>
 
                             <div class="form-group col-md-6">
                             <label for="idate">Issued On</label>
-                            <input type="date" class="form-control" id="idate">
+                            <input type="date" class="form-control issues_on_dates" id="idate">
                             </div>
 
                         </div>
@@ -75,7 +75,7 @@
                     </div>
 
                     <!-- Save Information -->
-                    <button type="button" class="btn btn-primary btn-lg btn-block">Save Information</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" id="course-save">Save Information</button>
 
                 </form>
 
@@ -90,7 +90,7 @@
                     <!-- paper Title -->
                     <div class="form-group">
                         <label for="ptitle">Paper Title</label>
-                        <input type="text" class="form-control" id="ptitle">
+                        <input type="text" class="form-control paper_titles" id="ptitle">
                     </div>
 
                     <!-- Publication and Date of publishing -->
@@ -98,12 +98,12 @@
 
                         <div class="form-group col-md-6">
                           <label for="publisher">Publisher/Publication</label>
-                          <input type="text" class="form-control" id="publisher">
+                          <input type="text" class="form-control paper_titles" id="publisher">
                         </div>
 
                         <div class="form-group col-md-6">
                           <label for="pdate">Published On</label>
-                          <input type="date" class="form-control" id="pdate">
+                          <input type="date" class="form-control published_on_dates" id="pdate">
                         </div>
 
                     </div>
@@ -115,7 +115,7 @@
                     </div>
 
                     <!-- Save Information -->
-                    <button type="button" class="btn btn-primary btn-lg btn-block">Save Information</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" id="publication-save">Save Information</button>
 
                 </form>
 
@@ -130,7 +130,7 @@
                     <!-- Award/Honor Name -->
                     <div class="form-group">
                         <label for="htitle">Title</label>
-                        <input type="text" class="form-control" id="htitle">
+                        <input type="text" class="form-control honor_titles" id="htitle">
                     </div>
 
                     <!-- Issuer and Date of issuing/completion -->
@@ -138,12 +138,12 @@
 
                         <div class="form-group col-md-6">
                           <label for="hissuer">Issuer</label>
-                          <input type="text" class="form-control" id="hissuer">
+                          <input type="text" class="form-control honor_issuers" id="hissuer">
                         </div>
 
                         <div class="form-group col-md-6">
                           <label for="hdate">Issued On</label>
-                          <input type="date" class="form-control" id="hdate">
+                          <input type="date" class="form-control honor_issued_dates" id="hdate">
                         </div>
 
                     </div>
@@ -155,7 +155,7 @@
                     </div>
 
                     <!-- Save Information -->
-                    <button type="button" class="btn btn-primary btn-lg btn-block">Save Information</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" id="honor-save">Save Information</button>
 
                 </form>
 
@@ -171,7 +171,7 @@
                     <div class="form-group">
                         <label for="">Interests/Hobbies</label>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control addhobby" aria-describedby="hobbies" placeholder="Enter your Hobbies and Interests..">
+                            <input type="text" class="form-control addhobby hobbies" aria-describedby="hobbies" placeholder="Enter your Hobbies and Interests..">
                             <div class="input-group-append">
                               <button class="btn btn-outline-secondary hobbybtn" type="button" id="hobbies">Add</button>
                             </div>
@@ -183,7 +183,7 @@
                     </div>
 
                     <!-- Save Information -->
-                    <button type="button" class="btn btn-primary btn-lg btn-block">Save Information</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" id="hobby-save">Save Information</button>
 
                 </form>
 
