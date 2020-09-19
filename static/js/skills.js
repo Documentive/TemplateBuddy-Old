@@ -19,6 +19,7 @@ class item {
         input.value = itemName;
         input.disabled = true;
         input.classList.add('form-control');
+        input.classList.add('skill_names');
         input.type = "text";
 
         // Create the divs according to the bootstrap forms
@@ -73,3 +74,46 @@ function check() {
 
 // Add button to add the skill
 addButton.addEventListener('click', check);
+
+function get_inputs_by_classname(classname) {
+  var value = "";
+  $('.' + classname).each(function() {
+    value += $(this).val() + "~~~";
+  });
+
+  return value;
+}
+
+$("#skill-save").click(function() {
+  var skill_names = get_inputs_by_classname("skill_names");
+
+  $.ajax({
+    url: "/skills",
+    type: "post",
+    data: {"skill_names": skill_names},
+    success: function(result) {
+      Swal.fire({
+        icon: result.icon,
+        title: result.title,
+        text: result.text
+      });
+    }
+  });
+});
+
+$("#logout").click(function() {
+  $.ajax({
+    url: "/logout",
+    type: "get",
+    success: function(result) {
+      Swal.fire({
+        icon: result.icon,
+        title: result.title,
+        text: result.text
+      }).then(function() {
+        if(result.icon == 'success')
+          location.href = '/';
+      });
+    }
+  });
+});
