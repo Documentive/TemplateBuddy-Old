@@ -584,6 +584,45 @@ def courses():
             }
         )
 
+@app.route("/publications", methods=['POST'])
+def publications():
+
+    if request.method == 'POST':
+        uid = session["id"]
+        paper_titles = request.form["paper_titles"]
+        publications = request.form["publications"]
+        published_on_dates = request.form["published_on_dates"]
+
+        conn = sqlite3.connect("local.db")
+
+        cursor = conn.execute(f"SELECT id FROM resume_details WHERE uid={uid}")
+        row = cursor.fetchone()
+
+        if row == None:
+            conn.execute(
+                f"""INSERT INTO resume_details(uid, paper_titles, publications, published_on_dates)
+                        VALUES('{uid}', '{paper_titles}', '{publications}',
+                        '{published_on_dates}')"""
+            )
+        else:
+            conn.execute(
+                f"""UPDATE resume_details SET paper_titles='{paper_titles}',
+                        publications='{publications}', published_on_dates='{published_on_dates}'
+                        WHERE uid={uid}"""
+            )
+
+        conn.commit()
+
+        conn.close()
+
+        return jsonify(
+            {
+                "icon": "success",
+                "title": "Success",
+                "text": "Data updated successfully!",
+            }
+        )
+
 @app.route("/logout", methods=["GET"])
 def logout():
 

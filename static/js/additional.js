@@ -135,16 +135,19 @@ class publishes {
         inputptitle.type = "text";
         inputptitle.disabled = true;
         inputptitle.classList.add('form-control');
+        inputptitle.classList.add('paper_titles');
 
         inputpublisher.value = publisher;
         inputpublisher.type = "text";
         inputpublisher.disabled = true;
         inputpublisher.classList.add('form-control');
+        inputpublisher.classList.add('publications');
 
         inputpdate.value = pdate;
         inputpdate.type = "date";
         inputpdate.disabled = true;
         inputpdate.classList.add('form-control');
+        inputpdate.classList.add('published_on_dates');
 
         // Create the respective container divs for each element
         let outerpublish = document.createElement('div');
@@ -406,6 +409,29 @@ $("#course-save").click(function() {
     url: "/courses",
     type: "post",
     data: {"course_names": course_names, "issuers": issuers, "issues_on_dates": issues_on_dates},
+    success: function(result) {
+      Swal.fire({
+        icon: result.icon,
+        title: result.title,
+        text: result.text
+      });
+    }
+  });
+});
+
+$("#publication-save").click(function() {
+  var paper_titles = get_inputs_by_classname("paper_titles");
+  var publications = get_inputs_by_classname("publications");
+  var published_on_dates = get_inputs_by_classname("published_on_dates");
+
+  console.log(paper_titles);
+  console.log(publications);
+  console.log(published_on_dates);
+
+  $.ajax({
+    url: "/publications",
+    type: "post",
+    data: {"paper_titles": paper_titles, "publications": publications, "published_on_dates": published_on_dates},
     success: function(result) {
       Swal.fire({
         icon: result.icon,
