@@ -58,7 +58,12 @@ conn.execute(
         end_dates_exp TEXT,
         description TEXT,
 
-        skill_names TEXT
+        skill_names TEXT,
+
+        project_title TEXT,
+        description_proj TEXT,
+        start_dates_proj TEXT,
+        end_dates_proj TEXT
     )"""
 )
 

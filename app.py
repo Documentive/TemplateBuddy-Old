@@ -363,7 +363,7 @@ def skills():
         if row == None:
             return render_template('skills.html', has_data=False)
 
-        institute_names = row[37].split('~~~')[:-1]
+        skills = row[37].split('~~~')[:-1]
 
 
         return render_template('skills.html', has_data=True, skills=skills)
@@ -393,7 +393,56 @@ def skills():
 def projects():
 
     if request.method == 'GET':
-        return render_template('projects.html')
+        uid = session['id']
+
+        if(uid == -1):
+            return redirect('/')
+
+        conn = sqlite3.connect("local.db")
+        cursor = conn.execute(f"SELECT * FROM resume_details WHERE uid={uid}")
+        row = cursor.fetchone()
+
+        conn.close()
+
+        if row == None:
+            return render_template('projects.html', has_data=False)
+
+        project_title = row[38].split('~~~')[:-1]
+        description_proj = row[39].split('~~~')[:-1]
+        start_dates_proj = row[40].split('~~~')[:-1]
+        end_dates_proj = row[41].split('~~~')[:-1]
+
+
+        return render_template('projects.html', has_data=True, project_title=project_title,
+                               description_proj=description_proj, start_dates_proj=start_dates_proj,
+                               end_dates_proj=end_dates_proj)
+    elif request.method == 'POST':
+       uid = session['id']
+       project_title = request.form['project_title']
+       description_proj = request.form['description_proj']
+       start_dates_proj = request.form['start_dates_proj']
+       end_dates_proj = request.form['end_dates_proj']
+
+       conn = sqlite3.connect("local.db")
+
+       cursor = conn.execute(f"SELECT id FROM resume_details WHERE uid={uid}")
+       row = cursor.fetchone()
+
+       if row == None:
+           conn.execute(f"""INSERT INTO resume_details(uid, project_title, description_proj,
+                        start_dates_proj, end_dates_proj)
+                        VALUES('{uid}', '{project_title}', '{description_proj}',
+                        '{start_dates_proj}', '{end_dates_proj}')""")
+       else:
+           conn.execute(f"""UPDATE resume_details SET project_title='{project_title}',
+                        description_proj='{description_proj}', start_dates_proj='{start_dates_proj}',
+                        end_dates_proj='{end_dates_proj}' WHERE uid={uid}""")
+
+       conn.commit()
+
+       conn.close()
+
+       return jsonify({"icon": "success", "title": "Success", "text": "Data updated successfully!"})
 
 @app.route("/additional", methods=['GET', 'POST'])
 def additional():
