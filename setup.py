@@ -49,24 +49,16 @@ conn.execute(
         end_dates DATE,
         grade_types TEXT,
         grades TEXT,
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 3fc20f4a03bd328fbf9e4dec74d1b04708259693
         job_titles TEXT,
         companies TEXT,
         cities_exp TEXT,
         countries_exp TEXT,
         start_dates_exp TEXT,
         end_dates_exp TEXT,
-<<<<<<< HEAD
         description TEXT,
 
         skill_names TEXT
-=======
-        description TEXT
->>>>>>> 3fc20f4a03bd328fbf9e4dec74d1b04708259693
     )"""
 )
 

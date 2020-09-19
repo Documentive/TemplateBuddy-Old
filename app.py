@@ -289,7 +289,28 @@ def experience():
         if(uid == -1):
             return redirect('/')
 
-        return render_template('experience.html')
+        conn = sqlite3.connect("local.db")
+        cursor = conn.execute(f"SELECT * FROM resume_details WHERE uid={uid}")
+        row = cursor.fetchone()
+
+        conn.close()
+
+        if row == None:
+            return render_template('experience.html', has_data=False)
+
+        job_titles = row[30].split('~~~')[:-1]
+        companies = row[31].split('~~~')[:-1]
+        cities_exp = row[32].split('~~~')[:-1]
+        countries_exp = row[33].split('~~~')[:-1]
+        start_dates_exp = row[34].split('~~~')[:-1]
+        end_dates_exp = row[35].split('~~~')[:-1]
+        description = row[36].split('~~~')[:-1]
+
+
+        return render_template('experience.html', has_data=True, job_titles=job_titles, companies=companies,
+                               cities_exp=cities_exp, countries_exp=countries_exp,
+                               start_dates_exp=start_dates_exp, end_dates_exp=end_dates_exp,
+                               description=description)
 
     elif request.method == 'POST':
         uid = session['id']
