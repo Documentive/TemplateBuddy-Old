@@ -1,0 +1,93 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    width: 90%;
+    margin: 3% auto;
+}
+
+hr {
+    border: 2px solid black;
+}
+
+.header {
+    text-align: right;
+}
+
+.header p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding-top: 0.3rem;
+}
+
+.personal {
+    margin-top: 2%;
+}
+
+.personal table {
+    margin-left: 2%;
+    margin-top: 0.8%;
+}
+
+.education {
+    margin-top: 1.5%;
+}
+
+.education #edu {
+    margin-top: 1%;
+}
+
+.education #edu p#dates {
+    float: right;
+    background-color: black;
+    color: white;
+    width: 10%;
+    text-align: right;
+}
+
+.education #edu h4 {
+    padding-bottom: 0.4%;
+}
+
+.education #grade p {
+    float: right;
+    text-align: right;
+}
+
+.workexp {
+    margin-top: 1.5%;
+}
+
+.workexp #jobdetail {
+    margin-top: 1%;
+}
+
+.workexp #jobdetail p#dates {
+    float: right;
+    background-color: black;
+    color: white;
+    width: 10%;
+    text-align: right;
+}
+
+.workexp p#company {
+    margin-top: 0.5%;
+    font-size: 1rem;
+}
+
+.workexp p#summary {
+    margin-top: 0.3%;
+    margin-left: 1%;
+}
+
+.skills {
+    margin-top: 1.5%;
+}
+
+.skilllist {
+    margin-top: 0.7%;
+}
