@@ -264,15 +264,18 @@ def education():
         if row == None:
             return render_template("education.html", has_data=False)
 
-        institute_names = row[21].split("~~~")[:-1]
-        cities = row[22].split("~~~")[:-1]
-        countries = row[23].split("~~~")[:-1]
-        degrees = row[24].split("~~~")[:-1]
-        fields_of_study = row[25].split("~~~")[:-1]
-        start_dates = row[26].split("~~~")[:-1]
-        end_dates = row[27].split("~~~")[:-1]
-        grade_types = row[28].split("~~~")[:-1]
-        grades = row[29].split("~~~")[:-1]
+        try:
+            institute_names = row[21].split("~~~")[:-1]
+            cities = row[22].split("~~~")[:-1]
+            countries = row[23].split("~~~")[:-1]
+            degrees = row[24].split("~~~")[:-1]
+            fields_of_study = row[25].split("~~~")[:-1]
+            start_dates = row[26].split("~~~")[:-1]
+            end_dates = row[27].split("~~~")[:-1]
+            grade_types = row[28].split("~~~")[:-1]
+            grades = row[29].split("~~~")[:-1]
+        except:
+            return render_template("education.html", has_data=False)
 
         return render_template(
             "education.html",
@@ -350,13 +353,16 @@ def experience():
         if row == None:
             return render_template("experience.html", has_data=False)
 
-        job_titles = row[30].split("~~~")[:-1]
-        companies = row[31].split("~~~")[:-1]
-        cities_exp = row[32].split("~~~")[:-1]
-        countries_exp = row[33].split("~~~")[:-1]
-        start_dates_exp = row[34].split("~~~")[:-1]
-        end_dates_exp = row[35].split("~~~")[:-1]
-        description = row[36].split("~~~")[:-1]
+        try:
+            job_titles = row[30].split("~~~")[:-1]
+            companies = row[31].split("~~~")[:-1]
+            cities_exp = row[32].split("~~~")[:-1]
+            countries_exp = row[33].split("~~~")[:-1]
+            start_dates_exp = row[34].split("~~~")[:-1]
+            end_dates_exp = row[35].split("~~~")[:-1]
+            description = row[36].split("~~~")[:-1]
+        except:
+            return render_template("experience.html", has_data=False)
 
         return render_template(
             "experience.html",
@@ -432,7 +438,10 @@ def skills():
         if row == None:
             return render_template("skills.html", has_data=False)
 
-        skills = row[37].split("~~~")[:-1]
+        try:
+            skills = row[37].split("~~~")[:-1]
+        except:
+            return render_template("skills.html", has_data=False)
 
         return render_template("skills.html", has_data=True, skills=skills)
 
@@ -486,10 +495,13 @@ def projects():
         if row == None:
             return render_template("projects.html", has_data=False)
 
-        project_title = row[38].split("~~~")[:-1]
-        description_proj = row[39].split("~~~")[:-1]
-        start_dates_proj = row[40].split("~~~")[:-1]
-        end_dates_proj = row[41].split("~~~")[:-1]
+        try:
+            project_title = row[38].split("~~~")[:-1]
+            description_proj = row[39].split("~~~")[:-1]
+            start_dates_proj = row[40].split("~~~")[:-1]
+            end_dates_proj = row[41].split("~~~")[:-1]
+        except:
+            return render_template("projects.html", has_data=False)
 
         return render_template(
             "projects.html",
@@ -556,19 +568,22 @@ def additional():
         if row == None:
             return render_template("additional.html", has_data=False)
 
-        course_names = row[42].split("~~~")[:-1]
-        issuers = row[43].split("~~~")[:-1]
-        issues_on_dates = row[44].split("~~~")[:-1]
+        try:
+            course_names = row[42].split("~~~")[:-1]
+            issuers = row[43].split("~~~")[:-1]
+            issues_on_dates = row[44].split("~~~")[:-1]
 
-        paper_titles = row[45].split("~~~")[:-1]
-        publications = row[46].split("~~~")[:-1]
-        published_on_dates = row[47].split("~~~")[:-1]
+            paper_titles = row[45].split("~~~")[:-1]
+            publications = row[46].split("~~~")[:-1]
+            published_on_dates = row[47].split("~~~")[:-1]
 
-        honor_titles = row[48].split("~~~")[:-1]
-        honor_issuers = row[49].split("~~~")[:-1]
-        honor_issued_dates = row[50].split("~~~")[:-1]
+            honor_titles = row[48].split("~~~")[:-1]
+            honor_issuers = row[49].split("~~~")[:-1]
+            honor_issued_dates = row[50].split("~~~")[:-1]
 
-        hobbies = row[51].split("~~~")[:-1]
+            hobbies = row[51].split("~~~")[:-1]
+        except:
+            return render_template("additional.html", has_data=False)
 
         return render_template(
             "additional.html",
