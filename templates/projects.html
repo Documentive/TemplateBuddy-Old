@@ -76,7 +76,47 @@
                    </div>
 
                     <div class="containProject">
+                        {% if has_data %}
 
+                            {% for i in range(project_title|length) %}
+
+                            <div class="outerDiv">
+
+                                 <!-- Project Title -->
+                                 <div class="form-group">
+                                     <label for="ptitle">Project Title</label>
+                                     <input type="text" class="form-control addTitle project_title" id="ptitle" value="{{project_title[i]}}" placeholder="Project Title">
+                                 </div>
+
+                                 <!-- Description -->
+                                 <div class="form-group">
+                                     <label for="description">Description</label>
+                                     <textarea class="form-control adddescp description_proj" id="description" placeholder="Enter between 100-150 words" rows="4">{{description_proj[i]}}
+                                     </textarea>
+                                 </div>
+
+                                 <!-- Tenure -->
+                                 <div class="form-row">
+
+                                     <div class="form-group col-md-6">
+                                     <label for="sdate">Start Date</label>
+                                     <input type="date" class="form-control addsdate start_dates_proj" id="sdate" value="{{start_dates_proj[i]}}">
+                                     </div>
+
+                                     <div class="form-group col-md-6">
+                                     <label for="edate">End Date</label>
+                                     <input type="date" class="form-control addedate end_dates_proj" id="edate" value="{{end_dates_proj[i]}}">
+                                     </div>
+
+                                 </div>
+
+                                 <button type="button" class="btn btn-success addBtn">ADD</button>
+
+                            </div>
+
+                            {% endfor %}
+
+                        {% endif %}
                     </div>
 
                     <!-- Save Information -->

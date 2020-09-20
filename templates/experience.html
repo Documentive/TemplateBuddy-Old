@@ -98,7 +98,68 @@
                     </div>
 
                     <div class="containExp">
+                      {% if has_data %}
 
+                          {% for i in range(job_titles|length) %}
+
+                            <div class="outerDiv">
+
+                                <!-- Job Title -->
+                                <div class="form-group">
+                                    <label for="jtitle">Job Title</label>
+                                    <input type="text" class="form-control addTitle job_titles" id="jtitle" value="{{job_titles[i]}}" placeholder="Ex: Software Developer">
+                                </div>
+
+                                <!-- Company Name -->
+                                <div class="form-group">
+                                    <label for="cname">Company</label>
+                                    <input type="text" class="form-control addCname companies" id="cname" value="{{companies[i]}}" placeholder="Ex: Microsoft">
+                                </div>
+
+                                <!-- Company Location -->
+                                <div class="form-row">
+
+                                    <div class="form-group col-md-6">
+                                    <label for="city">City</label>
+                                    <input type="text" class="form-control addCity cities_exp" id="city" value="{{cities_exp[i]}}">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                    <label for="country">Country</label>
+                                    <input type="text" class="form-control addCountry countries_exp" id="country" value="{{countries_exp[i]}}">
+                                    </div>
+
+                                </div>
+
+                                <!-- Tenure -->
+                                <div class="form-row">
+
+                                    <div class="form-group col-md-6">
+                                    <label for="sdate">Start Date</label>
+                                    <input type="date" class="form-control addSdate start_dates_exp" id="sdate" value="{{start_dates_exp[i]}}">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                    <label for="edate">End Date</label>
+                                    <input type="date" class="form-control addEdate end_dates_exp" id="edate" value="{{end_dates_exp[i]}}">
+                                    </div>
+
+                                </div>
+
+                                <!-- Description -->
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea class="form-control addDesc description" id="description" placeholder="Enter between 100-150 words" rows="4">{{description[i]}}
+                                    </textarea>
+                                </div>
+
+                                <button type="button" class="btn btn-success addBtn">ADD</button>
+
+                            </div>
+
+                          {% endfor %}
+
+                      {% endif %}
                     </div>
 
                     <!-- Save Information -->

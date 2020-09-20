@@ -71,7 +71,34 @@
                     </div>
 
                     <div class="containcourse">
+                      {% if has_data %}
 
+                          {% for i in range(course_names|length) %}
+
+                              <!-- Course Name -->
+                              <div class="form-group">
+                                  <label for="course">Course/Certificate Name</label>
+                                  <input type="text" class="form-control course_names" value="{{course_names[i]}}" id="course" placeholder="Ex: Complete Web Developer Course">
+                              </div>
+
+                              <!-- Issuer and Date of issuing/completion -->
+                              <div class="form-row">
+
+                                  <div class="form-group col-md-6">
+                                  <label for="issuer">Issuer</label>
+                                  <input type="text" class="form-control issuers" value="{{issuers[i]}}" id="issuer" placeholder="Ex: Coursera, Oracle">
+                                  </div>
+
+                                  <div class="form-group col-md-6">
+                                  <label for="idate">Issued On</label>
+                                  <input type="date" class="form-control issues_on_dates" value="{{issues_on_dates[i]}}" id="idate">
+                                  </div>
+
+                              </div>
+
+                          {% endfor %}
+
+                      {% endif %}
                     </div>
 
                     <!-- Save Information -->
@@ -111,7 +138,34 @@
                     <button type="button" class="btn btn-success publishbtn">ADD</button>
 
                     <div class="containpublish">
+                      {% if has_data %}
 
+                          {% for i in range(paper_titles|length) %}
+
+                              <!-- paper Title -->
+                              <div class="form-group">
+                                  <label for="ptitle">Paper Title</label>
+                                  <input type="text" class="form-control paper_titles" id="ptitle" value="{{paper_titles[i]}}">
+                              </div>
+
+                              <!-- Publication and Date of publishing -->
+                              <div class="form-row">
+
+                                  <div class="form-group col-md-6">
+                                    <label for="publisher">Publisher/Publication</label>
+                                    <input type="text" class="form-control publications" id="publisher" value="{{publications[i]}}">
+                                  </div>
+
+                                  <div class="form-group col-md-6">
+                                    <label for="pdate">Published On</label>
+                                    <input type="date" class="form-control published_on_dates" id="pdate" value="{{published_on_dates[i]}}">
+                                  </div>
+
+                              </div>
+
+                          {% endfor %}
+
+                      {% endif %}
                     </div>
 
                     <!-- Save Information -->
@@ -151,7 +205,34 @@
                     <button type="button" class="btn btn-success awardbtn">ADD</button>
 
                     <div class="containaward">
+                      {% if has_data %}
 
+                          {% for i in range(honor_titles|length) %}
+
+                              <!-- Award/Honor Name -->
+                              <div class="form-group">
+                                  <label for="htitle">Title</label>
+                                  <input type="text" class="form-control honor_titles" id="htitle" value="{{honor_titles[i]}}">
+                              </div>
+
+                              <!-- Issuer and Date of issuing/completion -->
+                              <div class="form-row">
+
+                                  <div class="form-group col-md-6">
+                                    <label for="hissuer">Issuer</label>
+                                    <input type="text" class="form-control honor_issuers" id="hissuer" value="{{honor_issuers[i]}}">
+                                  </div>
+
+                                  <div class="form-group col-md-6">
+                                    <label for="hdate">Issued On</label>
+                                    <input type="date" class="form-control honor_issued_dates" id="hdate" value="{{honor_issued_dates[i]}}">
+                                  </div>
+
+                              </div>
+
+                          {% endfor %}
+
+                      {% endif %}
                     </div>
 
                     <!-- Save Information -->
@@ -179,7 +260,24 @@
                     </div>
 
                     <div class="containhobby">
+                      {% if has_data %}
 
+                          {% for i in range(honor_titles|length) %}
+
+                              <!-- Add Interest/Hobbies Used -->
+                              <div class="form-group">
+                                  <label for="">Interests/Hobbies</label>
+                                  <div class="input-group mb-3">
+                                      <input type="text" class="form-control addhobby hobbies" aria-describedby="hobbies" value="{{hobbies[i]}}" placeholder="Enter your Hobbies and Interests..">
+                                      <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary hobbybtn" type="button" id="hobbies">Add</button>
+                                      </div>
+                                  </div>
+                              </div>
+
+                          {% endfor %}
+
+                      {% endif %}
                     </div>
 
                     <!-- Save Information -->

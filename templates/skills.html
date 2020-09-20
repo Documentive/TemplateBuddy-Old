@@ -55,7 +55,18 @@
 
                     <!-- Container to keep the typed skills -->
                     <div class="containSkill">
+                      {% if has_data %}
 
+                          {% for i in range(skills|length) %}
+                              <div class="input-group mb-3">
+                                  <input type="text" class="form-control addText skill_names" aria-describedby="skills" value="{{skills[i]}}" placeholder="Enter a skill. Ex: React.js">
+                                  <div class="input-group-append">
+                                      <button class="btn btn-outline-secondary addBtn" type="button" id="skills" >Add</button>
+                                  </div>
+                              </div>
+                          {% endfor %}
+
+                      {% endif %}
                     </div>
 
                     <!-- Save Information -->
