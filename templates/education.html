@@ -117,6 +117,82 @@
 
                     <div class="containEducation">
 
+                        {% if has_data %}
+
+                    {% for i in range(institute_names|length) %}
+                    
+                    <div class="outerDiv">
+
+                        <!-- Institute Name -->
+                        <div class="form-group">
+                            <label for="institute">Institute Name</label>
+                            <input type="text" class="form-control institute_names" id="institute" placeholder="Ex: Harvard Business School" value="{{institute_names[i]}}">
+                        </div>
+
+                        <!-- Institute Location -->
+                        <div class="form-row">
+
+                            <div class="form-group col-md-6">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control cities" id="city" value="{{cities[i]}}">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                            <label for="country">Country</label>
+                            <input type="text" class="form-control countries" id="country" value="{{countries[i]}}">
+                            </div>
+
+                        </div>
+
+                        <!-- Degree Information -->
+                        <div class="form-row">
+
+                            <div class="form-group col-md-6">
+                            <label for="degree">Degree</label>
+                            <input type="text" class="form-control degrees" id="degree" placeholder="Ex: Bachelors's" value="{{degrees[i]}}">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                            <label for="fos">Field of Study</label>
+                            <input type="text" class="form-control fields_of_study" id="fos" placeholder="Ex: Computer Science" value="{{fields_of_study[i]}}">
+                            </div>
+
+                        </div>
+
+                        <!-- Tenure -->
+                        <div class="form-row">
+
+                            <div class="form-group col-md-6">
+                            <label for="sdate">Start Date</label>
+                            <input type="date" class="form-control start_dates" id="sdate" value="{{start_dates[i]}}">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                            <label for="edate">End Date</label>
+                            <input type="date" class="form-control end_dates" id="edate" value="{{end_dates[i]}}">
+                            </div>
+
+                        </div>
+
+                        <!-- Grade type and grade -->
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="grade">Grade Type</label>
+                                <select class="custom-select grade_types" id="selectType">
+                                    <option value="GPA" {% if grade_types[i] == 'GPA' %} selected {% endif %}>GPA</option>
+                                    <option value="Percentage" {% if grade_types[i] == 'Percentage' %} selected {% endif %}>Percentage</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="gradeval">Grade</label>
+                                <input type="text" class="form-control grades" id="gradeval" value="{{grades[i]}}">
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                {% endif %}
+
                     </div>
 
                     <!-- Save Information -->
@@ -124,82 +200,7 @@
 
                 </form>
 
-                {% if has_data %}
-
-                    {% for i in range(institute_names|length) %}
-                      <form>
-
-                          <div class="outerDiv">
-
-                              <!-- Institute Name -->
-                              <div class="form-group">
-                                  <label for="institute">Institute Name</label>
-                                  <input type="text" class="form-control institute_names" id="institute" placeholder="Ex: Harvard Business School" value="{{institute_names[i]}}">
-                              </div>
-
-                              <!-- Institute Location -->
-                              <div class="form-row">
-
-                                  <div class="form-group col-md-6">
-                                  <label for="city">City</label>
-                                  <input type="text" class="form-control cities" id="city" value="{{cities[i]}}">
-                                  </div>
-
-                                  <div class="form-group col-md-6">
-                                  <label for="country">Country</label>
-                                  <input type="text" class="form-control countries" id="country" value="{{countries[i]}}">
-                                  </div>
-
-                              </div>
-
-                              <!-- Degree Information -->
-                              <div class="form-row">
-
-                                  <div class="form-group col-md-6">
-                                  <label for="degree">Degree</label>
-                                  <input type="text" class="form-control degrees" id="degree" placeholder="Ex: Bachelors's" value="{{degrees[i]}}">
-                                  </div>
-
-                                  <div class="form-group col-md-6">
-                                  <label for="fos">Field of Study</label>
-                                  <input type="text" class="form-control fields_of_study" id="fos" placeholder="Ex: Computer Science" value="{{fields_of_study[i]}}">
-                                  </div>
-
-                              </div>
-
-                              <!-- Tenure -->
-                              <div class="form-row">
-
-                                  <div class="form-group col-md-6">
-                                  <label for="sdate">Start Date</label>
-                                  <input type="date" class="form-control start_dates" id="sdate" value="{{start_dates[i]}}">
-                                  </div>
-
-                                  <div class="form-group col-md-6">
-                                  <label for="edate">End Date</label>
-                                  <input type="date" class="form-control end_dates" id="edate" value="{{end_dates[i]}}">
-                                  </div>
-
-                              </div>
-
-                              <!-- Grade type and grade -->
-                              <div class="form-row">
-                                  <div class="form-group col-md-6">
-                                      <label for="grade">Grade Type</label>
-                                      <select class="custom-select grade_types" id="selectType">
-                                          <option value="GPA" {% if grade_types[i] == 'GPA' %} selected {% endif %}>GPA</option>
-                                          <option value="Percentage" {% if grade_types[i] == 'Percentage' %} selected {% endif %}>Percentage</option>
-                                      </select>
-                                  </div>
-                                  <div class="form-group col-md-6">
-                                      <label for="gradeval">Grade</label>
-                                      <input type="text" class="form-control grades" id="gradeval" value="{{grades[i]}}">
-                                  </div>
-                              </div>
-                      </form>
-                    {% endfor %}
-
-                {% endif %}
+                
 
             </div>
 
