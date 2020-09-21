@@ -31,43 +31,36 @@ class item {
 
         // Assign the values
         inputjtitle.value = jtitle;
-        inputjtitle.disabled = true;
         inputjtitle.classList.add('form-control');
         inputjtitle.classList.add('job_titles');
         inputjtitle.type = "text";
 
         inputcname.value = cname;
-        inputcname.disabled = true;
         inputcname.classList.add('form-control');
         inputcname.classList.add('companies');
         inputcname.type = "text";
 
         inputcity.value = city;
-        inputcity.disabled = true;
         inputcity.classList.add('form-control');
         inputcity.classList.add('cities_exp');
         inputcity.type = "text";
 
         inputcountry.value = country;
-        inputcountry.disabled = true;
         inputcountry.classList.add('form-control');
         inputcountry.classList.add('countries_exp');
         inputcountry.type = "text";
 
         inputsdate.value = sdate;
-        inputsdate.disabled = true;
         inputsdate.classList.add('form-control');
         inputsdate.classList.add('start_dates_exp');
         inputsdate.type = "date";
 
         inputedate.value = edate;
-        inputedate.disabled = true;
         inputedate.classList.add('form-control');
         inputedate.classList.add('end_dates_exp');
         inputedate.type = "date";
 
         inputdescription.value = description;
-        inputdescription.disabled = true;
         inputdescription.classList.add('form-control');
         inputdescription.classList.add('description');
 

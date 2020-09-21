@@ -17,7 +17,6 @@ class item {
 
         let input = document.createElement('input');
         input.value = itemName;
-        input.disabled = true;
         input.classList.add('form-control');
         input.classList.add('skill_names');
         input.type = "text";

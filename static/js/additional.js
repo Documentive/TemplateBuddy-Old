@@ -57,19 +57,16 @@ class courses {
         // Assign the values to each element
         inputcourse.value = course;
         inputcourse.type = "text";
-        inputcourse.disabled = true;
         inputcourse.classList.add('form-control');
         inputcourse.classList.add('course_names');
 
         inputissuer.value = issuer;
         inputissuer.type = "text";
-        inputissuer.disabled = true;
         inputissuer.classList.add('form-control');
         inputissuer.classList.add('issuers');
 
         inputidate.value = idate;
         inputidate.type = "date";
-        inputidate.disabled = true;
         inputidate.classList.add('form-control');
         inputidate.classList.add('issues_on_dates');
 
@@ -133,19 +130,16 @@ class publishes {
         // Assign the values to each element
         inputptitle.value = ptitle;
         inputptitle.type = "text";
-        inputptitle.disabled = true;
         inputptitle.classList.add('form-control');
         inputptitle.classList.add('paper_titles');
 
         inputpublisher.value = publisher;
         inputpublisher.type = "text";
-        inputpublisher.disabled = true;
         inputpublisher.classList.add('form-control');
         inputpublisher.classList.add('publications');
 
         inputpdate.value = pdate;
         inputpdate.type = "date";
-        inputpdate.disabled = true;
         inputpdate.classList.add('form-control');
         inputpdate.classList.add('published_on_dates');
 
@@ -210,19 +204,16 @@ class awards {
         // Assign the values to each element
         inputhtitle.value = htitle;
         inputhtitle.type = "text";
-        inputhtitle.disabled = true;
         inputhtitle.classList.add('form-control');
         inputhtitle.classList.add('honor_titles');
 
         inputhissuer.value = hissuer;
         inputhissuer.type = "text";
-        inputhissuer.disabled = true;
         inputhissuer.classList.add('form-control');
         inputhissuer.classList.add('honor_issuers');
 
         inputhdate.value = hdate;
         inputhdate.type = "date";
-        inputhdate.disabled = true;
         inputhdate.classList.add('form-control');
         inputhdate.classList.add('honor_issued_dates');
 
@@ -285,7 +276,6 @@ class hobbies {
         // Assign the values to each element
         inputhobby.value = hobby;
         inputhobby.style.background = "#ffffff";
-        inputhobby.disabled = true;
         inputhobby.classList.add('form-control');
         inputhobby.classList.add('hobbies');
         inputhobby.type = "text";

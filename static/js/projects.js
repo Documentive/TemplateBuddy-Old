@@ -23,25 +23,21 @@ class item {
         let inputDescription = document.createElement('textarea');
 
         inputTitle.value = title;
-        inputTitle.disabled = true;
         inputTitle.classList.add('form-control');
         inputTitle.classList.add('project_title');
         inputTitle.type = "text";
 
         inputSDate.value = sdate;
-        inputSDate.disabled = true;
         inputSDate.classList.add('form-control');
         inputSDate.classList.add('start_dates_proj');
         inputSDate.type = "date";
 
         inputEDate.value = edate;
-        inputEDate.disabled = true;
         inputEDate.classList.add('form-control');
         inputEDate.classList.add('end_dates_proj');
         inputEDate.type = "date";
 
         inputDescription.value = description;
-        inputDescription.disabled = true;
         inputDescription.classList.add('form-control');
         inputDescription.classList.add('description_proj');
 
