@@ -50,7 +50,7 @@ user@programmer~:$ python setup.py
 
 The following resources are a good place to get to know more about simC:-
 
-1) Get to know about TemplateBuddy <a href="https://dev.to/cimplec/writing-code-in-c-simplify-your-life-with-sim-c-2dkj">Dev.to</a>, <a href="https://medium.com/oss-build/get-to-know-about-templatebuddy-7717aea13bcf">Medium</a>.
+1) Get to know about TemplateBuddy <a href="https://dev.to/documentive/get-to-know-about-templatebuddy-2ooi">Dev.to</a>, <a href="https://medium.com/oss-build/get-to-know-about-templatebuddy-7717aea13bcf">Medium</a>.
 
 Before moving further please go through the rules in [CONTRIBUTING.md](./CONTRIBUTING.md)  
 
