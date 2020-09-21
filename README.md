@@ -15,26 +15,36 @@ The data once fed by the user is saved in his account and the user can just chan
 user@programmer~:$ git clone https://github.com/Documentive/TemplateBuddy
 ```
 
-2) Install all the requirements (for the backend), make sure you are inside TemplateBuddy directory:-
+2) Install all the requirements (for the backend):-
 
 ```bash
 user@programmer~:$ pip install -r requirements.txt
 ```
 
-3) To run
+3) Create database:- 
 
-	3.1) In linux and macOS
+```bash
+user@programmer~:$ python setup.py 
+```
+
+4) To run
+
+	4.1) In linux and macOS
 
 	```bash
 	user@programmer~:$ ./run.sh
 	```
 
-	3.2) In windows
+	4.2) In windows
 
 	```bash
 	user@programmer~:$ set FLASK_APP=app.py
 	user@programmer~:$ flask run
 	```
+
+5) Open localhost:5000 in any browser.
+
+- For steps 2 - 5make sure you are inside TemplateBuddy directory.
 
 ## Contributing
 
