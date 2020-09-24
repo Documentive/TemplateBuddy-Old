@@ -44,105 +44,19 @@
 
             <div class="list-wrapper">
 
-                <div class="list-item">
-                    <div class="content">
-                        <input type="radio" name="template" id="temp1" class="input-hidden">
-                        <label for="temp1"> <img src="./testimg.png" alt=""> </label>
-                        <div class="text">
-                            <h4>Template 1</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="list-item">
-                    <div class="content">
-                        <input type="radio" name="template" id="temp2" class="input-hidden">
-                        <label for="temp2"><img src="./testimg3.png" alt=""></label>
-                        <div class="text">
-                            <h4>Template 2</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="list-item">
-                    <div class="content">
-                        <input type="radio" name="template" id="temp3" class="input-hidden">
-                        <label for="temp3"><img src="./testimg2.png" alt=""></label>
-                        <div class="text">
-                            <h4>Template 3</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="list-item">
-                    <div class="content">
-                        <input type="radio" name="template" id="temp4" class="input-hidden">
-                        <label for="temp4"><img src="./testimg3.png" alt=""></label>
-                        <div class="text">
-                            <h4>Template 4</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="list-item">
-                    <div class="content">
-                        <input type="radio" name="template" id="temp5" class="input-hidden">
-                        <label for="temp5"><img src="./testimg2.png" alt=""></label>
-                        <div class="text">
-                            <h4>Template 5</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="list-item">
-                    <div class="content">
-                        <input type="radio" name="template" id="temp6" class="input-hidden">
-                        <label for="temp6"><img src="./testimg.png" alt=""></label>
-                        <div class="text">
-                            <h4>Template 6</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="list-item">
-                    <div class="content">
-                        <input type="radio" name="template" id="temp7" class="input-hidden">
-                        <label for="temp7"><img src="./testimg2.png" alt=""></label>
-                        <div class="text">
-                            <h4>Template 7</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="list-item">
-                    <div class="content">
-                        <input type="radio" name="template" id="temp8" class="input-hidden">
-                        <label for="temp8"><img src="./testimg2.png" alt=""></label>
-                        <div class="text">
-                            <h4>Template 8</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="list-item">
-                    <div class="content">
-                        <input type="radio" name="template" id="temp2" class="input-hidden">
-                        <label for="temp9"><img src="./testimg2.png" alt=""></label>
-                        <div class="text">
-                            <h4>Template 9</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="list-item">
-                    <div class="content">
-                        <input type="radio" name="template" id="temp10" class="input-hidden">
-                        <label for="temp10"><img src="./testimg2.png" alt=""></label>
-                        <div class="text">
-                            <h4>Template 10</h4>
-                        </div>
-                    </div>
-                </div>
+                {% for i in range(templates|length) %}
+                  <div class="list-item">
+                      <div class="content">
+                          <input type="radio" name="template" id="{{ids[i]}}" class="input-hidden">
+                          <label for="{{ids[i]}}">
+                            <img src="{{templates[i]}}" alt="{{names[i]}}" style="height: 400px; width: 320px;">
+                          </label>
+                          <div class="text">
+                              <h4>{{names[i]}}</h4>
+                          </div>
+                      </div>
+                  </div>
+                {% endfor %}
 
             </div>
 

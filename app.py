@@ -4,6 +4,7 @@ import sqlite3
 import hashlib
 from werkzeug.utils import secure_filename
 import os
+import glob
 import shutil
 
 # Instantiate flask app
@@ -757,7 +758,12 @@ def hobby():
 def templateselect():
 
     if request.method == 'GET':
-        return render_template('templateselect.html')
+        templates = glob.glob("static/resume_templates/screenshots/*.png")
+        templates = ["../" + template for template in templates]
+        ids = [os.path.basename(template) for template in templates]
+        names = [os.path.splitext(os.path.basename(template).capitalize())[0] for template in templates]
+        
+        return render_template('templateselect.html', templates=templates, names=names, ids=ids)
 
 @app.route("/logout", methods=["GET"])
 def logout():
