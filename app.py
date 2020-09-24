@@ -760,9 +760,9 @@ def templateselect():
     if request.method == 'GET':
         templates = glob.glob("static/resume_templates/screenshots/*.png")
         templates = ["../" + template for template in templates]
-        ids = [os.path.basename(template) for template in templates]
+        ids = [os.path.splitext(os.path.basename(template))[0] for template in templates]
         names = [os.path.splitext(os.path.basename(template).capitalize())[0] for template in templates]
-        
+
         return render_template('templateselect.html', templates=templates, names=names, ids=ids)
 
 @app.route("/logout", methods=["GET"])
