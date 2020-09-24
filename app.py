@@ -753,6 +753,12 @@ def hobby():
             }
         )
 
+@app.route("/templateselect", methods=['GET', 'POST'])
+def templateselect():
+
+    if request.method == 'GET':
+        return render_template('templateselect.html')
+
 @app.route("/logout", methods=["GET"])
 def logout():
 
