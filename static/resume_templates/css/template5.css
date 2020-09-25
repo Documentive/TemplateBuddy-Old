@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+#portion-one{
+	height: 200px;
+}
+.row{
+	width: 100%;
+	padding-top:100px;
+
+}
+#photo{
+	width: 192px;
+	height: 192px;
+
+/*URL OF THE IMAGE TO PUT ON THE RESUME*/
+	background-image: url("...");
+	border: 1px black solid;
+
+	position: absolute;
+	right: 20px;
+}
+
+span.heading{
+	font-weight: bolder;
+	display: block;
+	font-size: 18px;
+}
+
+#details > span{
+	font-weight: bolder;
+	font-size: 20px;
+
+}
+#info span{
+	display: block;
+	padding: 5px;
+}
+.col-3{
+	width: 25%;
+	float: left;
+	text-align: right;
+	padding-right: 20px; 
+	position: relative;
+
+	clear: left;
+	padding-bottom: 20px;
+}
+.heading-right{
+	font-weight: bolder;
+	font-size: 15px;
+}
+.col-9{
+	width: 75%;
+	float: left;
+	padding-right: 200px;
+}
+hr{
+color: black;
+border:black solid 1px;
+position: relative;
+top:18px;
+}
+.sections{
+	margin-bottom: 10px;
+}
+.sections p{
+}
