@@ -1,5 +1,9 @@
 # Import required libraries
 import sqlite3
+import os
+
+if not os.path.exists('local.db'):
+    os.remove('local.db')
 
 # Setup connection to db
 conn = sqlite3.connect("local.db")
