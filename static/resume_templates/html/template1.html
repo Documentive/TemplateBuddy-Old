@@ -33,10 +33,10 @@
                     <th>GPA/Percentage</th>
                 </tr>
                 <tr>
-                    <td>{{degree}}({{fos}})</td>
-                    <td>{{Institution}}, {{city}}, {{Country}}</td>
-                    <td>{{edate}}</td>
-                    <td>{{gradeval}}</td>
+                    <td>{{degrees[i]}}({{fields_of_study[i]}})</td>
+                    <td>{{institute_names[i]}}, {{cities[i]}}, {{countries[i]}}</td>
+                    <td>{{end_dates[i]}}</td>
+                    <td>{{grades[i]}}</td>
                 </tr>
             </table>
         </div>
@@ -44,7 +44,7 @@
         <div class="skills">
             <h3>SKILLS</h3>
             <hr>
-            <p>{{skills}}</p>
+            <p>{{skill_names[i]}}</p>
         </div>
 
         <div class="experience">
@@ -52,11 +52,11 @@
             <h3>WORK EXPERIENCE</h3>
             <hr>
             <div>
-                <p id="dates">{{sdate}} - {{edate}}</p>
-                <h4>{{cname}}, {{city}}, {{country}}</h4>
+                <p id="dates">{{start_dates_exp[i]}} - {{nd_dates_exp[i]}}</p>
+                <h4>{{companies[i]}}, {{cities_exp[i]}}, {{countries_exp[i]}}</h4>
 
             </div>
-            <p>{{description}}</p>
+            <p>{{description[i]}}</p>
 
         </div>
 
@@ -64,9 +64,9 @@
 
             <h3>PROJECTS</h3>
             <hr>
-            <h4>{{ptitle}}</h4>
-            <p>Duration: {{sdate}} - {{edate}}</p>
-            <p>{{description}}</p>
+            <h4>{{project_title[i]}}</h4>
+            <p>Duration: {{start_dates_proj[i]}} - {{end_dates_proj[i]}}</p>
+            <p>{{description_proj[i]}}</p>
 
         </div>
 
@@ -74,7 +74,7 @@
             <h3>COURSES</h3>
             <hr>
             <ul>
-                <li>{{course}}, issued by {{issuer}}</li>
+                <li>{{course_names[i]}}, issued by {{issuers[i]}}</li>
             </ul>
         </div>
 
@@ -82,7 +82,7 @@
             <h3>PUBLICATIONS</h3>
             <hr>
             <ul>
-                <li>{{ptitle}}, published by {{publisher}}</li>
+                <li>{{paper_titles[i]}}, published by {{publications[i]}}</li>
             </ul>
         </div>
 
@@ -90,7 +90,7 @@
             <h3>HONORS & AWARDS</h3>
             <hr>
             <ul>
-                <li>{{htitle}}, given by {{hissuer}}</li>
+                <li>{{honor_titles[i]}}, given by {{honor_issuers[i]}}</li>
             </ul>
         </div>
 
@@ -98,7 +98,7 @@
             <h3>INTERESTS & HOBBIES</h3>
             <hr>
             <ul>
-                <li>{{hobbies}}</li>
+                <li>{{hobbies[i]}}</li>
             </ul>
         </div>
 
