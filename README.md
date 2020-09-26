@@ -58,7 +58,7 @@ The following resources are a good place to get to know more about TemplateBuddy
 
 ### Instructions for first time contributors/ beginner level contributors for template related issues (both HTML and LATEX) during HACKTOBERFEST
 
-- Start working on the issues once you are assigned to them. Head over to the issue and comment that you want it to be assigned to you. Once the maintainer assigns the issue to you, start working on it.
+- Start working on the issues once you are assigned to them. Head over to the issue and comment that you want it to be assigned to you. Once the maintainer assigns the issue to you, start working on it. Issues will be assigned on a First Come First Serve (FCFS) basis.
 - Once the issue is assigned, you have one week (7 Days) to submit the PR. Failing to do so will get the issue reassigned to someone else. As each issue related to questions are being assigned to single contributor at a time, we sincerely hope that you cooperate with us.
 - If you create a PR without the issue being assigned to you, the PR will be marked spam as you are not adhering to the rules.   
 - For the template related files:
