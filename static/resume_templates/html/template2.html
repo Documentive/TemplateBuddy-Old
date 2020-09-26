@@ -39,29 +39,29 @@
         <div class="education">
             <h3>EDUCATION</h3><hr>
             <div id="edu">
-                <p id="dates">{{sdate}} - {{edate}}</p>
-                <h4>{{degree}}, {{fos}}</h4>
+                <p id="dates">{{start_dates[i]}} - {{end_dates[i]}}</p>
+                <h4>{{degrees[i]}}, {{fields_of_study[i]}}</h4>
             </div>
             <div id="grade">
-                <p>GPA/Percentage - {{gradeval}}</p>
-                <h4>{{institute}}, {{city}}</h4>
+                <p>GPA/Percentage - {{grades[i]}}</p>
+                <h4>{{institute_names[i]}}, {{cities[i]}}</h4>
             </div>
         </div>
 
         <div class="workexp">
             <h3>WORK EXPERIENCE</h3><hr>
             <div id="jobdetail">
-                <p id="dates">{{sdate}} - {{edate}}</p>
-                <h4>{{jtitle}}</h4>
+                <p id="dates">{{start_dates_exp[i]}} - {{end_dates_exp[i]}}</p>
+                <h4>{{job_titles[i]}}</h4>
             </div>
-            <p id="company"><i>{{cname}} - {{city}}, {{country}}</i></p>
-            <p id="summary">{{description}}</p>
+            <p id="company"><i>{{companies[i]}} - {{cities_exp[i]}}, {{countries_exp[i]}}</i></p>
+            <p id="summary">{{description[i]}}</p>
         </div>
 
         <div class="skills">
             <h3>SKILLS</h3><hr>
             <div class="skilllist">
-                <p>{{skills}}</p>
+                <p>{{skill_names[i]}}</p>
             </div>
         </div>
 
