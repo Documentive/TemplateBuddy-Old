@@ -52,7 +52,7 @@ The following resources are a good place to get to know more about TemplateBuddy
 
 1) Get to know about TemplateBuddy <a href="https://dev.to/documentive/get-to-know-about-templatebuddy-2ooi">Dev.to</a>, <a href="https://medium.com/oss-build/get-to-know-about-templatebuddy-7717aea13bcf">Medium</a>.   
 
-#### Instructions for first time contributors/ beginner level contributors for template related issues (both HTML and LATEX)    
+#### Instructions for first time contributors/ beginner level contributors for template related issues (both HTML and LATEX) during HACKTOBERFEST
 
 - Start working on the issues once you are assigned to them. Head over to the issue and comment that you want it to be assigned to you. Once the maintainer assigns the issue to you, start working on it.
 - Once the issue is assigned, you have one week (7 Days) to submit the PR. Failing to do so will get the issue reassigned to someone else. As each issue related to questions are being assigned to single contributor at a time, we sincerely hope that you cooperate with us.
