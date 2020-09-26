@@ -2,8 +2,16 @@
 import sqlite3
 import os
 
+def mkdir(path):
+    if not os.path.exists(path):
+        os.mkdir(path)
+
 if os.path.exists("local.db"):
     os.remove("local.db")
+
+mkdir("static/rendered")
+mkdir("static/rendered/resumes")
+mkdir("static/images/profile_pictures")
 
 # Setup connection to db
 conn = sqlite3.connect("local.db")

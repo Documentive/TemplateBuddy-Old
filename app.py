@@ -6,6 +6,7 @@ from werkzeug.utils import secure_filename
 import os
 import glob
 import shutil
+import jinja2
 
 # Instantiate flask app
 app = Flask(__name__)
@@ -774,6 +775,88 @@ def templateselect():
 
         return render_template(
             "templateselect.html", templates=templates, names=names, ids=ids
+        )
+
+    elif request.method == "POST":
+        id = request.form['id']
+        uid = session['id']
+
+        resume_path = os.path.join("static/rendered/resumes", str(uid))
+        if os.path.exists(resume_path):
+            shutil.rmtree(resume_path)
+
+        os.mkdir(resume_path)
+
+        shutil.copy(os.path.join('static/resume_templates/css/', id + '.css'),
+                    os.path.join(resume_path))
+
+        with open(os.path.join('static/resume_templates/html/', id + '.html')) as file:
+            t = jinja2.Template(file.read())
+
+        conn = sqlite3.connect("local.db")
+
+        cursor = conn.execute(f"SELECT * FROM resume_details WHERE uid={uid}")
+        row = cursor.fetchone()
+
+        t.stream(
+            firstname=row[2],
+            middlename=row[3],
+            lastname=row[4],
+            email=row[5],
+            mobile=row[6],
+            address_1=row[7],
+            address_2=row[8],
+            city=row[9],
+            state=row[10],
+            zip=row[11],
+            profile=row[12],
+            headline=row[13],
+            github=row[14],
+            linkedin=row[15],
+            twitter=row[16],
+            website=row[17],
+            behance=row[18],
+            dribble=row[19],
+            summary=row[20],
+            institute_names = row[21].split("~~~")[:-1],
+            cities = row[22].split("~~~")[:-1],
+            countries = row[23].split("~~~")[:-1],
+            degrees = row[24].split("~~~")[:-1],
+            fields_of_study = row[25].split("~~~")[:-1],
+            start_dates = row[26].split("~~~")[:-1],
+            end_dates = row[27].split("~~~")[:-1],
+            grade_types = row[28].split("~~~")[:-1],
+            grades = row[29].split("~~~")[:-1],
+            job_titles = row[30].split("~~~")[:-1],
+            companies = row[31].split("~~~")[:-1],
+            cities_exp = row[32].split("~~~")[:-1],
+            countries_exp = row[33].split("~~~")[:-1],
+            start_dates_exp = row[34].split("~~~")[:-1],
+            end_dates_exp = row[35].split("~~~")[:-1],
+            description = row[36].split("~~~")[:-1],
+            skill_names = row[37].split("~~~")[:-1],
+            project_title = row[38].split("~~~")[:-1],
+            description_proj = row[39].split("~~~")[:-1],
+            start_dates_proj = row[40].split("~~~")[:-1],
+            end_dates_proj = row[41].split("~~~")[:-1],
+            course_names = row[42].split("~~~")[:-1],
+            issuers = row[43].split("~~~")[:-1],
+            issues_on_dates = row[44].split("~~~")[:-1],
+            paper_titles = row[45].split("~~~")[:-1],
+            publications = row[46].split("~~~")[:-1],
+            published_on_dates = row[47].split("~~~")[:-1],
+            honor_titles = row[48].split("~~~")[:-1],
+            honor_issuers = row[49].split("~~~")[:-1],
+            honor_issued_dates = row[50].split("~~~")[:-1],
+            hobbies = row[51].split("~~~")[:-1]
+        ).dump(os.path.join(resume_path, id + ".html"))
+
+        return jsonify(
+            {
+                "icon": "success",
+                "title": "Success",
+                "text": "Templated saved successfully!",
+            }
         )
 
 
