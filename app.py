@@ -602,10 +602,10 @@ def additional():
         )
 
 
-@app.route("/courses", methods=['POST'])
+@app.route("/courses", methods=["POST"])
 def courses():
 
-    if request.method == 'POST':
+    if request.method == "POST":
         uid = session["id"]
         course_names = request.form["course_names"]
         issuers = request.form["issuers"]
@@ -641,10 +641,11 @@ def courses():
             }
         )
 
-@app.route("/publications", methods=['POST'])
+
+@app.route("/publications", methods=["POST"])
 def publications():
 
-    if request.method == 'POST':
+    if request.method == "POST":
         uid = session["id"]
         paper_titles = request.form["paper_titles"]
         publications = request.form["publications"]
@@ -680,10 +681,11 @@ def publications():
             }
         )
 
-@app.route("/honors", methods=['POST'])
+
+@app.route("/honors", methods=["POST"])
 def honors():
 
-    if request.method == 'POST':
+    if request.method == "POST":
         uid = session["id"]
         honor_titles = request.form["honor_titles"]
         honor_issuers = request.form["honor_issuers"]
@@ -719,10 +721,11 @@ def honors():
             }
         )
 
-@app.route("/hobby", methods=['POST'])
+
+@app.route("/hobby", methods=["POST"])
 def hobby():
 
-    if request.method == 'POST':
+    if request.method == "POST":
         uid = session["id"]
         hobbies = request.form["hobbies"]
 
@@ -754,16 +757,25 @@ def hobby():
             }
         )
 
-@app.route("/templateselect", methods=['GET', 'POST'])
+
+@app.route("/templateselect", methods=["GET", "POST"])
 def templateselect():
 
-    if request.method == 'GET':
+    if request.method == "GET":
         templates = glob.glob("static/resume_templates/screenshots/*.png")
         templates = ["../" + template for template in templates]
-        ids = [os.path.splitext(os.path.basename(template))[0] for template in templates]
-        names = [os.path.splitext(os.path.basename(template).capitalize())[0] for template in templates]
+        ids = [
+            os.path.splitext(os.path.basename(template))[0] for template in templates
+        ]
+        names = [
+            os.path.splitext(os.path.basename(template).capitalize())[0]
+            for template in templates
+        ]
 
-        return render_template('templateselect.html', templates=templates, names=names, ids=ids)
+        return render_template(
+            "templateselect.html", templates=templates, names=names, ids=ids
+        )
+
 
 @app.route("/logout", methods=["GET"])
 def logout():

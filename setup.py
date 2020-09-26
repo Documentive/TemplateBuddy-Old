@@ -2,8 +2,8 @@
 import sqlite3
 import os
 
-if os.path.exists('local.db'):
-    os.remove('local.db')
+if os.path.exists("local.db"):
+    os.remove("local.db")
 
 # Setup connection to db
 conn = sqlite3.connect("local.db")
