@@ -20,10 +20,10 @@
             <p class="title">EDUCATION</p><hr>
             <ul>
                 <li>
-                    <p class="location">{{city}}, {{country}}</p>
-                    <h4 class="institute">{{institute}}</h4>
-                    <p class="dates"><i>{{sdate}} - {{edate}}</i></p>
-                    <p class="degree"><i>{{degree}}, {{fos}}; GPA/&percnt; : {{gradeval}}</i></p>
+                    <p class="location">{{cities[i]}}, {{countries[i]}}</p>
+                    <h4 class="institute">{{institute_names[i]}}</h4>
+                    <p class="dates"><i>{{start_dates[i]}} - {{end_dates[i]}}</i></p>
+                    <p class="degree"><i>{{degrees[i]}}, {{fields_of_study[i]}}; GPA/&percnt; : {{grades[i]}}</i></p>
                 </li>
             </ul>
         </div>
@@ -32,11 +32,11 @@
             <p class="title">EXPERIENCE</p><hr>
             <ul>
                 <li>
-                    <p class="location">{{city}}, {{country}}</p>
-                    <h4 class="cname">{{cname}}</h4>
-                    <p class="dates"><i>{{sdate}} - {{edate}}</i></p>
-                    <p class="jtitle"><i>{{jtitle}}</i></p>
-                    <p class="descp">{{description}}</p>
+                    <p class="location">{{cities_exp[i]}}, {{countries_exp[i]}}</p>
+                    <h4 class="cname">{{companies[i]}}</h4>
+                    <p class="dates"><i>{{start_dates_exp[i]}} - {{end_dates_exp[i]}}</i></p>
+                    <p class="jtitle"><i>{{job_titles[i]}}</i></p>
+                    <p class="descp">{{description[i]}}</p>
                 </li>
             </ul>
         </div>
@@ -45,8 +45,8 @@
             <p class="title">PROJECTS</p><hr>
             <ul>
                 <li>
-                    <h4>{{ptitle}}</h4>
-                    <p class="descp">{{description}}</p>
+                    <h4>{{project_title[i]}}</h4>
+                    <p class="descp">{{description_proj[i]}}</p>
                 </li>
             </ul>
         </div>
@@ -55,7 +55,7 @@
             <p class="title">SKILLS</p><hr>
             <ul>
                 <li>
-                    {{skills}}
+                    {{skill_names[i]}}
                 </li>
             </ul>
         </div>
