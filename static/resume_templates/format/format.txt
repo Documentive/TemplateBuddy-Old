@@ -20,30 +20,31 @@
 20) Institute names (all) - {{institute_names[i]}}
 21) Cities (all) - {{cities[i]}}
 22) Countries (all) - {{countries[i]}}
-23) Degrees (all) - {{degrees[i]}}
-24) Start dates (all) - {{start_dates[i]}}
-25) End dates (all) - {{end_dates[i]}}
-26) Grade types (all) - {{grade_types[i]}}
-27) Grades (all) - {{grades[i]}}
-28) Job titles (all) - {{job_titles[i]}}
-29) Companies (all) - {{companies[i]}}
-30) Cities of experience (all) - {{cities_exp[i]}}
-31) Countries of experience (all) - {{countries_exp[i]}}
-32) Start dates of experience (all) - {{start_dates_exp[i]}}
-33) End dates of experience (all) - {{nd_dates_exp[i]}}
-34) Descriptions (all) - {{description[i]}}
-35) Skill names (all) - {{skill_names[i]}}
-36) Project titles (all) - {{project_title[i]}}
-37) Description of projects (all) - {{description_proj[i]}}
-38) Start date of projects (all) - {{start_dates_proj[i]}}
-39) End date of projects (all) - {{end_dates_proj[i]}}
-40) Course names (all) - {{course_names[i]}}
-41) Issuer of course certificates (all) - {{issuers[i]}}
-42) Issued on dates (all) - {{issues_on_dates[i]}}
-43) Paper titles (all) - {{paper_titles[i]}}
-44) Name of publications (all) - {{publications[i]}}
-45) Published dates (all) - {{published_on_dates[i]}}
-46) Honor titles (all) - {{honor_titles[i]}}
-47) Honor issuers (all) - {{honor_issuers[i]}}
-48) Honor issued dates (all) - {{honor_issued_dates[i]}}
-49) Hobbies (all) - {{hobbies[i]}}
+23) Field of Study (all) - {{fields_of_study[i]}}
+24) Degrees (all) - {{degrees[i]}}
+25) Start dates (all) - {{start_dates[i]}}
+26) End dates (all) - {{end_dates[i]}}
+27) Grade types (all) - {{grade_types[i]}}
+28) Grades (all) - {{grades[i]}}
+29) Job titles (all) - {{job_titles[i]}}
+30) Companies (all) - {{companies[i]}}
+31) Cities of experience (all) - {{cities_exp[i]}}
+32) Countries of experience (all) - {{countries_exp[i]}}
+33) Start dates of experience (all) - {{start_dates_exp[i]}}
+34) End dates of experience (all) - {{end_dates_exp[i]}}
+35) Descriptions (all) - {{description[i]}}
+36) Skill names (all) - {{skill_names[i]}}
+37) Project titles (all) - {{project_title[i]}}
+38) Description of projects (all) - {{description_proj[i]}}
+39) Start date of projects (all) - {{start_dates_proj[i]}}
+40) End date of projects (all) - {{end_dates_proj[i]}}
+41) Course names (all) - {{course_names[i]}}
+42) Issuer of course certificates (all) - {{issuers[i]}}
+43) Issued on dates (all) - {{issues_on_dates[i]}}
+44) Paper titles (all) - {{paper_titles[i]}}
+45) Name of publications (all) - {{publications[i]}}
+46) Published dates (all) - {{published_on_dates[i]}}
+47) Honor titles (all) - {{honor_titles[i]}}
+48) Honor issuers (all) - {{honor_issuers[i]}}
+49) Honor issued dates (all) - {{honor_issued_dates[i]}}
+50) Hobbies (all) - {{hobbies[i]}}
