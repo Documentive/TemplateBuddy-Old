@@ -5,6 +5,10 @@
 TemplateBuddy is a free platform where the users can create their resumes and research papers from a variety of templates that we have to offer.   
 The data once fed by the user is saved in his account and the user can just change the template and adjust the information he/she has to show.
 
+# Hacktoberfest 2020
+
+Hacktoberfest 2020 is here. Contributions are now welcome. Please go through [CONTRIBUTING.md](./CONTRIBUTING.md) and the instructions in readme [Contribute](#contribute). We look forward for your contributions.
+
 ## Steps to install
 
 - Before moving on to the installation, make sure you have python3 installed. If you don't have python then you can do so from here - <a href="https://python.org">Python</a>.
@@ -47,7 +51,7 @@ user@programmer~:$ python setup.py
 - For steps 2 - 5make sure you are inside TemplateBuddy directory.
 
 ## Contributing
-
+<span id="contribute"></span>
 The following resources are a good place to get to know more about TemplateBuddy:-
 
 1) Get to know about TemplateBuddy <a href="https://dev.to/documentive/get-to-know-about-templatebuddy-2ooi">Dev.to</a>, <a href="https://medium.com/oss-build/get-to-know-about-templatebuddy-7717aea13bcf">Medium</a>.   
