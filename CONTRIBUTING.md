@@ -34,6 +34,16 @@
 	user@programmer~:$ python main.py
 	```
   4) If any test fails make sure to fix your code so that the error goes away. PR will be deleted if it does not pass the tests. 
+  
+## Instructions for first time contributors/ beginner level contributors for template related issues (both HTML and LATEX) during HACKTOBERFEST
+
+- Start working on the issues once you are assigned to them. Head over to the issue and comment that you want it to be assigned to you. Once the maintainer assigns the issue to you, start working on it.
+- Once the issue is assigned, you have one week (7 Days) to submit the PR. Failing to do so will get the issue reassigned to someone else. As each issue related to questions are being assigned to single contributor at a time, we sincerely hope that you cooperate with us.
+- If you create a PR without the issue being assigned to you, the PR will be marked spam as you are not adhering to the rules.   
+- For the template related files:
+	- if it is a HTML template, name the files as template<template_number>.html and template<template_number>.css and put them in the respective folders in TemplateBuddy/static/resume_templates i.e. html and css folder. Eg. template2.html and template2.css   
+	- if it is a LaTeX template, put the source files in a folder named as template<template_number> and put that folder in the location TemplateBuddy/static/resume_templates/tex as a zip file. Eg. template2.zip
+- If the files are not named in the above mentioned format, a comemnt would be added by the maintainers as a warning and if it is not changed in the next PR, the PR would be marked spam for not adhering to the rules.
 
 ## General Hacktoberfest Rules
 
