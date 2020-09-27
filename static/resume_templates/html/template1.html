@@ -32,31 +32,37 @@
                     <th>Date of Completion</th>
                     <th>GPA/Percentage</th>
                 </tr>
-                <tr>
-                    <td>{{degrees[i]}}({{fields_of_study[i]}})</td>
-                    <td>{{institute_names[i]}}, {{cities[i]}}, {{countries[i]}}</td>
-                    <td>{{end_dates[i]}}</td>
-                    <td>{{grades[i]}}</td>
-                </tr>
+                {% for i in range(degrees|length) %}
+                  <tr>
+                      <td>{{degrees[i]}}({{fields_of_study[i]}})</td>
+                      <td>{{institute_names[i]}}, {{cities[i]}}, {{countries[i]}}</td>
+                      <td>{{end_dates[i]}}</td>
+                      <td>{{grades[i]}}</td>
+                  </tr>
+                {% endfor %}
             </table>
         </div>
 
         <div class="skills">
             <h3>SKILLS</h3>
             <hr>
-            <p>{{skill_names[i]}}</p>
+            {% for i in range(skill_names|length) %}
+              <p>{{skill_names[i]}}</p>
+            {% endfor %}
         </div>
 
         <div class="experience">
 
             <h3>WORK EXPERIENCE</h3>
             <hr>
-            <div>
-                <p id="dates">{{start_dates_exp[i]}} - {{nd_dates_exp[i]}}</p>
-                <h4>{{companies[i]}}, {{cities_exp[i]}}, {{countries_exp[i]}}</h4>
+            {% for i in range(start_dates_exp|length) %}
+              <div>
+                  <p id="dates">{{start_dates_exp[i]}} - {{nd_dates_exp[i]}}</p>
+                  <h4>{{companies[i]}}, {{cities_exp[i]}}, {{countries_exp[i]}}</h4>
 
-            </div>
-            <p>{{description[i]}}</p>
+              </div>
+              <p>{{description[i]}}</p>
+            {% endfor %}
 
         </div>
 
@@ -64,9 +70,11 @@
 
             <h3>PROJECTS</h3>
             <hr>
-            <h4>{{project_title[i]}}</h4>
-            <p>Duration: {{start_dates_proj[i]}} - {{end_dates_proj[i]}}</p>
-            <p>{{description_proj[i]}}</p>
+            {% for i in range(project_title|length) %}
+              <h4>{{project_title[i]}}</h4>
+              <p>Duration: {{start_dates_proj[i]}} - {{end_dates_proj[i]}}</p>
+              <p>{{description_proj[i]}}</p>
+            {% endfor %}
 
         </div>
 
@@ -74,7 +82,9 @@
             <h3>COURSES</h3>
             <hr>
             <ul>
-                <li>{{course_names[i]}}, issued by {{issuers[i]}}</li>
+                {% for i in range(course_names|length) %}
+                  <li>{{course_names[i]}}, issued by {{issuers[i]}}</li>
+                {% endfor %}
             </ul>
         </div>
 
@@ -82,7 +92,9 @@
             <h3>PUBLICATIONS</h3>
             <hr>
             <ul>
-                <li>{{paper_titles[i]}}, published by {{publications[i]}}</li>
+                {% for i in range(paper_titles|length) %}
+                  <li>{{paper_titles[i]}}, published by {{publications[i]}}</li>
+                {% endfor %}
             </ul>
         </div>
 
@@ -90,7 +102,9 @@
             <h3>HONORS & AWARDS</h3>
             <hr>
             <ul>
-                <li>{{honor_titles[i]}}, given by {{honor_issuers[i]}}</li>
+                {% for i in range(honor_titles|length) %}
+                  <li>{{honor_titles[i]}}, given by {{honor_issuers[i]}}</li>
+                {% endfor %}
             </ul>
         </div>
 
@@ -98,7 +112,9 @@
             <h3>INTERESTS & HOBBIES</h3>
             <hr>
             <ul>
-                <li>{{hobbies[i]}}</li>
+                {% for i in range(hobbies|length) %}
+                  <li>{{hobbies[i]}}</li>
+                {% endfor %}
             </ul>
         </div>
 
