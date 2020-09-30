@@ -1,0 +1,91 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    width: 90%;
+    margin: 3% auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 0.3rem;
+}
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.summary {
+    margin-top: 1%;
+}
+
+.summary p {
+    text-align: justify;
+    margin-left: 0.3%;
+}
+
+.skills {
+    margin-top: 1%;
+}
+
+ol, ul {
+    margin-left: 1.1%;
+}
+
+.experience {
+    margin-top: 1%;
+}
+
+.experience .details {
+    margin-left: 1%;
+    margin-top: 0.5rem;
+}
+
+.details p#loc, p#dates {
+    float: right;
+    text-align: right;
+}
+
+.details p#dates, p#deg, p#jobtitle {
+    margin-top: 0.3rem;
+}
+
+.education {
+    margin-top: 1%;
+}
+
+#data, #skill {
+    margin-top: 0.3rem;
+}
+
+.projects {
+    margin-top: 1%;
+}
+
+.project {
+    margin-top: 0.3rem;
+}
+
+.awards {
+    margin-top: 1%;
+}
+
+.publications {
+    margin-top: 1%;
+}
