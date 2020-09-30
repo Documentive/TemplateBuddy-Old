@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template 7</title>
+    <link rel="stylesheet" href="./template7.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h2 id="name">{{firstname}} {{middlename}} {{lastname}}</h2>
+            <div class="social">
+                <h4 id="links">Website: {{website}}</h4>
+                <h4 id="links">Email: {{email}}</h4>
+                <h4 id="links">Phone: {{mobile}}</h4>
+                <h4 id="links">LinkedIn: {{linkedin}}</h4>
+                <h4 id="links">GitHub: {{github}}</h4>
+            </div>
+        </div>
+    
+        <div class="education">
+            <h3 class="title">EDUCATION</h3><hr>
+            <div class="details">
+                <p id="loc">{{cities[i]}}, {{countries[i]}}</p>
+                <p id="uni">{{institute_names[i]}}</p>
+                <p id="dates">{{start_dates[i]}} - {{end_dates[i]}}</p>
+                <p id="deg">{{degrees[i]}} in {{fields_of_study[i]}}, {{grade_types[i]}}: {{grades[i]}}</p>
+            </div>
+        </div>
+    
+        <div class="experience">
+            <h3 class="title">EXPERIENCE</h3><hr>
+            <div class="details">
+                <p id="loc">{{cities_exp[i]}}, {{countries_exp[i]}}</p>
+                <p id="company">{{companies[i]}}</p>
+                <p id="dates">{{start_dates_exp[i]}} - {{end_dates_exp[i]}}</p>
+                <p id="jobtitle">{{job_titles[i]}}</p>
+            </div>
+        </div>
+    
+        <div class="publications">
+            <h3 class="title">PUBLICATIONS</h3><hr>
+            <ol>
+                <li class="paper">
+                    <p id="dates">{{published_on_dates[i]}}</p>
+                    <p id="ptitle">{{paper_titles[i]}}</p>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="skills">
+            <h3 class="title">SKILLS</h3><hr>
+            <ul>
+                <li id="skill">{{skill_names[i]}}</li>
+            </ul>
+        </div>
+    
+        <div class="projects">
+            <h3 class="title">PROJECTS</h3><hr>
+            <ul>
+                <li class="project">
+                    <p id="dates">{{start_dates_proj[i]}} - {{end_dates_proj[i]}}</p>
+                    <p id="proj_title">{{project_title[i]}}</p>
+                    <p id="descp">{{description_proj[i]}}</p>
+                </li>
+            </ul>
+        </div>
+    
+        <div class="awards">
+            <h3 class="title">HONORS AND AWARDS</h3><hr>
+            <ul>
+                <li id="data">
+                    <p id="dates">{{honor_issued_dates[i]}}</p>
+                    <p>{{honor_titles[i]}}</p>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>
