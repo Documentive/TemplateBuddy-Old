@@ -23,24 +23,23 @@ class item {
         let inputDescription = document.createElement('textarea');
 
         inputTitle.value = title;
-        inputTitle.disabled = true;
         inputTitle.classList.add('form-control');
+        inputTitle.classList.add('project_title');
         inputTitle.type = "text";
 
         inputSDate.value = sdate;
-        inputSDate.disabled = true;
         inputSDate.classList.add('form-control');
+        inputSDate.classList.add('start_dates_proj');
         inputSDate.type = "date";
 
         inputEDate.value = edate;
-        inputEDate.disabled = true;
         inputEDate.classList.add('form-control');
+        inputEDate.classList.add('end_dates_proj');
         inputEDate.type = "date";
 
         inputDescription.value = description;
-        inputDescription.disabled = true;
         inputDescription.classList.add('form-control');
-        // inputDescription.type = "text";
+        inputDescription.classList.add('description_proj');
 
         // Create the html stucture according to the display
         let outerdiv = document.createElement('div');
@@ -116,3 +115,50 @@ function check() {
 
 // Add button to add the project information
 addButton.addEventListener('click', check);
+
+function get_inputs_by_classname(classname) {
+  var value = "";
+  $('.' + classname).each(function() {
+    value += $(this).val() + "~~~";
+  });
+
+  return value;
+}
+
+$("#project-save").click(function() {
+  var project_title = get_inputs_by_classname("project_title");
+  var description_proj = get_inputs_by_classname("description_proj");
+  var start_dates_proj = get_inputs_by_classname("start_dates_proj");
+  var end_dates_proj = get_inputs_by_classname("end_dates_proj");
+
+  $.ajax({
+    url: "/projects",
+    type: "post",
+    data: {"project_title": project_title, "description_proj": description_proj,
+           "start_dates_proj": start_dates_proj, "end_dates_proj": end_dates_proj},
+    success: function(result) {
+      Swal.fire({
+        icon: result.icon,
+        title: result.title,
+        text: result.text
+      });
+    }
+  });
+});
+
+$("#logout").click(function() {
+  $.ajax({
+    url: "/logout",
+    type: "get",
+    success: function(result) {
+      Swal.fire({
+        icon: result.icon,
+        title: result.title,
+        text: result.text
+      }).then(function() {
+        if(result.icon == 'success')
+          location.href = '/';
+      });
+    }
+  });
+});

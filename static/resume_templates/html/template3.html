@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template3</title>
+    <link rel="stylesheet" href="template3.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <p id="email">Email : {{email}}</p>
+            <h3>{{firstname}} {{middlename}} {{lastname}}</h3>
+            <p id="mobile">Mobile : {{mobile}}</p>
+            <p>{{website}}</p>
+        </div>
+
+        <div class="education">
+            <p class="title">EDUCATION</p><hr>
+            <ul>
+                {% for i in range(cities|length) %}
+                  <li>
+                      <p class="location">{{cities[i]}}, {{countries[i]}}</p>
+                      <h4 class="institute">{{institute_names[i]}}</h4>
+                      <p class="dates"><i>{{start_dates[i]}} - {{end_dates[i]}}</i></p>
+                      <p class="degree"><i>{{degrees[i]}}, {{fields_of_study[i]}}; GPA/&percnt; : {{grades[i]}}</i></p>
+                  </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="experience">
+            <p class="title">EXPERIENCE</p><hr>
+            <ul>
+              {% for i in range(cities_exp|length) %}
+                  <li>
+                      <p class="location">{{cities_exp[i]}}, {{countries_exp[i]}}</p>
+                      <h4 class="cname">{{companies[i]}}</h4>
+                      <p class="dates"><i>{{start_dates_exp[i]}} - {{end_dates_exp[i]}}</i></p>
+                      <p class="jtitle"><i>{{job_titles[i]}}</i></p>
+                      <p class="descp">{{description[i]}}</p>
+                  </li>
+              {% endfor %}
+            </ul>
+        </div>
+
+        <div class="project">
+            <p class="title">PROJECTS</p><hr>
+            <ul>
+                {% for i in range(project_title|length) %}
+                  <li>
+                      <h4>{{project_title[i]}}</h4>
+                      <p class="descp">{{description_proj[i]}}</p>
+                  </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="skills">
+            <p class="title">SKILLS</p><hr>
+            <ul>
+                {% for i in range(skill_names|length) %}
+                  <li>
+                      {{skill_names[i]}}
+                  </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

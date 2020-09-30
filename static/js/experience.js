@@ -31,38 +31,38 @@ class item {
 
         // Assign the values
         inputjtitle.value = jtitle;
-        inputjtitle.disabled = true;
         inputjtitle.classList.add('form-control');
+        inputjtitle.classList.add('job_titles');
         inputjtitle.type = "text";
 
         inputcname.value = cname;
-        inputcname.disabled = true;
         inputcname.classList.add('form-control');
+        inputcname.classList.add('companies');
         inputcname.type = "text";
 
         inputcity.value = city;
-        inputcity.disabled = true;
         inputcity.classList.add('form-control');
+        inputcity.classList.add('cities_exp');
         inputcity.type = "text";
 
         inputcountry.value = country;
-        inputcountry.disabled = true;
         inputcountry.classList.add('form-control');
+        inputcountry.classList.add('countries_exp');
         inputcountry.type = "text";
 
         inputsdate.value = sdate;
-        inputsdate.disabled = true;
         inputsdate.classList.add('form-control');
+        inputsdate.classList.add('start_dates_exp');
         inputsdate.type = "date";
 
         inputedate.value = edate;
-        inputedate.disabled = true;
         inputedate.classList.add('form-control');
+        inputedate.classList.add('end_dates_exp');
         inputedate.type = "date";
 
         inputdescription.value = description;
-        inputdescription.disabled = true;
         inputdescription.classList.add('form-control');
+        inputdescription.classList.add('description');
 
         // Create the html stucture according to the display
         let outerdiv = document.createElement('div');
@@ -163,3 +163,54 @@ function check() {
 
 // Add button to add the project information
 addButton.addEventListener('click', check);
+
+function get_inputs_by_classname(classname) {
+  var value = "";
+  $('.' + classname).each(function() {
+    value += $(this).val() + "~~~";
+  });
+
+  return value;
+}
+
+$("#experience-save").click(function() {
+  var job_titles = get_inputs_by_classname("job_titles");
+  var companies = get_inputs_by_classname("companies");
+  var cities_exp = get_inputs_by_classname("cities_exp");
+  var countries_exp = get_inputs_by_classname("countries_exp");
+  var start_dates_exp = get_inputs_by_classname("start_dates_exp");
+  var end_dates_exp = get_inputs_by_classname("end_dates_exp");
+  var description = get_inputs_by_classname("description");
+
+  $.ajax({
+    url: "/experience",
+    type: "post",
+    data: {"job_titles": job_titles, "companies": companies, "cities_exp": cities_exp,
+           "countries_exp": countries_exp, "start_dates_exp": start_dates_exp,
+           "end_dates_exp": end_dates_exp, "description": description},
+    success: function(result) {
+      Swal.fire({
+        icon: result.icon,
+        title: result.title,
+        text: result.text
+      });
+    }
+  });
+});
+
+$("#logout").click(function() {
+  $.ajax({
+    url: "/logout",
+    type: "get",
+    success: function(result) {
+      Swal.fire({
+        icon: result.icon,
+        title: result.title,
+        text: result.text
+      }).then(function() {
+        if(result.icon == 'success')
+          location.href = '/';
+      });
+    }
+  });
+});

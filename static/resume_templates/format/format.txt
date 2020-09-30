@@ -1,0 +1,50 @@
+1) First name - {{firstname}}
+2) Middle name - {{middlename}}
+3) Last name - {{lastname}}
+4) Email address - {{email}}
+5) Mobile number - {{mobile}}
+6) Address line 1 - {{address_1}}
+7) Address line 2 - {{address_2}}
+8) City - {{city}}
+9) State - {{state}}
+10) Zip code - {{zip}}
+11) Profile picture - {{profile_picture}}
+12) Headline - {{headline}}
+13) GitHub link - {{github}}
+14) LinkedIn link - {{linkedin}}
+15) Twitter link - {{twitter}}
+16) Website link - {{website}}
+17) Behance link - {{behance}}
+18) Dribble link - {{dribble}}
+19) Summary link - {{summary}}
+20) Institute names (all) - {{institute_names[i]}}
+21) Cities (all) - {{cities[i]}}
+22) Countries (all) - {{countries[i]}}
+23) Field of Study (all) - {{fields_of_study[i]}}
+24) Degrees (all) - {{degrees[i]}}
+25) Start dates (all) - {{start_dates[i]}}
+26) End dates (all) - {{end_dates[i]}}
+27) Grade types (all) - {{grade_types[i]}}
+28) Grades (all) - {{grades[i]}}
+29) Job titles (all) - {{job_titles[i]}}
+30) Companies (all) - {{companies[i]}}
+31) Cities of experience (all) - {{cities_exp[i]}}
+32) Countries of experience (all) - {{countries_exp[i]}}
+33) Start dates of experience (all) - {{start_dates_exp[i]}}
+34) End dates of experience (all) - {{end_dates_exp[i]}}
+35) Descriptions (all) - {{description[i]}}
+36) Skill names (all) - {{skill_names[i]}}
+37) Project titles (all) - {{project_title[i]}}
+38) Description of projects (all) - {{description_proj[i]}}
+39) Start date of projects (all) - {{start_dates_proj[i]}}
+40) End date of projects (all) - {{end_dates_proj[i]}}
+41) Course names (all) - {{course_names[i]}}
+42) Issuer of course certificates (all) - {{issuers[i]}}
+43) Issued on dates (all) - {{issues_on_dates[i]}}
+44) Paper titles (all) - {{paper_titles[i]}}
+45) Name of publications (all) - {{publications[i]}}
+46) Published dates (all) - {{published_on_dates[i]}}
+47) Honor titles (all) - {{honor_titles[i]}}
+48) Honor issuers (all) - {{honor_issuers[i]}}
+49) Honor issued dates (all) - {{honor_issued_dates[i]}}
+50) Hobbies (all) - {{hobbies[i]}}

@@ -57,18 +57,18 @@ class courses {
         // Assign the values to each element
         inputcourse.value = course;
         inputcourse.type = "text";
-        inputcourse.disabled = true;
         inputcourse.classList.add('form-control');
+        inputcourse.classList.add('course_names');
 
         inputissuer.value = issuer;
         inputissuer.type = "text";
-        inputissuer.disabled = true;
         inputissuer.classList.add('form-control');
+        inputissuer.classList.add('issuers');
 
         inputidate.value = idate;
         inputidate.type = "date";
-        inputidate.disabled = true;
         inputidate.classList.add('form-control');
+        inputidate.classList.add('issues_on_dates');
 
         // Create the respective container divs for each element
         let outercourse = document.createElement('div');
@@ -130,18 +130,18 @@ class publishes {
         // Assign the values to each element
         inputptitle.value = ptitle;
         inputptitle.type = "text";
-        inputptitle.disabled = true;
         inputptitle.classList.add('form-control');
+        inputptitle.classList.add('paper_titles');
 
         inputpublisher.value = publisher;
         inputpublisher.type = "text";
-        inputpublisher.disabled = true;
         inputpublisher.classList.add('form-control');
+        inputpublisher.classList.add('publications');
 
         inputpdate.value = pdate;
         inputpdate.type = "date";
-        inputpdate.disabled = true;
         inputpdate.classList.add('form-control');
+        inputpdate.classList.add('published_on_dates');
 
         // Create the respective container divs for each element
         let outerpublish = document.createElement('div');
@@ -204,18 +204,18 @@ class awards {
         // Assign the values to each element
         inputhtitle.value = htitle;
         inputhtitle.type = "text";
-        inputhtitle.disabled = true;
         inputhtitle.classList.add('form-control');
+        inputhtitle.classList.add('honor_titles');
 
         inputhissuer.value = hissuer;
         inputhissuer.type = "text";
-        inputhissuer.disabled = true;
         inputhissuer.classList.add('form-control');
+        inputhissuer.classList.add('honor_issuers');
 
         inputhdate.value = hdate;
         inputhdate.type = "date";
-        inputhdate.disabled = true;
         inputhdate.classList.add('form-control');
+        inputhdate.classList.add('honor_issued_dates');
 
         // Create the respective container divs for each element
         let outeraward = document.createElement('div');
@@ -276,8 +276,8 @@ class hobbies {
         // Assign the values to each element
         inputhobby.value = hobby;
         inputhobby.style.background = "#ffffff";
-        inputhobby.disabled = true;
         inputhobby.classList.add('form-control');
+        inputhobby.classList.add('hobbies');
         inputhobby.type = "text";
 
         // Create the respective container divs for each element
@@ -384,3 +384,103 @@ awardbtn.addEventListener('click', checkaward);
 
 // Add button click event for hobbies and interests
 hobbybtn.addEventListener('click', checkhobby);
+
+function get_inputs_by_classname(classname) {
+  var value = "";
+  $('.' + classname).each(function() {
+    value += $(this).val() + "~~~";
+  });
+
+  return value;
+}
+
+$("#course-save").click(function() {
+  var course_names = get_inputs_by_classname("course_names");
+  var issuers = get_inputs_by_classname("issuers");
+  var issues_on_dates = get_inputs_by_classname("issues_on_dates");
+
+  $.ajax({
+    url: "/courses",
+    type: "post",
+    data: {"course_names": course_names, "issuers": issuers, "issues_on_dates": issues_on_dates},
+    success: function(result) {
+      Swal.fire({
+        icon: result.icon,
+        title: result.title,
+        text: result.text
+      });
+    }
+  });
+});
+
+$("#publication-save").click(function() {
+  var paper_titles = get_inputs_by_classname("paper_titles");
+  var publications = get_inputs_by_classname("publications");
+  var published_on_dates = get_inputs_by_classname("published_on_dates");
+
+  $.ajax({
+    url: "/publications",
+    type: "post",
+    data: {"paper_titles": paper_titles, "publications": publications, "published_on_dates": published_on_dates},
+    success: function(result) {
+      Swal.fire({
+        icon: result.icon,
+        title: result.title,
+        text: result.text
+      });
+    }
+  });
+});
+
+$("#honor-save").click(function() {
+  var honor_titles = get_inputs_by_classname("honor_titles");
+  var honor_issuers = get_inputs_by_classname("honor_issuers");
+  var honor_issued_dates = get_inputs_by_classname("honor_issued_dates");
+
+  $.ajax({
+    url: "/honors",
+    type: "post",
+    data: {"honor_titles": honor_titles, "honor_issuers": honor_issuers, "honor_issued_dates": honor_issued_dates},
+    success: function(result) {
+      Swal.fire({
+        icon: result.icon,
+        title: result.title,
+        text: result.text
+      });
+    }
+  });
+});
+
+$("#hobby-save").click(function() {
+  var hobbies = get_inputs_by_classname("hobbies");
+
+  $.ajax({
+    url: "/hobby",
+    type: "post",
+    data: {"hobbies": hobbies},
+    success: function(result) {
+      Swal.fire({
+        icon: result.icon,
+        title: result.title,
+        text: result.text
+      });
+    }
+  });
+});
+
+$("#logout").click(function() {
+  $.ajax({
+    url: "/logout",
+    type: "get",
+    success: function(result) {
+      Swal.fire({
+        icon: result.icon,
+        title: result.title,
+        text: result.text
+      }).then(function() {
+        if(result.icon == 'success')
+          location.href = '/';
+      });
+    }
+  });
+});

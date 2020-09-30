@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS File -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../static/css/templateselect.css">
+
+    <title>Template Selection</title>
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <!-- Add logo here -->
+        <header>
+            <a href="#"><img src="" alt="Logo"></a>
+            <button type="button" id="logout">Logout</button>
+        </header>
+
+        <!-- All content goes here -->
+        <div class="container">
+
+            <!-- Navigate to different pages -->
+            <div class="tabs">
+              <a href="/personal">Personal Info</a>
+              <a href="/education">Education</a>
+              <a href="/experience">Experience</a>
+              <a href="/skills">Skills</a>
+              <a href="/projects">Projects</a>
+              <a href="/additional">Additional Info</a>
+              <a href="/templateselect" class="active">Templates</a>
+            </div>
+
+            <h1>SELECT A TEMPLATE</h1>
+
+            <div class="list-wrapper">
+
+                {% for i in range(templates|length) %}
+                  <div class="list-item">
+                      <div class="content">
+                          <input type="radio" name="template" id="{{ids[i]}}" class="input-hidden">
+                          <label for="{{ids[i]}}">
+                            <img src="{{templates[i]}}" alt="{{names[i]}}" style="height: 400px; width: 320px;">
+                          </label>
+                          <div class="text">
+                              <h4>{{names[i]}}</h4>
+                          </div>
+                      </div>
+                  </div>
+                {% endfor %}
+
+            </div>
+
+            <div id="pagination-container"></div>
+
+            <!-- Select Resume -->
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="generate-resume">Generate Resume</button>
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Made with <i class="fa fa-heart pulse"></i> by Developers of Documentive</p>
+        </footer>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.min.js"></script>
+
+    <!-- Sweet Alert 2 -->
+    <script src="../static/js/sweetalert.min.js"></script>
+
+    <script src="../static/js/templateselect.js"></script>
+
+    <script>
+
+        var items = $('.list-wrapper .list-item');
+        var numItems = items.length;
+        var perPage = 3;
+
+        items.slice(perPage).hide();
+
+        $('#pagination-container').pagination({
+            items: numItems,
+            itemsOnPage: perPage,
+            prevText: "<",
+            nextText: ">",
+            onPageClick: function(pageNumber) {
+                var showFrom = perPage * (pageNumber - 1);
+                var showTo = showFrom + perPage;
+                items.hide().slice(showFrom, showTo).show();
+            }
+        });
+
+    </script>
+
+
+</body>
+</html>

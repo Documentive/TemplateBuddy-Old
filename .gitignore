@@ -1,3 +1,6 @@
 .vscode
 .DS_Store
 __pycache__
+static/images/profile_pictures/
+static/rendered/
+local.db

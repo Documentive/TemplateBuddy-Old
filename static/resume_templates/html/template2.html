@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template2</title>
+    <link rel="stylesheet" href="template2.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>{{firstname}} {{middlename}} {{lastname}}</h1>
+            <p><i>{{headline}}</i></p>
+        </div>
+
+        <div class="personal">
+            <h3>PERSONAL DETAILS</h3><hr>
+            <table>
+                <tr>
+                    <td><i>Address</i></td>
+                    <td>{{address_1}}, {{address_2}}, {{city}}, {{country}}</td>
+                </tr>
+                <tr>
+                    <td><i>Phone</i></td>
+                    <td>{{mobile}}</td>
+                </tr>
+                <tr>
+                    <td><i>Mail</i></td>
+                    <td>{{email}}</td>
+                </tr>
+                <tr>
+                    <td><i>Github</i></td>
+                    <td>{{github}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="education">
+            <h3>EDUCATION</h3><hr>
+            {% for i in range(start_dates|length) %}
+              <div id="edu">
+                  <p id="dates">{{start_dates[i]}} - {{end_dates[i]}}</p>
+                  <h4>{{degrees[i]}}, {{fields_of_study[i]}}</h4>
+              </div>
+            {% endfor %}
+
+            {% for i in range(grades|length) %}
+              <div id="grade">
+                  <p>GPA/Percentage - {{grades[i]}}</p>
+                  <h4>{{institute_names[i]}}, {{cities[i]}}</h4>
+              </div>
+            {% endfor %}
+        </div>
+
+        <div class="workexp">
+            <h3>WORK EXPERIENCE</h3><hr>
+            {% for i in range(start_dates_exp|length) %}
+              <div id="jobdetail">
+                  <p id="dates">{{start_dates_exp[i]}} - {{end_dates_exp[i]}}</p>
+                  <h4>{{job_titles[i]}}</h4>
+              </div>
+
+              <p id="company"><i>{{companies[i]}} - {{cities_exp[i]}}, {{countries_exp[i]}}</i></p>
+              <p id="summary">{{description[i]}}</p>
+            {% endfor %}
+        </div>
+
+        <div class="skills">
+            <h3>SKILLS</h3><hr>
+            <div class="skilllist">
+                {% for i in range(skill_names|length) %}
+                  <p>{{skill_names[i]}}</p>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

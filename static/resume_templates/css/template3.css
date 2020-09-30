@@ -1,0 +1,86 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    width: 90%;
+    margin: 3% auto;
+}
+
+.header {
+    margin-top: 1.5%;
+}
+
+.header p#email, p#mobile {
+    float: right;
+    text-align: right;
+}
+
+p.title {
+    padding-bottom: 0.3rem;
+}
+
+.education {
+    margin-top: 1.5%;
+}
+
+.education ul li {
+    margin-left: 1%;
+}
+
+.education p.location, p.dates {
+    float: right;
+    text-align: right;
+}
+
+.education p.dates, p.degree {
+    padding-top: 0.3%;
+}
+
+.experience {
+    margin-top: 1.5%;
+}
+
+.experience ul li {
+    margin-left: 1%;
+}
+
+.experience p.location, p.dates {
+    float: right;
+    text-align: right;
+}
+
+.experience p.dates, p.jtitle {
+    padding-top: 0.3%;
+}
+
+.experience p.descp {
+    padding-top: 0.3%;
+    margin-left: 1%;
+    text-align: justify;
+}
+
+.project {
+    margin-top: 1.5%;
+}
+
+.project ul li {
+    margin-left: 1%;
+}
+
+.project p.descp {
+    padding-top: 0.3%;
+    margin-left: 1%;
+    text-align: justify;
+}
+
+.skills {
+    margin-top: 1.5%;
+}
+
+.skills ul li {
+    margin-left: 1%;
+}

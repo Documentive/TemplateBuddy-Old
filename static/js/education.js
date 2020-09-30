@@ -35,55 +35,46 @@ class item {
 
         // Assign the values
         inputiname.value = iname;
-        inputiname.disabled = true;
         inputiname.classList.add('form-control');
         inputiname.classList.add('institute_names');
         inputiname.type = "text";
 
         inputcity.value = city;
-        inputcity.disabled = true;
         inputcity.classList.add('form-control');
         inputcity.classList.add('cities');
         inputcity.type = "text";
 
         inputcountry.value = country;
-        inputcountry.disabled = true;
         inputcountry.classList.add('form-control');
         inputcountry.classList.add('countries');
         inputcountry.type = "text";
 
         inputdegree.value = degree;
-        inputdegree.disabled = true;
         inputdegree.classList.add('form-control');
         inputdegree.classList.add('degrees');
         inputdegree.type = "text";
 
         inputfos.value = fos;
-        inputfos.disabled = true;
         inputfos.classList.add('form-control');
         inputfos.classList.add('fields_of_study');
         inputfos.type = "text";
 
         inputsdate.value = sdate;
-        inputsdate.disabled = true;
         inputsdate.classList.add('form-control');
         inputsdate.classList.add('start_dates');
         inputsdate.type = "date";
 
         inputedate.value = edate;
-        inputedate.disabled = true;
         inputedate.classList.add('form-control');
         inputedate.classList.add('end_dates');
         inputedate.type = "date";
 
         inputselectType.value = selectType;
-        inputselectType.disabled = true;
         inputselectType.classList.add('form-control');
         inputselectType.classList.add('grade_types');
         inputselectType.type = "text";
 
         inputgradeval.value = gradeval;
-        inputgradeval.disabled = true;
         inputgradeval.classList.add('form-control');
         inputgradeval.classList.add('grades');
         inputgradeval.type = "text";
