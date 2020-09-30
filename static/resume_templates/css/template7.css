@@ -1,0 +1,85 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    width: 90%;
+    margin: 3% auto;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    color: rgb(4, 78, 139);
+}
+
+hr {
+    border: 1px rgb(4, 78, 139) solid;
+}
+
+.education {
+    margin-top: 2%;
+}
+
+.education .details {
+    margin-left: 1%;
+    margin-top: 0.8rem;
+}
+
+.details p#loc, p#dates {
+    float: right;
+    text-align: right;
+}
+
+.details p#dates, p#deg, p#jobtitle {
+    margin-top: 0.3rem;
+}
+
+.experience {
+    margin-top: 2%;
+}
+
+.experience .details {
+    margin-left: 1%;
+    margin-top: 1rem;
+}
+
+.publications {
+    margin-top: 2%;
+}
+
+ol, ul {
+    margin-left: 1.1%;
+}
+
+p#ptitle, p#proj_title {
+    margin-top: 1rem;
+}
+
+.skills {
+    margin-top: 2%;
+}
+
+#skill{
+    margin-top: 0.5rem;
+}
+
+.projects {
+    margin-top: 2%;
+}
+
+.awards {
+    margin-top: 2%;
+}
+
+#data {
+    margin-top: 0.7rem;
+}
