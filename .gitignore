@@ -1,5 +1,6 @@
 .vscode
 .DS_Store
+.venv/
 __pycache__
 static/images/profile_pictures/
 static/rendered/
