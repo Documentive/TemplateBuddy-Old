@@ -64,7 +64,7 @@ The following resources are a good place to get to know more about TemplateBuddy
 - For the template related files:
 	- if it is a HTML template, name the files as template<template_number>.html and template<template_number>.css and put them in the respective folders in TemplateBuddy/static/resume_templates i.e. html and css folder. Eg. template2.html and template2.css   
 	- if it is a LaTeX template, put the source files in a folder named as template<template_number> and put that folder in the location TemplateBuddy/static/resume_templates/tex as a zip file. Eg. template2.zip
-- If the files are not named in the above mentioned format, a comemnt would be added by the maintainers as a warning and if it is not changed in the next PR, the PR would be marked spam for not adhering to the rules.
+- If the files are not named in the above mentioned format, a comment would be added by the maintainers as a warning and if it is not changed in the next PR, the PR would be marked spam for not adhering to the rules.
 
 
 Before moving further please go through the rules in [CONTRIBUTING.md](./CONTRIBUTING.md)  
