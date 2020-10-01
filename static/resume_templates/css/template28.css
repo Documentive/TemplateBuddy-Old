@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@100;500&display=swap');
+
+body {
+    font-weight: 200 !important;
+    background: #787a7d !important;
+}
+
+.header {
+    background: #4d4d4d;
+    font-size: 50px;
+    padding: 10px;
+    font-weight: 100;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header-font {
+    font-family: 'Roboto Condensed', sans-serif;
+}

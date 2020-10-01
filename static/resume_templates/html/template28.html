@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template 28</title>
+    <link rel="stylesheet" href="../css/template28.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="shadow-lg bg-white">
+
+            <div class="header text-white text-center">
+                {{firstname}}<b>{{lastname}}</b>
+            </div>
+
+            <div class="row mt-1 p-5">
+                <div class="col-md-3">
+
+                    <div class="profile-image text-center">
+                        <img src="{{profile_picture}}" alt="{{firstname}}_{{lastname}}" height="170">
+                    </div>
+                    <br>
+
+                    <div class="contact">
+                        <h4 class="header-font">Contact</h4>
+                        <p>{{address_1}}</p>
+                        <p>{{mobile}}</p>
+                        <p>{{email}}</p>
+                    </div>
+
+                    <div class="languages">
+                        <h4 class="header-font">Languages</h4>
+                        English - advanced <br>
+                        <p></p>
+                    </div>
+
+                    <div class="interested-profile">
+                        <h4 class="header-font">Interested Profile</h4>
+                        {% for i in range(hobbies|length) %}
+                        {{hobbies[i]}} <br>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="education mt-5 mt-md-0">
+                        <h3 class="header-font"><span style="color: #71dbef;">Edu</span>cation</h3>
+                        {% for i in range(degrees|length) %}
+                        <span class="header-font">{{degrees[i]}}</span>: {{fields_of_study[i]}} -
+                        {{institute_names[i]}} ({{cities[i]}}, {{countries[i]}}), {{end_dates[i]}} <br>
+                        {% endfor %}
+                    </div>
+
+                    <div class="experience mt-3">
+                        <h3 class="header-font"><span style="color: #fb4c8a;">Exp</span>erience</h3>
+                        <div class="content ml-5">
+                            {% for i in range(start_dates_exp|length) %}
+                            <p>
+                                <div class="header-font">{{job_titles[i]}}, {{companies[i]}} ({{start_dates_exp[i]}} -
+                                    {{end_dates_exp[i]}}):</div>
+                                {{description[i]}}
+                            </p>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="research mt-3">
+                        <h3 class="header-font"><span style="color: #fe9e2f;">Res</span>earch</h3>
+                        <div class="content ml-5">
+                            {% for i in range(project_title|length) %}
+                            <div class="header-font">{{project_title[i]}} ({{start_dates_proj[i]}} -
+                                {{end_dates_proj[i]}})</div>
+                            {{description_proj[i]}}
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="skills mt-3">
+                        <h3 class="header-font"><span style="color: #b3e54c;">Ski</span>lls</h3>
+                        <div class="content ml-5 header-font">
+                            {% for i in range(skill_names|length) %}
+                            {{skill_names[i]}} <br>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="activities-and-societies mt-3">
+                        <h3 class="header-font"><span style="color: #965efe;">Hon</span>ors and Awards</h3>
+                        <div class="content ml-5 header-font">
+                            {% for i in range(honor_titles|length) %}
+                            {{honor_titles[i]}}, {{honor_issuers[i]}} ({{honor_issued_dates[i]}}) <br>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
