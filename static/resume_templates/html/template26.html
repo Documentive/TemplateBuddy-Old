@@ -1,0 +1,140 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/template26.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>{{firstname}} {{middlename}} {{lastname}}</h1>
+            <hr>
+            <p>{{address_1}}</p>
+            <p>{{address_2}}</p>
+            <p>{{mobile}}</p>
+            <p>{{email}}</p>
+            <p>{{linkedin}}</p>
+        </div>
+
+        <table>
+
+            <tr>
+                <td class="heading">TECHNOLOGY SKILLS</td>
+                <td>
+                    <ul>
+                        {% for i in range(skill_names|length) %}
+
+                            <li>{{skill_names[i]}}</li>
+
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="heading">EXPERIENCE</td>
+                <td>
+                    {% for i in range(start_dates_exp|length) %}
+                        <div>
+                            <p>Duration: {{start_dates_exp[i]}} - {{end_dates_exp[i]}}</p>
+                            <h3><span>Company: </span>{{companies[i]}}, {{cities_exp[i]}}, {{countries_exp[i]}}</h3>
+
+                        </div>
+                        <p>{{description[i]}}</p>
+                        <br>
+                    {% endfor %}
+
+                </td>
+            </tr>
+
+        
+
+            <tr>
+                <td class="heading">EDUCATION</td>
+                <td>
+                    {% for i in range(degrees|length) %}
+                        <div class="degree-heading">
+                            <p>{{degrees[i]}}({{fields_of_study[i]}})</p>
+                            <p>{{start_dates[i]}}-{{end_dates[i]}}</p>
+                        </div>
+            
+                        <p>{{institute_names[i]}}, {{cities[i]}}, {{countries[i]}} CGPA {{grades[i]}}</p>
+                        <br>
+                    {% endfor %}
+                </td>
+            </tr>
+
+            <tr>
+                <td class="heading">PROJECTS UNDERTAKEN</td>
+                <td>
+                    <ul>
+                        {% for i in range(project_title|length) %}
+                        <li>
+                            <h4>{{project_title[i]}}</h4>
+                            <p>Duration: {{start_dates_proj[i]}} - {{end_dates_proj[i]}}</p>
+                            <p>{{description_proj[i]}}</p>
+                            <br>
+                        </li>
+                        {% endfor %}    
+                    </ul>
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <td class="heading">COURSES DONE</td>
+                <td>
+                    <ul>
+                        {% for i in range(course_names|length) %}
+                          <li>{{course_names[i]}}, issued by {{issuers[i]}} on {{issues_on_dates[i]}}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="heading">PUBLICATIONS</td>
+                <td>
+                    <ul>
+                        {% for i in range(paper_titles|length) %}
+                          <li>{{paper_titles[i]}}, published by {{publications[i]}}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="heading">HONORS & AWARDS</td>
+                <td>
+                    <ul>
+                        {% for i in range(honor_titles|length) %}
+                          <li>{{honor_titles[i]}}, given by {{honor_issuers[i]}}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="heading">INTERESTS & HOBBIES</td>
+                <td>
+                    <ul>
+                        {% for i in range(hobbies|length) %}
+                          <li>{{hobbies[i]}}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="heading">SUMMARY</td>
+                <td>
+                    <p>{{summary}}</p>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</body>
+</html>
