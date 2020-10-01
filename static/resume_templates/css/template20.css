@@ -1,0 +1,29 @@
+body{
+  
+  font-size: 120%;
+  padding-left: 15%;
+  padding-right: 15%;
+  font-size: 115%;
+  
+  }
+
+  body span{
+	padding-right:15%; 
+
+  }
+  p{
+  	font-size: 120%;
+  }
+  td{
+  	font-size: 110%;
+  }
+  h1{
+  	font-size: 140%;
+  }
+  h3{
+  	font-size: 125%;
+  }
+  
+  a{
+    text-decoration: none;
+  }
