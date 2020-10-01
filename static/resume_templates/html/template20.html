@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="template20.css">
+  
+  
+  
+  
+ </head>
+
+<body>
+
+	<section id="header">
+	<h1>{{firstname}} {{middlename}} {{lastname}}</h1>
+	<p style="text-align:left;">
+		{{fields_of_study[i]}}
+	<span style="float:right;">
+        {{phone}}
+    </span>
+	</p>
+	
+	<p style="text-align:left;">
+    {{institute_names[i]}}
+    <span style="float:right;">
+        {{email}}</a>
+    </span>
+	</p>
+	
+	<p style="text-align:left;">
+    {{address_1}} {{address_2}}
+    <span style="float:right;">
+        {{home}}
+    </span>
+	</p>
+	
+	<p style="text-align:left;">
+    {{city}}, {{state}}
+    <span style="float:right;">
+       {{id}}
+    </span>
+	</p>
+	</section>
+	<br>
+	
+	<section id="Education">
+	<h3>Education {{degrees[i]}}</h3>
+	<p>&dagger; Indicates expected</p>
+	
+	<table>
+	<tr><td> {{start_dates[i]}}&ndash;{{end_dates[i]}} &dagger; </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;{{degrees[i]}}, {{fields_of_study[i]}}, {{institute_names[i]}}</td></tr>
+	</table>
+	</section>
+	<br>
+	
+	
+	<section id="Appointments">
+	<h3>Appointments</h3>
+	<table>
+		<tr><td>{{start_dates_exp[i]}}&ndash;{{end_dates_exp[i]}} </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;{{job_titles[i]}}, {{description[i]}}, {{companies[i]}}</td></tr>	
+	</table>
+	</section>
+	<br>
+	
+	<section id="Teaching">
+	<h3>Teaching</h3>
+	<table>
+	<tr><td>{{start_dates_exp[i]}} </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;{{course_names[i]}} {{description[i]}}</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{companies[i]}}</tr>	
+	</table>
+	</section>
+	<br>
+	
+	
+	<section id="teaching-assistant">
+	<h3>Teaching Assistant</h3>
+	<table>
+	<tr><td>{{start_dates_exp[i]}} </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; {{course_names[i]}} {{description[i]}}</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{companies[i]}}</tr>	
+	</table>
+	</section>
+	<br>
+	
+	
+	<section id="supervision">
+	<h3>Supervision</h3>
+	<table>
+	<tr><td>{{start_dates_exp[i]}} </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;{{description[i]}}</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{companies[i]}}</tr>
+	</table>
+	</section>
+	<br>
+	
+	
+	<section id="honours-awerds">
+	<h3>Selected Honours and Awards</h3>
+	<table>
+	<tr><td>{{honor_issued_dates[i]}} </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;{{honor_issuers[i]}}  {{honor_titles[i]}}</td></tr>
+	</table>
+	</section>
+	<br>
+	
+	
+	<section id="publications">
+	<h3>Publications</h3>
+	<p>{% for i in range(paper_titles|length) %} {{paper_titles[i]}}, {{description_proj[i]}}, published by {{publications[i]}}</p>
+	</section>
+	<br>
+	
+	
+	
+	<section id="journals">
+	<h3>Journals</h3>
+	<p>{% for i in range(paper_titles|length) %} {{paper_titles[i]}}, {{description_proj[i]}}, published by {{publications[i]}}</p>
+	</section>
+	<br>
+	
+	
+	
+	<section id="conferences">
+	<h3>Conferences</h3>
+	<p> [1]		{{publications[i]}} {{published_on_dates[i]}}. {{paper_titles[i]}} {{institute_names[i]}} {{description[i]}}
+	</section>
+	<br>
+	
+	
+	<section id="book-chapters">
+	<h3>Book Chapters</h3>
+	<p> [1]		{{publications[i]}} {{published_on_dates[i]}}. {{paper_titles[i]}} {{description[i]}}
+	</section>
+	<br>
+	
+	
+	<section id="theses">
+	<h3>Theses and dissertations</h3>
+	<p> [1]		{{publications[i]}} {{published_on_dates[i]}}. {{paper_titles[i]}} {{description[i]}}
+	</section>
+	<br>
+	
+	
+	<section id="technical-reports">
+	<h3>Technical Reports</h3>
+	<p> [1]		{{publications[i]}} {{published_on_dates[i]}}. {{paper_titles[i]}} {{description[i]}}
+	</section>
+	<br>
+	
+	
+	<section id="posters">
+	<h3>Posters</h3>
+	<p> [1]		{{publications[i]}} {{published_on_dates[i]}}. {{paper_titles[i]}} {{description[i]}}
+	</section>
+	<br>
+	
+	
+	<section id="contributed-presentations">
+	<h3>Contributed Presentations</h3>
+	<p> [1]		{{publications[i]}} {{published_on_dates[i]}}. {{paper_titles[i]}} {{description[i]}}
+	</section>
+	<br>
+	
+	
+	
+	
+	<section id="professional-activities">
+	<h3>Professional Activities</h3>
+	<ul>
+		<li>{{job_titles[i]}}, {{institute_names[i]}} {{start_dates_exp[i]}}  {{end_dates_exp[i]}}.</li>
+	</ul>
+	</section>
+	<br>
+	
+	
+	<section id="references">
+	<h3>References</h3>
+	<p>Available on request.</p>
+	</section>
+	<br>
+	
+	
+</body>
+</html>
+
+  
