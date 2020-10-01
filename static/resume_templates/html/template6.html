@@ -16,13 +16,13 @@
       <h1>
         {{firstname}} <span class="bold">{{middlename}} {{lastname}}</span>
       </h1>
-      <h3>{{gradeval}, {{fos}}, {{degree}}</h3>
+      <h3>{{grade_types[i]}}, {{fields_of_study[i]}}, {{degrees[i]}}</h3>
     </div>
 
     <div class="container">
       <div class="informations">
         <i class="fa fa-map-marker" aria-hidden="true"> </i>
-        <p class="location">{{city}}, {{country}</p>
+        <p class="location">{{cities[i]}}, {{countries[i]}}</p>
         <i class="fa fa-envelope-o" aria-hidden="true"></i>
         <p id="email">{{email}}</p>
         <i class="fa fa-home" aria-hidden="true"></i>
@@ -31,9 +31,9 @@
 
       <div class="description">
         <p class="p1">
-          {{firstname}} {{middlename}} {{lastname}} is a {{gradeval}}.
+          {{firstname}} {{middlename}} {{lastname}} is a {{grade_types[i]}}.
         </p>
-        <p class="descp">{{description}}</p>
+        <p class="descp">{{description[i]}}</p>
       </div>
 
       <div class="experience">
@@ -42,12 +42,14 @@
           <li>
             <div class="title-exp">
               <h4 class="jtitle">
-                {{jtitle}}<span class="cname">, {{cname}}, </span
-                ><span class="location">{{city}}, {{country}}</span>
+                {{job_titles[i]}}<span class="cname">, {{companies[i]}}, </span
+                ><span class="location"
+                  >{{cities_exp[i]}}, {{countries_exp[i]}}</span
+                >
               </h4>
-              <p class="dates">{{sdate}} - {{edate}}</p>
+              <p class="dates">{{start_dates_exp[i]}} - {{end_dates_exp[i]}}</p>
             </div>
-            <p class="descp">{{description}}</p>
+            <p class="descp">{{description[i]}}</p>
           </li>
         </ul>
       </div>
@@ -57,10 +59,10 @@
         <ul>
           <li>
             <div class="title-prj">
-              <h4 class="ptitle">{{ptitle}}</h4>
-              <p class="descp">, {{description}}</p>
+              <h4 class="ptitle">{{project_title[i]}}</h4>
+              <p class="descp">, {{description_proj[i]}}</p>
             </div>
-            <p class="dates">{{sdate}} - {{edate}}</p>
+            <p class="dates">{{start_dates_proj[i]}} - {{end_dates_proj[i]}}</p>
           </li>
         </ul>
       </div>
@@ -70,12 +72,20 @@
         <ul>
           <li>
             <div class="title-edu">
-              <h4 class="degree">{{degree}}</h4>
-              <p class="add-info">, {{fos}}, {{institute}}, {{country}}</p>
+              <h4 class="degree">{{degrees[i]}}</h4>
+              <p class="add-info">
+                , {{fields_of_study[i]}}, {{institute_names[i]}},
+                {{countries[i]}}
+              </p>
             </div>
-            <p class="dates">{{edate}}</p>
+            <p class="dates">{{end_dates[i]}}</p>
           </li>
         </ul>
+      </div>
+
+      <div class="publication">
+        <h2 class="title"><span>Pub</span>lication</h2>
+        <p>{{publications[i]}}</p>
       </div>
     </div>
 
