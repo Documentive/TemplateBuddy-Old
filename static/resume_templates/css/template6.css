@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Header */
+.header {
+  padding-top: 30px;
+  text-align: center;
+  background-color: #343e48;
+  color: #fff;
+}
+
+.header h1,
+.header h3 {
+  font-weight: 300;
+}
+
+.header h1 .bold {
+  font-weight: 500;
+}
+
+.header h3 {
+  margin-top: 8px;
+  padding-bottom: 20px;
+}
+
+.container {
+  margin: auto;
+  padding: 0 20px;
+  max-width: 1280px;
+  color: #343e48;
+}
+
+/* Informations */
+.informations,
+footer {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+#email,
+.informations .website {
+  color: #fe705c;
+}
+
+.informations i,
+footer i {
+  margin: 0 4px;
+}
+
+.description {
+  text-align: justify;
+  line-height: 1.5;
+}
+
+/* Experience, Projects, Education */
+.title,
+.experience ul li,
+.project ul li {
+  margin: 8px 0;
+}
+
+.title span,
+.project ul li .title-prj .ptitle {
+  color: #fe705c;
+}
+
+.experience ul,
+.project ul,
+.education ul {
+  line-height: 1.5;
+  list-style-type: none;
+}
+
+.experience ul li .title-exp {
+  display: flex;
+  justify-content: space-between;
+}
+
+.experience ul li .title-exp .jtitle span {
+  font-weight: 400;
+}
+
+.experience ul li .descp {
+  text-align: justify;
+  color: #7e7e7e;
+}
+
+.project ul li,
+.education ul li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.project ul li .title-prj,
+.education ul li .title-edu {
+  display: flex;
+}

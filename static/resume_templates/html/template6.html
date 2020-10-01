@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template 6</title>
+    <link rel="stylesheet" href="../css/template6.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>
+        {{firstname}} <span class="bold">{{middlename}} {{lastname}}</span>
+      </h1>
+      <h3>{{gradeval}, {{fos}}, {{degree}}</h3>
+    </div>
+
+    <div class="container">
+      <div class="informations">
+        <i class="fa fa-map-marker" aria-hidden="true"> </i>
+        <p class="location">{{city}}, {{country}</p>
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+        <p id="email">{{email}}</p>
+        <i class="fa fa-home" aria-hidden="true"></i>
+        <p class="website">{{website}}</p>
+      </div>
+
+      <div class="description">
+        <p class="p1">
+          {{firstname}} {{middlename}} {{lastname}} is a {{gradeval}}.
+        </p>
+        <p class="descp">{{description}}</p>
+      </div>
+
+      <div class="experience">
+        <h2 class="title"><span>Exp</span>erience</h2>
+        <ul>
+          <li>
+            <div class="title-exp">
+              <h4 class="jtitle">
+                {{jtitle}}<span class="cname">, {{cname}}, </span
+                ><span class="location">{{city}}, {{country}}</span>
+              </h4>
+              <p class="dates">{{sdate}} - {{edate}}</p>
+            </div>
+            <p class="descp">{{description}}</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <h2 class="title"><span>Pro</span>jects</h2>
+        <ul>
+          <li>
+            <div class="title-prj">
+              <h4 class="ptitle">{{ptitle}}</h4>
+              <p class="descp">, {{description}}</p>
+            </div>
+            <p class="dates">{{sdate}} - {{edate}}</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="education">
+        <h2 class="title"><span>Edu</span>cation</h2>
+        <ul>
+          <li>
+            <div class="title-edu">
+              <h4 class="degree">{{degree}}</h4>
+              <p class="add-info">, {{fos}}, {{institute}}, {{country}}</p>
+            </div>
+            <p class="dates">{{edate}}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <p class="name">{{firstname}} {{middlename}} {{lastname}}'s Resume,</p>
+      <i class="fa fa-envelope-o" aria-hidden="true"></i>
+      <p id="email">{{email}}</p>
+    </footer>
+  </body>
+</html>
