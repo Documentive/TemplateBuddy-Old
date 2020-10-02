@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="../css/template27.css">
+    </head>
+    <body>
+            <div class = "container">
+                <div class = "header">
+                    <h1>{{firstname}} {{lastname}}</h1>
+                    <p>{{mobile}} ◇ {{city}}, {{state}}</p>
+                    <a href="mailto:{{email}}"/>{{email}}</a> ◇ <a href="{{linkedin}}"/>{{linkedin}}</a> ◇ <a href="{{website}}"/>{{website}}</a>
+                </div>
+                
+                <br>
+                <div class = "content">
+
+                    <h1>OBJECTIVE</h1>
+                    <table width="100%">
+                        <tr>
+                            {{headline}}
+                        </tr>
+                    </table>
+                    <br>
+
+                    <h1>EDUCATION</h1>
+                    <table width="100%">
+                        <tr>
+                            <td class="leftContainer">
+                                <b>{{degrees[i]}}</b>, {{institute_names[i]}} <br>
+                                Relevant  Coursework: {{course_names[i]}}
+                            </td>
+                            <td class="rightContainer">
+                                {{start_dates[i]}}
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+
+                    <h1>SKILLS</h1>
+                    <table width="100%">
+                        <tr>
+                            <td class="leftContainerSmall">
+                                <b>{{skill_names[i]}}</b>
+                            </td>
+                            <td class="rightContainerSmall">
+                                A, B, C, D
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+
+                    <h1>EXPERIENCE</h1>
+                    <table width="100%">
+                        <tr>
+                            <td class="leftContainer">
+                                <b>{{job_titles[i]}}</b><br>
+                                {{companies[i]}}
+                                <ul>
+                                    <li>{{description[i]}}</li>
+                                </ul>
+                            </td>
+                            <td class="rightContainer">
+                                {{start_dates_exp[i]}} - {{end_dates_exp[i]}} <br>
+                                <i>{{cities_exp[i]}}, {{countries_exp[i]}}</i>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    
+                    <h1>PROJECTS</h1>
+                    <table width="100%">
+                        <tr>
+                            <b>{{project_title[i]}}.</b> {{description_proj[i]}}
+                        </tr>
+                    </table>
+                    <br>
+
+                </div>
+            </div>  
+    </body>  
+</html>
