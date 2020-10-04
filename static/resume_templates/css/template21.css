@@ -1,0 +1,68 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    width: 90%;
+    margin: 3% auto;
+}
+
+h1 {
+    margin-bottom: 0.3rem;
+}
+
+.header{
+    text-align:center;
+}
+
+hr{
+    margin-bottom: 2%;
+}
+
+ul{
+    margin-left:1em; 
+}
+
+.education_details {
+    margin-top: 0.5rem;
+}
+
+.education_details p#loc, p#dates {
+    float: right;
+    text-align: right;
+}
+
+.details p#loc, p#dates {
+    float: right;
+    text-align: right;
+}
+
+.section {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+span.afterDate{
+    margin-left: 0.5%;
+}
+
+/*.leftContainerSmall {
+    width:25%;
+}
+
+.midContainerSmall {
+    width:25%;
+}
+
+
+.midContainerSmall p#end_date {
+    float: left;
+    text-align: left;
+}
+
+.rightContainerClose {
+    width:50%;
+}*/
