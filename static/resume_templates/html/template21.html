@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Template 21</title>
     <link rel="stylesheet" href="../css/template21.css">
+    <link rel="stylesheet" href="../../css/font-awesome.min.css" />
 </head>
 <body>
 
@@ -13,8 +14,15 @@
         <div class="header">
             <h1>{{firstname}} {{lastname}}</h1>
             <h4>{{headline}}</h4>
-            <h4>{{address_1}}, {{city}}, {{state}}, {{zip}}</h4>
-                <h4>Email: {{email}} | Website: {{website}} | Twitter: {{twitter}}</h4>
+            <h4><em>{{address_1}}, {{city}}, {{state}}, {{zip}}</em></h4>
+                <h4>
+                	<i class="fa fa-envelope-o"></i>
+                	{{email}} | 
+                	<i class="fa fa-home"></i>
+            		{{website}} | 
+            		<i class="fa fa-twitter"></i>
+        			{{twitter}}
+        		</h4>
         </div>
     
         <div class="section">
