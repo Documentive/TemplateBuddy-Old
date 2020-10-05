@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/template-23.css">
+</head>
+<body>
+    <div id="container">
+        <div class="header">
+            <h3>{{firstname}} {{middlename}} {{lastname}}</h3>
+            <hr>
+        </div>
+        <table>
+            <tr>
+                <td class="heading">CONTACT INFORMATION</td>
+                <td>          
+                    <p><span>{{address_1}}{{address_2}}</span><span>{{mobile}}</span></p>
+                    <p><span>{{city}}{{state}}{{zip}}</span><span>{{email}}</span></p>
+                </td>
+            </tr> 
+
+            <tr>  
+                <td class="heading">EDUCATION</td>
+                <td>
+                    {% for i in range(degrees|length) %}
+                        <div class="degree-heading">
+                            <h4>{{institute_names[i]}}, {{cities[i]}}, {{countries[i]}}</h4>
+                            <p>{{degrees[i]}},{{end_dates[i]}}</p>
+                            <p>GPA: {{grades[i]}}</p>
+                        </div>
+                        
+                        <br>
+                    {% endfor %}
+                </td>
+            </tr> 
+
+            <tr>
+                <td class="heading">HONORS & AWARDS</td>
+                <td>
+                    <ul>
+                        {% for i in range(honor_titles|length) %}
+                          <li>{{honor_titles[i]}}, given by {{honor_issuers[i]}}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr> 
+
+            <tr>
+                <td class="heading">EXPERIENCE</td>
+                <td>
+                    {% for i in range(start_dates_exp|length) %}
+                        <div>
+                            {{institute_names[i]}}
+                            <p>{{job_titles[i]}} Duration: {{start_dates_exp[i]}} - {{end_dates_exp[i]}}</p>
+                            <p>{{description[i]}}</p>
+
+                        </div>
+                        <br>
+                    {% endfor %}
+
+                </td>
+            </tr>
+ 
+            
+            <tr>
+                <td class="heading">GRANTS AWARDED</td>
+                <td> 
+                    {% for i in range(honor_titles|length) %}         
+                    <h4>{{institute_names[i]}}</h4>
+                    <p><span>{{honor_titles[i]}}</span><span>{{honor_issued_dates[i]}}</span></p>
+                    {% endfor %}
+                </td>
+            </tr> 
+            <tr>
+                <td class="heading">SUMMARY</td>
+                <td>
+                    <p>{{summary}}</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
