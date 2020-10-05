@@ -1,0 +1,38 @@
+.container{
+    max-width: 60%;
+    margin: 1rem auto;
+}
+
+.header{
+    text-align: center;
+}
+
+.heading{
+    font-size: 1.4rem;
+    font-weight: bold;
+    width: 20%;
+}
+
+table{
+    border-spacing: 3.5rem;
+    width: 100%;
+
+}
+
+td{
+
+    vertical-align: top;
+    text-align: left;
+}
+
+.degree-heading{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+p,li{
+    font-size: 1.3rem;
+    letter-spacing: 1.7px;
+    word-spacing: 3px;
+}
