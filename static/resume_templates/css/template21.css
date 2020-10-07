@@ -35,11 +35,6 @@ ul{
     text-align: right;
 }
 
-.details p#loc, p#dates {
-    float: right;
-    text-align: right;
-}
-
 .section {
     margin-top: 1%;
     margin-bottom: 1%;
@@ -48,21 +43,3 @@ ul{
 span.afterDate{
     margin-left: 0.5%;
 }
-
-/*.leftContainerSmall {
-    width:25%;
-}
-
-.midContainerSmall {
-    width:25%;
-}
-
-
-.midContainerSmall p#end_date {
-    float: left;
-    text-align: left;
-}
-
-.rightContainerClose {
-    width:50%;
-}*/
