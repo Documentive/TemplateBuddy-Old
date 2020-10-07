@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template 21</title>
+    <link rel="stylesheet" href="../css/template21.css">
+    <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>{{firstname}} {{lastname}}</h1>
+            <h4>{{headline}}</h4>
+            <h4><em>{{address_1}}, {{city}}, {{state}}, {{zip}}</em></h4>
+                <h4>
+                	<i class="fa fa-envelope-o"></i>
+                	{{email}} | 
+                	<i class="fa fa-home"></i>
+            		{{website}} | 
+            		<i class="fa fa-twitter"></i>
+        			{{twitter}}
+        		</h4>
+        </div>
+    
+        <div class="section">
+            <h3 class="title">Education</h3><hr>
+            <div class="education_details">
+                <p id="loc">{{cities[i]}}, {{countries[i]}}</p>
+                <p id="uni">{{institute_names[i]}}</p>
+                <p id="dates">{{start_dates[i]}} - {end_dates[i]}}</p>
+                <p id="deg">{{degrees[i]}} {{fields_of_study[i]}}</p>
+                <p><ul><li>{{description{i}}</li></ul></p>
+            </div>
+        </div>
+    
+        <div class="section">
+            <h3 class="title">Professional Experience</h3><hr>
+            <div class="details">
+                <p>{{start_dates_exp[i]}} - {{end_dates_exp[i]}} <span class = "afterDate"><strong>{{job_titles[i]}}</strong>, {{companies[i]}}</span></p>
+            </div>
+        </div>
+    
+        <div class="section">
+            <h3 class="title">Publications</h3><hr>
+            <div class="details">
+            	<h4>PUBLISHED</h4>
+                <p><strong>{lastname}, {firstname}</strong>. {{published_on_dates[i]}}. {{paper_titles[i]}}. {{publications[i]}}</p>
+                <br>
+                <h4>IN REVIEW</h4>
+                <p>{{paper_titles[i]}}</p>
+                <br>
+                <h4>IN PREP</h4>
+                <p>{{paper_titles[i]}}</p>
+			</div>
+                
+        </div>
+
+        <div class="section">
+            <h3 class="title">Awards, Fellowships, and Grants</h3><hr>
+            <div class="details">
+                <p>{{honor_issued_dates[i]}}<span class = "afterDate"><strong>{{honor_titles[i]}}</strong>, {{honors_issuers[i]}}</span></p>
+                
+            </div>
+        </div>
+
+         <div class="section">
+            <h3 class="title">Presentations</h3><hr>
+            <div class="details">
+            	<h4>INVITED TALKS</h4>
+                <p>{{published_on_dates[i]}}. <em>{{paper_titles[i]}}</em>. {{publications[i]}}, {{cities_exp[i]}}</p>
+                <br>
+                <h4>CONTRIBUTED PRESENTATIONS</h4>
+                <p><strong>{lastname}, {firstname}</strong>. {{published_on_dates[i]}}. {{paper_titles[i]}}. {{publications[i]}}, {{cities_exp[i]}}</p>
+            </div>
+  
+        </div>
+
+         <div class="section">
+            <h3 class="title">Teaching Experience</h3><hr>
+            <div class="details">
+                <p>{{start_dates_exp[i]}}<span class = "afterDate"><strong>{{course_names[i]}}</strong>, {{job_titles[i]}}</span></p>
+            </div>
+        </div>
+
+          <div class="section">
+            <h3 class="title">Mentoring</h3><hr>
+            <div class="details">
+                <p>{{start_dates_exp[i]}} - {{end_dates_exp[i]}}<span class = "afterDate">{{job_titles[i]}}, {{insitute_names[i]}}</span></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="title">Outreach and Professional Development</h3><hr>
+            <div class="details">
+            	<h4>SERVICE AND OUTREACH</h4>
+                <p>{{start_dates_exp[i]}} - {{end_dates_exp[i]}}<span class = "afterDate"><strong>{{insitute_names[i]}}</strong>, {{job_titles[i]}}</span></p>
+                <br>
+                <h4>PEER REVIEW</h4>
+                <p>{{paper_titles[i]}}</p>
+                <br>
+                <h4>PROFESSIONAL MEMBERSHIPS</h4>
+                <p>{{intitute_names[i]}}</p>
+                <br>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
