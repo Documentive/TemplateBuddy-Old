@@ -134,7 +134,7 @@
 
 .login button,
 .signup button{
-  background: linear-gradient(to right, #50C9C3, #96DEDA);
+  background: linear-gradient(to right,#50CAF1, #96DF89);
   border: none;
   color:white;
   font-size: 12px;
