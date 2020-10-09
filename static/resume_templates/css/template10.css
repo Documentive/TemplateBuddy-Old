@@ -1,0 +1,190 @@
+body{
+	font-style: normal;
+	font-family: 'Google Sans', 'Roboto', arial, sans-serif;;
+	font-size: 120%;
+	padding-left: 5%;
+	padding-right: 5%;
+	font-size: 115%;
+}
+
+.template10-header-container {
+ text-align: center;
+}
+
+.name {
+	margin-top: 4px;
+	font-size: 3.5rem;
+}
+
+.last-name {
+	font-weight: 600;
+}
+
+.first-name {
+	color: #5D5D5D;
+	font-weight: lighter;
+}
+
+.position {
+	color: #DE4534;
+	margin-top: 4px;
+	font-size: 0.7rem;
+}
+
+.address {
+	margin-top: 4px;
+	font-size: 14px;
+	color: #9E9E9E;
+}
+
+.contact {
+	margin-top: 4px;
+	font-size: 12px;
+	color: #494949;
+}
+span > i {
+	margin-right: 2px;
+}
+
+.quote {
+	font-size: 14px;
+	color: #666666;
+	margin-top: 16px;
+}
+
+.contents-container {
+	margin-top: 48px;
+}
+
+.main-title {
+	 font-weight: 600;
+}
+
+.right > span{
+	color: #DC3522;
+}
+
+.main-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-title span > {
+  background: #fff;
+  margin: 0 15px;
+}
+
+.main-title:after {
+	margin-top: 10px;
+  background: black;
+  height: 2px;
+  flex: 1;
+  content: '';
+}
+
+.main-title.right:before {
+  background: none;
+}
+
+p {
+	margin-top: 4px;
+	font-size: 12px;
+	color: #A6A6A6;
+}
+
+.description > p {
+	margin-top: 4px;
+}
+
+.work-exp {
+	margin-top: 16px;
+}
+
+.sub-title {
+	display: flex;
+	justify-content: space-between;
+}
+
+.sub-title > .name {
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.sub-title > .contry-city {
+	color: #EA7C6F;
+	font-size: 12px;
+	font-weight: 100;
+}
+
+.sub-title > .position  {
+	font-size: 11px;
+	color: #6A6A6A;
+}
+
+.sub-title > .range {
+	font-style: italic;
+	font-size: 12px;
+	color: #A6A6A6;
+}
+
+.honors-awards {
+	margin-top: 16px;
+}
+
+.honors-awards-container {
+	margin-top: 4px;
+}
+
+.international-title {
+	font-size: 16px;
+	color: #6A6A6A;
+}
+
+.issue-detail {
+	margin-top: 4px;
+	justify-content: space-between;
+	display: flex;
+	padding-left: 16px;
+	font-size: 12px;
+}
+
+.year {
+	flex-grow: 1;
+}
+.title-award {
+	font-weight: 600;
+}
+.contry-city {
+	color: #EA7C6F;
+	font-size: 12px;
+	font-weight: 100;
+}
+
+.title-detail {
+	flex-grow: 5;
+}
+
+.presentation {
+	margin-top: 16px;
+}
+
+.writing {
+	margin-top: 16px;
+}
+
+.program-committees {
+	margin-top: 16px;
+}
+
+.education {
+	margin-top: 16px;
+}
+
+.education-contain {
+	margin-top: 4px;
+}
+
+.extracurricular-activity {
+	margin-top: 16px;
+}

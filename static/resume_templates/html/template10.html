@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Template 10</title>
+	<link rel="stylesheet" href="../css/template10.css">
+	<link rel="stylesheet" href="../../css/font-awesome.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	<div class="template10-container">
+		<div class="template10-header-container">
+			<div class="name">
+				<span class="first-name">{{firstname}}</span>
+				<span class="last-name">{{middlename}} {{lastname}}</span>
+			</div>
+			<div class="position">
+				<span>
+					{{headline}}
+				</span>
+			</div>
+			<div class="address">
+				<span>
+					{{address_1}}
+				</span>
+			</div>
+			<div class="contact">
+				<div>
+					<span><i class="fa fa-mobile"></i>{{mobile}}</span>
+					<span>|</span>
+					<span><i class="fa fa-envelope"></i>{{email}}</span>
+					<span>|</span>
+					<span><i class="fa fa-home"></i>{{website}}</span>
+					<span>|</span>
+					<span><i class="fa fa-github-square"></i>{{github}}</span>
+					<span>|</span>
+					<span><i class="fa fa-linkedin-square"></i>{{linkedin}}</span>
+				</div>
+			</div>
+			<div class="quote">
+				<span>
+				</span>
+			</div>
+		</div>
+		<div class="contents-container">
+			<div class="summary">
+				<div class="main-title">
+					<span class="right"><span>Sum</span>mary</span>
+				</div>
+				<div class="summary-content">
+					<p>
+						{{summary}}
+					</p>
+				</div>
+			</div>
+			<div class="work-exp">
+				<div class="main-title">
+					<span class="right"><span>Wor</span>k Experience</span>
+				</div>
+				{% for i in range(start_dates_exp|length) %}
+					<div class="work-exp-content">
+						<div class="sub-title">
+							<span class="name">{{companies[i]}}</span>
+							<span class="contry-city">{{cities_exp[i]}}, {{countries_exp[i]}}</span>
+						</div>
+						<div class="sub-title">
+							<span class="position">{{job_titles[i]}}</span>
+							<span class="range">{{start_dates_exp[i]}} - {{nd_dates_exp[i]}}</span>
+						</div>
+						<div class="description">
+							<p>
+								{{description[i]}
+							</p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="honors-awards">
+				<div class="main-title">
+					<span class="right"><span>Hon</span>ors & Awards</span>
+				</div>
+				<div class="honors-awards-container">
+					<div class="international">
+						{% for i in range(honor_titles|length) %}
+							<div class="issue-detail">
+								<span class="year">{{honor_issued_dates[i]}}</span>
+								<span class="title-detail">
+									<span class="title-award"></span>
+									{{honor_titles[i]}}
+								</span>
+								<span class="contry-city">{{honor_issuers[i]}}</span>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			<div class="presentation">
+				<div class="main-title">
+					<span class="right"><span>Pre</span>sentation</span>
+				</div>
+				{% for i in range(paper_titles|length) %}
+					<div>
+						<div class="sub-title">
+							<span class="name">{{paper_titles[i]}}</span>
+							<span class="contry-city">{{publications[i]}}</span>
+						</div>
+						<div class="description">
+							<p>
+								{{description_proj[i]}}
+							</p>
+						</div>
+					</div>
+				{% endfor %}
+				</div>
+			</div>
+			<div class="program-committees">
+				<div class="main-title">
+					<span class="right"><span>Pro</span>gram Committees</span>
+				</div>
+				<div class="issue-detail">
+					<span class="year">{{start_dates_exp[i]}} - {{end_dates_exp[i]}}</span>
+					<span class="title-detail">
+						<span class="title-award"></span>
+						{{job_titles[i]}}
+					</span>
+					<span class="contry-city">{{insitute_names[i]}}</span>
+				</div>
+			</div>
+			<div class="education">
+				<div class="main-title">
+					<span class="right"><span>Edu</span>cation</span>
+				</div>
+				{% for i in range(degrees|length) %}
+					<div class="education-contain">
+						<div class="sub-title">
+							<span class="name">{{degrees[i]}}({{fields_of_study[i]}})</span>
+							<span class="contry-city">{{cities[i]}}, {{countries[i]}}</span>
+						</div>
+						<div class="sub-title">
+							<span class="position">{{institute_names[i]}}</span>
+							<span class="range">{{end_dates[i]}} - {{grades[i]}}</span>
+						</div>
+						<div class="description">
+							<p></p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="extracurricular-activity">
+				<div class="main-title">
+					<span class="right"><span>Ext</span>racurricular Activity</span>
+				</div>
+				{% for i in range(project_title|length) %}
+					<div class="extracurricular-activity-contain">
+						<div class="sub-title">
+							<span class="name">{{project_title[i]}}</span>
+							<span class="contry-city">{{start_dates_proj[i]}} - {{end_dates_proj[i]}}</span>
+						</div>
+						<div class="description">
+							<p>{{description_proj[i]}}</p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
