@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: auto;
+    height: auto;
+    overflow-x: hidden;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.name-container {
+    grid-column: 1/13;
+    grid-row: 1;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 26px 0 26px 0;
+    color: #274357;
+    margin-top: 50px;
+    border-bottom: 3px solid black;
+}
+
+.name-container h2 {
+    font-size: 30px;
+}
+
+.personal-details {
+    grid-column: 1/13;
+    grid-row: 2;
+    height: 200px;
+    padding: 20px 0 20px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.left-container {
+    grid-column: 1/2;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.left-container span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.left-container div,
+.right-container div {
+    font-size: 18px;
+}
+
+.right-container {
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.right-container span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.email-label {
+    transform: translateY(-40px);
+}
+
+.email {
+    transform: translateY(-40px);
+}
+
+.header h2 {
+    margin-bottom: 30px;
+    font-size: 26px;
+    color: #274357;
+}
+
+.experiences {
+    grid-column: 1/13;
+    grid-row: 3;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.entries {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.exp-item {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr 1.4fr;
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.date-range {
+    font-weight: 700;
+}
+
+.start-date,
+.end-date {
+    text-transform: capitalize;
+}
+
+.job {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+.job-title {
+    font-weight: 700;
+}
+
+.job-description {
+    padding: 10px 0 10px 0;
+}
+
+.more-details {
+    font-size: 17px;
+}
+
+.education {
+    grid-column: 1/13;
+    grid-row: 4;
+    height: auto;
+    margin: 30px 0 30px 0;
+}
+
+.edu-item {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.edu-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+.edu-details {
+    padding: 5px 0 10px 0;
+}
+
+.skills {
+    grid-column: 1/13;
+    grid-row: 5;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.skill-items {
+    margin-bottom: 30px;
+}
+
+.skills-dt::before {
+    content: " \220E";
+    margin-right: 20px;
+}
+
+.skills-dt {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.skills-dd {
+    margin-left: 35px;
+    font-style: italic;
+    font-size: 17px;
+}
+
+.publications {
+    grid-column: 1/13;
+    grid-row: 6;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.publication-items::before {
+    content: " \220E";
+    margin-right: 20px;
+}
+
+.publication-items {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.name-of-book {
+    font-style: italic;
+}
+
+.languages {
+    grid-column: 1/13;
+    grid-row: 7;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.language-items::before {
+    content: " \220E";
+    margin-right: 20px;
+}
+
+.language-items {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.interests {
+    grid-column: 1/13;
+    grid-row: 8;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.interests-items {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.interests-items::before {
+    content: " \220E";
+    margin-right: 20px;
+}
