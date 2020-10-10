@@ -206,26 +206,9 @@ body {
     font-style: italic;
 }
 
-.languages {
-    grid-column: 1/13;
-    grid-row: 7;
-    height: auto;
-    margin-bottom: 30px;
-}
-
-.language-items::before {
-    content: " \220E";
-    margin-right: 20px;
-}
-
-.language-items {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
 .interests {
     grid-column: 1/13;
-    grid-row: 8;
+    grid-row: 7;
     height: auto;
     margin-bottom: 30px;
 }
