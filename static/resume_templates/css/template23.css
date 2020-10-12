@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lora", serif;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    width: 80%;
+    margin: 30px auto;
+}
+
+.name-container {
+    grid-column: 1/13;
+    grid-row: 1;
+    border-bottom: 1px solid #000000;
+    margin-top: 60px;
+    padding: 20px 0 20px 0;
+}
+
+.basic-details {
+    grid-column: 1/13;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    margin-top: 30px;
+}
+
+.label {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.address {
+    font-size: 20px;
+    padding: 5px;
+    font-weight: 500;
+}
+
+.other-contacts {
+    font-size: 20px;
+    padding: 4px;
+    font-weight: 500;
+}
+
+.section {
+    margin-top: 40px;
+    grid-column: 1/13;
+    display: grid;
+}
+
+.edu {
+    grid-row: 3;
+    grid-template-columns: 1fr 3.9fr;
+}
+
+.entries {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.edu-items {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.program-details {
+    display: flex;
+    flex-direction: column;
+    margin-left: 24px;
+    font-size: 20px;
+    margin-top: 6px;
+}
+
+.institute {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.awards {
+    grid-row: 4;
+    grid-template-columns: 1fr 3.9fr;
+}
+
+.awards-items {
+    font-size: 20px;
+}
+
+.exp {
+    grid-row: 5;
+    grid-template-columns: 1fr 3.9fr;
+}
+
+.exp-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.company {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.position-date {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.job-description {
+    font-size: 20px;
+    margin-left: 28px;
+    padding: 6px;
+}
+
+.presentations {
+    grid-row: 6;
+    grid-template-columns: 1fr 3.9fr;
+}
+
+.presentations-items {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.paper-title {
+    font-style: italic;
+}
