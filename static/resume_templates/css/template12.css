@@ -1,0 +1,59 @@
+.container {
+  margin: 100px;
+}
+
+.color {
+  color: purple;
+}
+
+.image {
+  position: absolute;
+  right: 150px;
+  width: 200px;
+  height: 120px;
+  /* border: 3px solid green; */
+}
+
+.answer {
+  position: absolute;
+  right: 100px;
+}
+
+.partition {
+  display: flex;
+}
+
+.part {
+  flex: 50%;
+}
+
+.line {
+  width: 90%;
+}
+
+.edu {
+  position: absolute;
+  right: 150px;
+}
+
+.expcol {
+  float: left;
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
+}
+
+.exp {
+    border-right: 1px solid black;
+    height: 50px;
+}
+
+.ss{
+    border: 1px solid black;
+    border-radius: 25px;
+}
