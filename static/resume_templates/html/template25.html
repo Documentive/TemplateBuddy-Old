@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template25</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/template25.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<div class="template container p-4">
+    <!--------HEADER Part--------------->
+    <div class="header">
+        <div class="row mt-4 p-2">
+            <div class="col-md-9">
+                <h1 class="name">{{firstname}} {{lastname}}</h1>
+                <div class="social-media">
+                    <a href="mailto:{{email}}"><i class="fa fa-at" aria-hidden="true"></i>
+                        {{email}} </i>
+                    </a>
+                    <a href=""><i class="fa fa-phone" aria-hidden="true"></i>{{mobile}}
+                    </a>
+                    <a href=""><i class="fa fa-envelope" aria-hidden="true"></i>{{address_1}}
+                    </a>
+                    <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i>{{address_2}}
+                    </a>
+                    <a href=""><i class="fa fa-linkedin" aria-hidden="true"></i>{{linkedin}}
+                    </a>
+                    </div>
+            </div>
+            <div class="col-md-3">
+                <div class="pic"><img src="{{pic}}"/></div>
+            </div>
+
+        </div>
+    </div>
+    <!----------MAIN PAGE--------->
+<div class="main mt-2 pt-2">
+<div class="row ">
+    <!---------LEFT COLUMN---------------------------------->
+    <div class="col-md-7 left">
+        <!------------EXPERIENCE--------------------------->
+        <div class="card-box p-2 exp">
+            <h2 class="head">EXPERIENCE</h2>
+            {% for i in range(start_dates_exp|length) %}
+
+            <div class="content mt-2 p-2 ">
+                <h3 class="subhead1">{{job_titles[i]}}</h3>
+                <h5 class="subhead2">{{companies[i]}}</h5>
+                <div class="row blue">
+                <div class="col-md-6 date"><i class="fa fa-calendar mr-3"></i>{{start_dates_exp[i]}} - {{end_dates_exp[i]}}</div>
+                <div class="col-md-6 place"><i class="fa fa-map-marker mr-3"></i>{{cities_exp[i]}}, {{countries_exp[i]}}</div>
+</div>
+                <div class="para blue">
+                    <li>{{description[i]}}
+                        </li>
+                    </div>
+            </div>
+            {% endfor %}
+
+         
+        </div>
+
+
+        <!---------------------------PROJECT----------------------------->
+        <div class="card-box p-2 project">
+            <h2 class="head">PROJECTS</h2>
+            {% for i in range(project_title|length) %}
+
+            <div class="content mt-2 p-2 ">
+                <h3 class="subhead1">{{project_title[i]}}
+                    </h3>
+                <h5 class="subhead2">{{cities[i]}}</h5>
+                <div class="row blue">
+                <div class="col-md-6 date"><i class="fa fa-calendar mr-3"></i>{{start_dates_proj[i]}} - {{end_dates_proj[i]}}</div>
+                <div class="col-md-6 place"><i class="fa fa-map-marker mr-3"></i>{{cities_proj[i]}}, {{countries_proj[i]}}</div>
+</div>
+                <div class="para blue">
+                    <li>
+                        {{description_proj[i]}}
+                        </li>
+                      
+                    </div>
+            </div>
+            {% endfor %}    
+        </div>
+
+
+<!--------CERTIFICATES-------------->
+
+        <div class="card-box p-2 certificate">
+            <h2 class="head">CERTIFICATES</h2>
+            {% for i in range(certificate_title|length) %}
+
+            <div class="content mt-2 p-2 ">
+                <a href="" class="subhead1">{{certificate_title[i]}}
+
+                </a>
+                <h5 class="subhead2">{{institute[i]}}
+                </h5>
+                <div class="row blue">
+                <div class="col-md-6 date"><i class="fa fa-calendar mr-3"></i>{{course_hour[i]}}</div>
+                <div class="col-md-6 place"><i class="fa fa-map-marker mr-3"></i>{{cities_certi[i]}}, {{countries_certi[i]}}</div>
+</div>
+                
+            </div>
+{% endfor %}
+        </div>
+    </div>
+    <!-----------END OF LEFT COLUMN------>
+    <!------------RIGHT COLUMN------------------------------------------>
+
+    <div class="col-md-4 right">
+        <!-------------SOFTSKILLS--------------------->
+        <div class="card-box p-2 soft-skill">
+            <h2 class="head">SOFTSKILLS</h2>
+            {% for i in range(softskill|length) %}
+
+            <div class="content mt-2 p-2 ">
+           <h5 href="" class="blue button m-1">{{softskill[i]}}</h5>
+
+            </div>
+            {% endfor %}
+        </div>
+
+<!------------------------------STRENGTH-------------------------->
+        <div class="card-box p-2 strength">
+            <h2 class="head">STRENGTHS</h2>
+            {% for i in range(strength_title|length) %}
+
+            <div class="content mt-2 p-2 ">
+                <li class="subhead2">{{strength_title}}                </li>
+                {% for i in range(strength_name|length) %}
+
+                 <h5 href="" class="blue button m-1">{strength_name[i]}</h5>
+               {% endfor %}
+                 </div>
+                 
+                 {% endfor %}
+
+        </div>
+
+
+
+
+<!--------------------------------EDUCATION------------------------------>
+        <div class="card-box p-2 education">
+            <h2 class="head">EDUCATION</h2>
+            {% for i in range(degrees|length) %}
+
+            <div class="content mt-2 p-2 ">
+                <h3 class="subhead1">{{degrees[i]}}({{fields_of_study[i]}})
+                </h3>
+                <h5 class="subhead2">{{institute_names[i]}}, {{cities[i]}}, {{countries[i]}}
+                </h5>
+                <div class="row blue">
+                <div class="col date"><i class="fa fa-calendar mr-3"></i>{{start_dates[i]}}-{{end_dates[i]}}</div>
+</div>
+
+            </div>
+            {% endfor %}
+        </div>
+
+<!--------languages-->
+        <div class="card-box p-2 languages">
+            <h2 class="head">LANGUAGES</h2>
+            {% for i in range(lang|length) %}
+
+            <div class="content mt-2 p-2 ">
+                <div class="row">
+               <div class="col-md-6">{{lang[i]}} 
+            </div>
+               <div class="col-md-6">
+                {% for i in range(rate|length) %}
+
+  <span class="dot"></span>   
+{% endfor %}
+               </div>
+            </div>
+    
+        
+            </div>
+            {% endfor %}
+
+        </div>
+
+
+<!--------------------OTHERS---------------------->
+
+<div class="card-box p-2 others">
+    <h2 class="head">OTHERS</h2>
+    <div class="content mt-2 p-2 ">
+      <li class="blue">{{other_details}}</li>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    </div>
+    <!------------END OF RIGHT COLUMN-->
+
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

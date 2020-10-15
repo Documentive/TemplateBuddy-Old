@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(230, 230, 230) !important;
+  transform: scale(1);
+  transform-origin: 0 0;
+  zoom: 0.75;
+}
+
+.template {
+  background-color: rgb(255, 255, 255);
+  height: auto;
+}
+header .row {
+  height: 150px;
+}
+
+.pic img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  margin: auto;
+object-fit: cover;}
+.name {
+  font-size: 50px;
+  color: rgb(104, 102, 102);
+  text-transform: uppercase;
+}
+.social-media a {
+  padding-right: 5px;
+  margin: 5px;
+  text-decoration: none;
+  color: rgb(85, 85, 85);
+  font-weight: 600;
+}
+.social-media a:hover {
+  text-decoration: none;
+}
+.social-media .fa {
+  color: #000;
+  margin-right: 5px;
+}
+.head {
+  color: #000;
+  border-bottom: 4px solid #000;
+  text-transform: uppercase;
+}
+.content .subhead1 {
+  color: rgb(123, 123, 128);
+  font-size: 25px;
+  text-transform: uppercase;
+}
+.content .subhead2 {
+  font-weight: bold;
+  font-size: 18px;
+}
+.blue {
+  color: rgb(5, 124, 145);
+  font-weight: 500;
+}
+
+.date,
+.place {
+  width: 550px;
+  font-weight: 500;
+}
+.content {
+  background-color: #fff;
+  border-bottom: 2px dashed rgb(133, 137, 138);
+}
+.card-box .button {
+  border: 1px solid rgb(87, 185, 202);
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 8px;
+  display: inline-block;
+  font-family: 10px;
+}
+.button:hover {
+  text-decoration: none;
+}
+.strength .subhead2 {
+  color: rgb(123, 123, 128);
+  font-weight: 500;
+}
+.certificate a:hover {
+  text-decoration: none;
+}
+.languages .row .col-md-6 {
+  color: rgb(85, 85, 85);
+  font-weight: 600;
+  font-size: 20px;
+}
+.dot {
+    height: 20px;
+    width: 20px;
+    background-color: rgb(14, 111, 136);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .half{
+    background-color: rgb(161, 160, 160);
+
+  }
