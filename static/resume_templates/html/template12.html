@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template12</title>
+    <link rel="stylesheet" href="../css/template12.css">
+    <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="name color">
+            {{firstname}} {{middlename}} <b>{{lastname}}</b>
+        </div>
+        <div class="title color">
+            {{headline}}
+        </div>
+        <div class="social color">
+            <span class="linkedin">
+                <i class="fa fa-linkedin-square"></i> {{linkedin}}
+            </span>
+            <span class="github">
+                <i class="fa fa-github-square"></i> {{github}}
+            </span>
+        </div>
+        <div class="image">
+            {{profile_picture}}
+        </div>
+        <div class="contact">
+            <span class="mobile">
+                <i class="fa fa-mobile"></i> {{mobile}}
+            </span>
+            <span class="mail color">
+                <i class="fa fa-at"></i> {{email}}
+            </span>
+        </div>
+        <div class="address">
+            <i class="fa fa-map-marker"></i> {{address_1}} {{address_2}}
+        </div>
+        <div class="Date of Birth">
+            <i class="fa fa-info"></i> Né le 23 septembre 1982 (35 ans) à
+        </div>
+        <br>
+        <div class="row">
+            <div class="bio">
+                {{summary}}
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="Skills">
+                <span class="color"><i class="fa fa-bars"></i> Skills</span>
+                <hr>
+                <div class="row">
+                    <span>Programming Langugaes</span>
+                    <span class="answer">Java (JEE, JSE, JME, Java Card Platform)</span>
+                </div>
+                <div class="row">
+                    <span>Frameworks</span>
+                    <span class="answer">Spring, Spring Boot, Ionic 3, Angular</span>
+                </div>
+                <div class="row">
+                    <span>Database</span>
+                    <span class="answer">IBM DB2, Oracle Database, Microsoft</span>
+                </div>
+                <div class="row">
+                    <span>Development Tools</span>
+                    <span class="answer">IntelliJ Idea, Eclipse, Visual Studio Code</span>
+                </div>
+                <div class="row">
+                    <span>Middleware</span>
+                    <span class="answer">JBoss EAP, Apache Tomcat, Websphere Application Server (WAS)</span>
+                </div>
+                <div class="row">
+                    <span>System</span>
+                    <span class="answer">Mac OS X, Windows Server, Windows 7, Linux Redhat, Linux Centos</span>
+                </div>
+                <div class="row">
+                    <span>other</span>
+                    <span class="answer">architecture SOA, technologies RFID, NFC et code barre 1D/2D</span>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="Header color">
+            <i class="fa fa-suitcase"></i> Experience
+        </div>
+        <hr>
+        {% for i in range(companies|length) %}
+        <div class="row exprow">
+            <div class="col expcol left">
+                <div class="exp">
+                    {{end_dates_exp[i]}}
+                </div>
+                <div class="exp">
+                    {{start_dates_exp[i]}}
+                </div>
+            </div>
+            <div class="col expcol right">
+                    <span class="job_post">&nbsp;&nbsp;  job_titles[i] </span>
+                    <span class="company_name">&nbsp;&nbsp;  companies[i] </span>
+                <div class="description">
+                    &nbsp;  {% for i in range(description|length) %}
+                    &nbsp;   {{description[i]}}
+                    &nbsp; {% endfor %}
+                </div>
+                <div class="skills">
+                    &nbsp; {% for i in range(skill_names|length) %}
+                    &nbsp; <span class="ss"> {{skill_names[i]}} </span>
+                    &nbsp; {% endfor %}
+                </div>
+            </div>
+        </div>
+        &nbsp; {% endfor %}
+        <br><br>
+        <div class="row partition">
+            <div class="col part">
+                <i class="fa fa-globe color"></i> <span class="color"> Languages</span>
+                <hr class="line">
+                <div>
+                    English
+                </div>
+                <div>
+                    French
+                </div>
+            </div>
+            <div class="col part">
+                <i class="fa fa-plus color"></i><span class="color"> Strength</span>
+                <hr>
+                <div>
+                    Passionate
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="header color">
+                <i class="fa fa-graduation-cap"></i> Education
+            </div>
+            <hr>
+            {% for i in range(degrees|length) %}
+            <div class="col">
+                <span> {{start_dates[i]}}</span>
+                <span class="edu"> {{fields_of_study[i]}} at {{institute_names[i]}}, {{cities[i]}}, {{countries[i]}}
+                </span>
+            </div>
+            { % endfor %}
+        </div>
+        <br>
+        <div class="row">
+            <div class="header color">
+                <i class="fa fa-laptop"></i> Projects
+            </div>
+            <hr>
+            {% for i in range(project|length) %}
+            <div class="title color">
+                {{project_title}}
+                <span class="edu"> <small> {{start_dates_proj[i]}} - {{end_dates_proj}}</small></span>
+            </div>
+            <div class="about">
+                {{description_proj[i]}}
+            </div>
+            {{% endfor %}}
+        </div>
+        <br>
+        <div class="References">
+            <div class="header color">
+                <i class="fa fa-quote-left"></i> References
+            </div>
+            <hr>
+            <div class="col">
+                Jon Snow
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
