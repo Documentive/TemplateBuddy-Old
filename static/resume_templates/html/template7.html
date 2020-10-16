@@ -21,63 +21,87 @@
             </div>
         </div>
     
+        {% if (cities|length) > 0 %}
         <div class="education">
             <h3 class="title">EDUCATION</h3><hr>
+            {% for i in range(cities|length) %}
             <div class="details">
                 <p id="loc">{{cities[i]}}, {{countries[i]}}</p>
                 <p id="uni">{{institute_names[i]}}</p>
                 <p id="dates">{{start_dates[i]}} - {{end_dates[i]}}</p>
                 <p id="deg">{{degrees[i]}} in {{fields_of_study[i]}}, {{grade_types[i]}}: {{grades[i]}}</p>
             </div>
+            {% endfor %}
         </div>
+        {% endif %}
     
+        {% if (cities_exp|length) > 0 %}
         <div class="experience">
             <h3 class="title">EXPERIENCE</h3><hr>
+            {% for i in range(cities_exp|length) %}
             <div class="details">
                 <p id="loc">{{cities_exp[i]}}, {{countries_exp[i]}}</p>
                 <p id="company">{{companies[i]}}</p>
                 <p id="dates">{{start_dates_exp[i]}} - {{end_dates_exp[i]}}</p>
                 <p id="jobtitle">{{job_titles[i]}}</p>
             </div>
+            {% endfor %}
         </div>
+        {% endif %}
     
+        {% if (published_on_dates|length) > 0 %}
         <div class="publications">
             <h3 class="title">PUBLICATIONS</h3><hr>
             <ol>
+                {% for i in range(published_on_dates|length) %}
                 <li class="paper">
                     <p id="dates">{{published_on_dates[i]}}</p>
                     <p id="ptitle">{{paper_titles[i]}}</p>
                 </li>
+                {% endfor %}
             </ol>
         </div>
+        {% endif %}
     
+        {% if (skill_names|length) > 0 %}
         <div class="skills">
             <h3 class="title">SKILLS</h3><hr>
             <ul>
+                {% for i in range(skill_names|length) %}
                 <li id="skill">{{skill_names[i]}}</li>
+                {% endfor %}
             </ul>
         </div>
+        {% endif %}
     
+        {% if (start_dates_proj|length) > 0 %}
         <div class="projects">
             <h3 class="title">PROJECTS</h3><hr>
             <ul>
+                {% for i in range(start_dates_proj|length) %}
                 <li class="project">
                     <p id="dates">{{start_dates_proj[i]}} - {{end_dates_proj[i]}}</p>
                     <p id="proj_title">{{project_title[i]}}</p>
                     <p id="descp">{{description_proj[i]}}</p>
                 </li>
+                {% endfor %}
             </ul>
         </div>
+        {% endif %}
     
+        {% if (honor_issued_dates|length) > 0 %}
         <div class="awards">
             <h3 class="title">HONORS AND AWARDS</h3><hr>
             <ul>
+                {% for i in range(honor_issued_dates|length) %}
                 <li id="data">
                     <p id="dates">{{honor_issued_dates[i]}}</p>
                     <p>{{honor_titles[i]}}</p>
                 </li>
+                {% endfor %}
             </ul>
         </div>
+        {% endif %}
 
     </div>
 

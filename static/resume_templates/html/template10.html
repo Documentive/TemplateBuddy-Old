@@ -56,6 +56,8 @@
 					</p>
 				</div>
 			</div>
+			
+			{% if (start_dates_proj|length) > 0 %}
 			<div class="work-exp">
 				<div class="main-title">
 					<span class="right"><span>Wor</span>k Experience</span>
@@ -78,6 +80,9 @@
 					</div>
 				{% endfor %}
 			</div>
+			{% endif %}
+
+			{% if (honor_titles|length) > 0 %}
 			<div class="honors-awards">
 				<div class="main-title">
 					<span class="right"><span>Hon</span>ors & Awards</span>
@@ -97,6 +102,9 @@
 					</div>
 				</div>
 			</div>
+			{% endif %}
+
+			{% if (paper_titles|length) > 0 %}
 			<div class="presentation">
 				<div class="main-title">
 					<span class="right"><span>Pre</span>sentation</span>
@@ -116,19 +124,9 @@
 				{% endfor %}
 				</div>
 			</div>
-			<div class="program-committees">
-				<div class="main-title">
-					<span class="right"><span>Pro</span>gram Committees</span>
-				</div>
-				<div class="issue-detail">
-					<span class="year">{{start_dates_exp[i]}} - {{end_dates_exp[i]}}</span>
-					<span class="title-detail">
-						<span class="title-award"></span>
-						{{job_titles[i]}}
-					</span>
-					<span class="contry-city">{{insitute_names[i]}}</span>
-				</div>
-			</div>
+			{% endif %}
+
+			{% if (degrees|length) > 0 %}
 			<div class="education">
 				<div class="main-title">
 					<span class="right"><span>Edu</span>cation</span>
@@ -149,6 +147,9 @@
 					</div>
 				{% endfor %}
 			</div>
+			{% endif %}
+
+			{% if (project_title|length) > 0 %}
 			<div class="extracurricular-activity">
 				<div class="main-title">
 					<span class="right"><span>Ext</span>racurricular Activity</span>
@@ -165,6 +166,7 @@
 					</div>
 				{% endfor %}
 			</div>
+			{% endif %}
 		</div>
 	</div>
 </body>

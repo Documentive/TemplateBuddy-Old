@@ -25,8 +25,10 @@
         		</h4>
         </div>
     
+        {% if (cities|length) > 0 %}
         <div class="section">
             <h3 class="title">Education</h3><hr>
+            {% for i in range(cities|length) %}
             <div class="education_details">
                 <p id="loc">{{cities[i]}}, {{countries[i]}}</p>
                 <p id="uni">{{institute_names[i]}}</p>
@@ -34,17 +36,25 @@
                 <p id="deg">{{degrees[i]}} {{fields_of_study[i]}}</p>
                 <p><ul><li>{{description{i}}</li></ul></p>
             </div>
+            {% endfor %}
         </div>
+        {% endif %}
     
+        {% if (start_dates_exp|length) > 0 %}
         <div class="section">
             <h3 class="title">Professional Experience</h3><hr>
+            {% for i in range(start_dates_exp|length) %}
             <div class="details">
                 <p>{{start_dates_exp[i]}} - {{end_dates_exp[i]}} <span class = "afterDate"><strong>{{job_titles[i]}}</strong>, {{companies[i]}}</span></p>
             </div>
+            {% endfor %}
         </div>
+        {% endif %}
     
+        {% if (published_on_dates|length) > 0 %}
         <div class="section">
             <h3 class="title">Publications</h3><hr>
+            {% for i in range(published_on_dates|length) %}
             <div class="details">
             	<h4>PUBLISHED</h4>
                 <p><strong>{lastname}, {firstname}</strong>. {{published_on_dates[i]}}. {{paper_titles[i]}}. {{publications[i]}}</p>
@@ -54,58 +64,33 @@
                 <br>
                 <h4>IN PREP</h4>
                 <p>{{paper_titles[i]}}</p>
-			</div>
+            </div>
+            {% endfor %}
                 
         </div>
+        {% endif %}
 
+        {% if (honor_issued_dates|length) > 0 %}
         <div class="section">
             <h3 class="title">Awards, Fellowships, and Grants</h3><hr>
+            {% for i in range(honor_issued_dates|length) %}
             <div class="details">
                 <p>{{honor_issued_dates[i]}}<span class = "afterDate"><strong>{{honor_titles[i]}}</strong>, {{honors_issuers[i]}}</span></p>
-                
             </div>
+            {% endfor %}
         </div>
+        {% endif %}
 
+        {% if (start_dates_exp|length) > 0 %}
          <div class="section">
-            <h3 class="title">Presentations</h3><hr>
-            <div class="details">
-            	<h4>INVITED TALKS</h4>
-                <p>{{published_on_dates[i]}}. <em>{{paper_titles[i]}}</em>. {{publications[i]}}, {{cities_exp[i]}}</p>
-                <br>
-                <h4>CONTRIBUTED PRESENTATIONS</h4>
-                <p><strong>{lastname}, {firstname}</strong>. {{published_on_dates[i]}}. {{paper_titles[i]}}. {{publications[i]}}, {{cities_exp[i]}}</p>
-            </div>
-  
-        </div>
-
-         <div class="section">
-            <h3 class="title">Teaching Experience</h3><hr>
+            <h3 class="title">Experience</h3><hr>
+            {% for i in range(start_dates_exp|length) %}
             <div class="details">
                 <p>{{start_dates_exp[i]}}<span class = "afterDate"><strong>{{course_names[i]}}</strong>, {{job_titles[i]}}</span></p>
             </div>
+            {% endfor %}
         </div>
-
-          <div class="section">
-            <h3 class="title">Mentoring</h3><hr>
-            <div class="details">
-                <p>{{start_dates_exp[i]}} - {{end_dates_exp[i]}}<span class = "afterDate">{{job_titles[i]}}, {{insitute_names[i]}}</span></p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h3 class="title">Outreach and Professional Development</h3><hr>
-            <div class="details">
-            	<h4>SERVICE AND OUTREACH</h4>
-                <p>{{start_dates_exp[i]}} - {{end_dates_exp[i]}}<span class = "afterDate"><strong>{{insitute_names[i]}}</strong>, {{job_titles[i]}}</span></p>
-                <br>
-                <h4>PEER REVIEW</h4>
-                <p>{{paper_titles[i]}}</p>
-                <br>
-                <h4>PROFESSIONAL MEMBERSHIPS</h4>
-                <p>{{intitute_names[i]}}</p>
-                <br>
-            </div>
-        </div>
+        {% endif %}
 
     </div>
 
