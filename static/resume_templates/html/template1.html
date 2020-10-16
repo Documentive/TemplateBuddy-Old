@@ -22,6 +22,7 @@
             <p>{{summary}}</p>
         </div>
 
+        {% if (degrees|length) > 0 %}
         <div class="education">
             <h3>EDUCATION</h3>
             <hr>
@@ -42,15 +43,20 @@
                 {% endfor %}
             </table>
         </div>
+        {% endif %}
 
+        {% if (skill_names|length) > 0 %}
         <div class="skills">
+
             <h3>SKILLS</h3>
             <hr>
             {% for i in range(skill_names|length) %}
               <p>{{skill_names[i]}}</p>
             {% endfor %}
         </div>
+        {% endif %}
 
+        {% if (start_dates_exp|length) > 0 %}
         <div class="experience">
 
             <h3>WORK EXPERIENCE</h3>
@@ -65,7 +71,9 @@
             {% endfor %}
 
         </div>
+        {% endif %}
 
+        {% if (project_title|length) > 0 %}
         <div class="projects">
 
             <h3>PROJECTS</h3>
@@ -77,7 +85,9 @@
             {% endfor %}
 
         </div>
+        {% endif %}
 
+        {% if (course_names|length) > 0 %}
         <div class="course">
             <h3>COURSES</h3>
             <hr>
@@ -87,7 +97,9 @@
                 {% endfor %}
             </ul>
         </div>
+        {% endif %}
 
+        {% if (paper_titles|length) > 0 %}
         <div class="publication">
             <h3>PUBLICATIONS</h3>
             <hr>
@@ -97,7 +109,9 @@
                 {% endfor %}
             </ul>
         </div>
+        {% endif %}
 
+        {% if (honor_titles|length) > 0 %}
         <div class="achievements">
             <h3>HONORS & AWARDS</h3>
             <hr>
@@ -107,7 +121,9 @@
                 {% endfor %}
             </ul>
         </div>
+        {% endif %}
 
+        {% if (hobbies|length) > 0 %}
         <div class="interests">
             <h3>INTERESTS & HOBBIES</h3>
             <hr>
@@ -117,6 +133,7 @@
                 {% endfor %}
             </ul>
         </div>
+        {% endif %}
 
         <div class="social">
             <h3>SOCIAL PROFILE</h3>

@@ -36,6 +36,7 @@
             </table>
         </div>
 
+        {% if (start_dates|length) > 0 %}
         <div class="education">
             <h3>EDUCATION</h3><hr>
             {% for i in range(start_dates|length) %}
@@ -52,7 +53,9 @@
               </div>
             {% endfor %}
         </div>
+        {% endif %}
 
+        {% if (start_dates_exp|length) > 0 %}
         <div class="workexp">
             <h3>WORK EXPERIENCE</h3><hr>
             {% for i in range(start_dates_exp|length) %}
@@ -65,7 +68,9 @@
               <p id="summary">{{description[i]}}</p>
             {% endfor %}
         </div>
+        {% endif %}
 
+        {% if (skill_names|length) > 0 %}
         <div class="skills">
             <h3>SKILLS</h3><hr>
             <div class="skilllist">
@@ -74,6 +79,7 @@
                 {% endfor %}
             </div>
         </div>
+        {% endif %}
 
     </div>
 </body>
