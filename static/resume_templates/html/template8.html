@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template8</title>
+    <link rel="stylesheet" href="../css/template8.css">
+    <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="name">
+            <h2>{{firstname}} {{middlename}} {{lastname}}, Ph.D</h2>
+        </div>
+        <div class="mail">
+            <span>
+                <i class="fa fa-envelope"></i>
+                {{mail}}
+            </span>
+            <span>
+                &nbsp; &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-twitter"></i>
+                {{twitter}}
+            </span>
+        </div>
+        <div class="picture">
+            {{profile_picture}}
+        </div>
+        <div class="website">
+            <i class="fa fa-globe"></i>
+            {{website}}
+        </div>
+        <div class="linkedin">
+            <i class="fa fa-linkedin-square"></i>
+            {{linkedin}}
+        </div>
+        <br>
+        <div class="Experience">
+            <div class="row header">
+                <h3>Employment History</h3>
+            </div>
+            <hr class="line">
+            {% for i in range(companies|length) %}
+            <div class="row">
+                <span>{{start_dates_exp[i]}} - {{end_dates_exp[i]}}</span>
+                &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-bookmark"></i> &nbsp;&nbsp;&nbsp;
+                <span><b>{{job_titles[i]}},</b>{{companies[i]}} {{cities_exp[i]}} {{countries_exp[i]}}</span>
+            </div>
+            {% endfor %}
+        </div>
+        <br>
+        <div class="education">
+            <div class="row header">
+                <h3>Education</h3>
+            </div>
+            <hr class="line">
+            {% for i in range(institute_names|length) %}
+            <div class="row">
+                <span>{{start_dates[i]}} - {{end_dates[i]}}</span>
+                &nbsp;&nbsp;&nbsp
+                <i class="fa fa-bookmark"></i> &nbsp;&nbsp;&nbsp;
+                <span><b>{{degrees[i]}}{{fields_of_study[i]}},{{institute_names}} </b>
+                    <div class="thesies">
+                        <small>Thesies title:</small>
+                    </div>
+                </span>
+            </div>
+            {% endfor %}
+        </div>
+        <br>
+        <div class="research">
+            <div class="row header">
+                <h3>Research Publications</h3>
+            </div>
+            <hr class="line">
+            <div class="row">
+                <h4> Journal Articles </h4>
+                {% for i in range(paper_titles|length) %}
+                <div>
+                    <ol>
+                        <li>
+                            {{paper_titles[i]}} {{publications[i]}} ({{published_on_dates[i]}})
+                        </li>
+                    </ol>
+                </div>
+                {% endfor %}
+                <h4> Conference Proceedings </h4>
+                <div>
+                    <ol>
+                        <li>
+                            Boon, K. M., & Lim, L. T. (2014).
+                        </li>
+                    </ol>
+                </div>
+                <h4> Books and Chapters </h4>
+                <div>
+                    <ol>
+                        <li>
+                            Belaton, B. Grid computing cluster:
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="skills">
+            <div class="row header">
+                <h3> Skills </h3>
+            </div>
+            <hr class="line">
+            <div class="row languages">
+                <span>
+                    Languages
+                </span>
+                <span class="icon1">
+                    <i class="fa fa-bookmark"></i>
+                    &nbsp;&nbsp;&nbsp;
+                    Strong reading, writing and speaking competencies for English, Mandarin Chinese, Bahasa
+                    Malaysia.
+                </span>
+            </div>
+            <div class="row Coding">
+                <span>
+                    Coding
+                </span>
+                <span class="icon2">
+                    <i class="fa fa-bookmark"></i>
+                    &nbsp;&nbsp;&nbsp;
+                    Java, php, Python, R, sql, xml/xsl, LATEX, . .
+                </span>
+            </div>
+            <div class="row Databases">
+                <span>
+                    Databases
+                </span>
+                <span class="icon3">
+                    <i class="fa fa-bookmark"></i>
+                    &nbsp;&nbsp;&nbsp;
+                    Mysql, Postgresql, hsql, sqlite, LotusNotes.
+                </span>
+            </div>
+            <div class="row Web Dev">
+                <span>
+                    Web Dev
+                </span>
+                <span class="icon4">
+                    <i class="fa fa-bookmark"></i>
+                    &nbsp;&nbsp;&nbsp;
+                    Html, css, JavaScript, Apache Web Server, Tomcat Web Server.
+                </span>
+            </div>
+            <div class="row Miscallenous">
+                <span>
+                    Misc
+                </span>
+                <span class="icon5">
+                    <i class="fa fa-bookmark"></i>
+                    &nbsp;&nbsp;&nbsp;
+                    Academic research, teaching, training, consultation, LATEX typesetting and publishing.
+                </span>
+            </div>
+        </div>
+        <br>
+        <div class="MixedExperience">
+            <div class="row header">
+                <h3>Miscallenous Experience</h3>
+            </div>
+            <hr class="line">
+            <div>
+                <h3>Awards and Achievements</h3>
+            </div>
+            {% for i in range(honor_titles|length) %}
+            <div>
+                <span>{{honor_issued_dates[i]}}</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span> <i class="fa fa-bookmark"></i>&nbsp;&nbsp;&nbsp; <b>
+                        {{honor_titles[i]}}</b> {{honor_issuers[i]}}</span>
+            </div>
+            {% endfor %}
+            <div>
+                <h3>Certification</h3>
+            </div>
+            {% for i in range(course_names|length) %}
+            <div class="certification">
+                <span>{{issues_on_dates[i]}}</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span> <i class="fa fa-bookmark"></i>&nbsp;&nbsp;&nbsp; <b>Certified
+                        {{course_names[i]}}</b> Awarded by {{issuers[i]}}</span>
+            </div>
+            {% endfor %}
+        </div>
+        <br>
+        <div class="References">
+            <div class="row header">
+                <h3> References</h3>
+            </div>
+            <hr class="line">
+            <div>
+                Available on Request
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
