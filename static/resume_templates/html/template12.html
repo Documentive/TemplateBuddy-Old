@@ -41,9 +41,6 @@
         <div class="address">
             <i class="fa fa-map-marker"></i> {{address_1}} {{address_2}}
         </div>
-        <div class="Date of Birth">
-            <i class="fa fa-info"></i> Né le 23 septembre 1982 (35 ans) à
-        </div>
         <br>
         <div class="row">
             <div class="bio">
@@ -51,41 +48,21 @@
             </div>
         </div>
         <br>
+        {% if (skill_names|length) > 0 %}
         <div class="row">
             <div class="Skills">
                 <span class="color"><i class="fa fa-bars"></i> Skills</span>
                 <hr>
                 <div class="row">
-                    <span>Programming Langugaes</span>
-                    <span class="answer">Java (JEE, JSE, JME, Java Card Platform)</span>
-                </div>
-                <div class="row">
-                    <span>Frameworks</span>
-                    <span class="answer">Spring, Spring Boot, Ionic 3, Angular</span>
-                </div>
-                <div class="row">
-                    <span>Database</span>
-                    <span class="answer">IBM DB2, Oracle Database, Microsoft</span>
-                </div>
-                <div class="row">
-                    <span>Development Tools</span>
-                    <span class="answer">IntelliJ Idea, Eclipse, Visual Studio Code</span>
-                </div>
-                <div class="row">
-                    <span>Middleware</span>
-                    <span class="answer">JBoss EAP, Apache Tomcat, Websphere Application Server (WAS)</span>
-                </div>
-                <div class="row">
-                    <span>System</span>
-                    <span class="answer">Mac OS X, Windows Server, Windows 7, Linux Redhat, Linux Centos</span>
-                </div>
-                <div class="row">
-                    <span>other</span>
-                    <span class="answer">architecture SOA, technologies RFID, NFC et code barre 1D/2D</span>
+                    {% for i in range(skill_names|length) %}
+                    <span class="answer">{{skill_names[i]}},</span>
+                    {% endfor %}
                 </div>
             </div>
         </div>
+        {% endif %}
         <br>
+        {% if (cities_exp|length) > 0 %}
         <div class="Header color">
             <i class="fa fa-suitcase"></i> Experience
         </div>
@@ -108,35 +85,12 @@
                     &nbsp;   {{description[i]}}
                     &nbsp; {% endfor %}
                 </div>
-                <div class="skills">
-                    &nbsp; {% for i in range(skill_names|length) %}
-                    &nbsp; <span class="ss"> {{skill_names[i]}} </span>
-                    &nbsp; {% endfor %}
-                </div>
             </div>
         </div>
         &nbsp; {% endfor %}
+        {% endif %}
         <br><br>
-        <div class="row partition">
-            <div class="col part">
-                <i class="fa fa-globe color"></i> <span class="color"> Languages</span>
-                <hr class="line">
-                <div>
-                    English
-                </div>
-                <div>
-                    French
-                </div>
-            </div>
-            <div class="col part">
-                <i class="fa fa-plus color"></i><span class="color"> Strength</span>
-                <hr>
-                <div>
-                    Passionate
-                </div>
-            </div>
-        </div>
-        <br>
+        {% if (degrees|length) > 0 %}
         <div class="row">
             <div class="header color">
                 <i class="fa fa-graduation-cap"></i> Education
@@ -150,7 +104,9 @@
             </div>
             { % endfor %}
         </div>
+        {% endif %}
         <br>
+        {% if (project|length) > 0 %}
         <div class="row">
             <div class="header color">
                 <i class="fa fa-laptop"></i> Projects
@@ -166,16 +122,7 @@
             </div>
             {{% endfor %}}
         </div>
-        <br>
-        <div class="References">
-            <div class="header color">
-                <i class="fa fa-quote-left"></i> References
-            </div>
-            <hr>
-            <div class="col">
-                Jon Snow
-            </div>
-        </div>
+        {% endif %}
     </div>
 </body>
 
