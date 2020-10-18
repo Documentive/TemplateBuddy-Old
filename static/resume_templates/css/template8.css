@@ -1,0 +1,74 @@
+.container {
+  margin: 100px;
+}
+
+.picture {
+  position: absolute;
+  right: 150px;
+  width: 200px;
+  height: 120px;
+}
+
+.line {
+    border: 2px solid green;
+    background-color: green;
+    margin-top: -15px;
+}
+
+.thesies {
+  margin-left: 310px;
+}
+
+ol {
+  max-width: 350px;
+  counter-reset: my-awesome-counter;
+  list-style: none;
+  padding-left: 40px;
+}
+ol li {
+  margin: 0 0 0.5rem 0;
+  counter-increment: my-awesome-counter;
+  position: relative;
+}
+ol li::before {
+    content: counter(my-awesome-counter);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    position: absolute;
+    --size: 25px;
+    left: calc(-1 * var(--size) - 10px);
+    line-height: var(--size);
+    width: var(--size);
+    height: var(--size);
+    top: 0;
+    /* transform: rotate(-10deg); */
+    background: maroon;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 1px 1px 0 #999;
+}
+
+i{
+    color: maroon;
+}
+
+.icon1{
+    padding-left: 50px;
+}
+
+.icon2{
+    padding-left: 73px;
+}
+
+.icon3{
+    padding-left: 54px;
+}
+
+.icon4{
+    padding-left: 59px;
+}
+
+.icon5{
+    padding-left: 88px;
+}
