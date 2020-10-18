@@ -16,10 +16,11 @@
       <h1>
         {{firstname}} <span class="bold">{{middlename}} {{lastname}}</span>
       </h1>
-      <h3>{{grade_types[i]}}, {{fields_of_study[i]}}, {{degrees[i]}}</h3>
+      <h3>{{headline}}</h3>
     </div>
 
     <div class="container">
+
       <div class="informations">
         <i class="fa fa-map-marker" aria-hidden="true"> </i>
         <p class="location">{{cities[i]}}, {{countries[i]}}</p>
@@ -30,15 +31,14 @@
       </div>
 
       <div class="description">
-        <p class="p1">
-          {{firstname}} {{middlename}} {{lastname}} is a {{grade_types[i]}}.
-        </p>
-        <p class="descp">{{description[i]}}</p>
+        <p class="descp">{{summary}}</p>
       </div>
 
+      {% if (cities_exp|length) > 0 %}
       <div class="experience">
         <h2 class="title"><span>Exp</span>erience</h2>
         <ul>
+          {% for i in range(cities_exp|length) %}
           <li>
             <div class="title-exp">
               <h4 class="jtitle">
@@ -51,12 +51,16 @@
             </div>
             <p class="descp">{{description[i]}}</p>
           </li>
+          {% endfor %}
         </ul>
       </div>
+      {% endif %}
 
+      {% if (start_dates_proj|length) > 0 %}
       <div class="project">
         <h2 class="title"><span>Pro</span>jects</h2>
         <ul>
+          {% for i in range(start_dates_proj|length) %}
           <li>
             <div class="title-prj">
               <h4 class="ptitle">{{project_title[i]}}</h4>
@@ -64,12 +68,16 @@
             </div>
             <p class="dates">{{start_dates_proj[i]}} - {{end_dates_proj[i]}}</p>
           </li>
+          {% endfor %}
         </ul>
       </div>
+      {% endif %}
 
+      {% if (degrees|length) > 0 %}
       <div class="education">
         <h2 class="title"><span>Edu</span>cation</h2>
         <ul>
+          {% for i in range(degrees|length) %}
           <li>
             <div class="title-edu">
               <h4 class="degree">{{degrees[i]}}</h4>
@@ -80,13 +88,20 @@
             </div>
             <p class="dates">{{end_dates[i]}}</p>
           </li>
+          {% endfor %}
         </ul>
       </div>
+      {% endif %}
 
+      {% if (paper_titles|length) > 0 %}
       <div class="publication">
         <h2 class="title"><span>Pub</span>lication</h2>
+        {% for i in range(paper_titles|length) %}
         <p>{{publications[i]}}</p>
+        {% endif %}
       </div>
+      {% endif %}
+
     </div>
 
     <footer>

@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <div class="name">
-            <h2>{{firstname}} {{middlename}} {{lastname}}, Ph.D</h2>
+            <h2>{{firstname}} {{middlename}} {{lastname}}</h2>
         </div>
         <div class="mail">
             <span>
@@ -39,12 +39,13 @@
             {{linkedin}}
         </div>
         <br>
+        {% if (cities_exp|length) > 0 %}
         <div class="Experience">
             <div class="row header">
                 <h3>Employment History</h3>
             </div>
             <hr class="line">
-            {% for i in range(companies|length) %}
+            {% for i in range(cities_exp|length) %}
             <div class="row">
                 <span>{{start_dates_exp[i]}} - {{end_dates_exp[i]}}</span>
                 &nbsp;&nbsp;&nbsp;
@@ -53,33 +54,32 @@
             </div>
             {% endfor %}
         </div>
+        {% endif %}
         <br>
+        {% if (degrees|length) > 0 %}
         <div class="education">
             <div class="row header">
                 <h3>Education</h3>
             </div>
             <hr class="line">
-            {% for i in range(institute_names|length) %}
+            {% for i in range(degrees|length) %}
             <div class="row">
                 <span>{{start_dates[i]}} - {{end_dates[i]}}</span>
                 &nbsp;&nbsp;&nbsp
                 <i class="fa fa-bookmark"></i> &nbsp;&nbsp;&nbsp;
-                <span><b>{{degrees[i]}}{{fields_of_study[i]}},{{institute_names}} </b>
-                    <div class="thesies">
-                        <small>Thesies title:</small>
-                    </div>
-                </span>
+                <span><b>{{degrees[i]}}{{fields_of_study[i]}},{{institute_names}} </b></span>
             </div>
             {% endfor %}
         </div>
+        {% endif %}
         <br>
+        {% if (paper_titles|length) > 0 %}
         <div class="research">
             <div class="row header">
                 <h3>Research Publications</h3>
             </div>
             <hr class="line">
             <div class="row">
-                <h4> Journal Articles </h4>
                 {% for i in range(paper_titles|length) %}
                 <div>
                     <ol>
@@ -88,89 +88,33 @@
                         </li>
                     </ol>
                 </div>
-                {% endfor %}
-                <h4> Conference Proceedings </h4>
-                <div>
-                    <ol>
-                        <li>
-                            Boon, K. M., & Lim, L. T. (2014).
-                        </li>
-                    </ol>
-                </div>
-                <h4> Books and Chapters </h4>
-                <div>
-                    <ol>
-                        <li>
-                            Belaton, B. Grid computing cluster:
-                        </li>
-                    </ol>
-                </div>
+                {% endfor %}                
             </div>
         </div>
+        {% endif %}
         <br>
+        {% if (skill_names|length) > 0 %}
         <div class="skills">
             <div class="row header">
                 <h3> Skills </h3>
             </div>
             <hr class="line">
-            <div class="row languages">
-                <span>
-                    Languages
-                </span>
-                <span class="icon1">
-                    <i class="fa fa-bookmark"></i>
-                    &nbsp;&nbsp;&nbsp;
-                    Strong reading, writing and speaking competencies for English, Mandarin Chinese, Bahasa
-                    Malaysia.
-                </span>
-            </div>
-            <div class="row Coding">
-                <span>
-                    Coding
-                </span>
-                <span class="icon2">
-                    <i class="fa fa-bookmark"></i>
-                    &nbsp;&nbsp;&nbsp;
-                    Java, php, Python, R, sql, xml/xsl, LATEX, . .
-                </span>
-            </div>
-            <div class="row Databases">
-                <span>
-                    Databases
-                </span>
-                <span class="icon3">
-                    <i class="fa fa-bookmark"></i>
-                    &nbsp;&nbsp;&nbsp;
-                    Mysql, Postgresql, hsql, sqlite, LotusNotes.
-                </span>
-            </div>
-            <div class="row Web Dev">
-                <span>
-                    Web Dev
-                </span>
-                <span class="icon4">
-                    <i class="fa fa-bookmark"></i>
-                    &nbsp;&nbsp;&nbsp;
-                    Html, css, JavaScript, Apache Web Server, Tomcat Web Server.
-                </span>
-            </div>
-            <div class="row Miscallenous">
-                <span>
-                    Misc
-                </span>
-                <span class="icon5">
-                    <i class="fa fa-bookmark"></i>
-                    &nbsp;&nbsp;&nbsp;
-                    Academic research, teaching, training, consultation, LATEX typesetting and publishing.
-                </span>
-            </div>
+            <span class="icon5">
+                <i class="fa fa-bookmark"></i>
+                &nbsp;&nbsp;&nbsp;
+                {% for i in range(skill_names|length) %}
+                <p>{{skill_names[i]}}</p><span>,&nbsp;</span>
+                {% endfor %}
+            </span>
         </div>
+        {% endif %}
         <br>
         <div class="MixedExperience">
             <div class="row header">
                 <h3>Miscallenous Experience</h3>
             </div>
             <hr class="line">
+            {% if (honor_titles|length) > 0 %}
             <div>
                 <h3>Awards and Achievements</h3>
             </div>
@@ -181,6 +125,8 @@
                         {{honor_titles[i]}}</b> {{honor_issuers[i]}}</span>
             </div>
             {% endfor %}
+            {% endif %}
+            {% if (course_names|length) > 0 %}
             <div>
                 <h3>Certification</h3>
             </div>
@@ -191,17 +137,10 @@
                         {{course_names[i]}}</b> Awarded by {{issuers[i]}}</span>
             </div>
             {% endfor %}
+            {% endif %}
         </div>
         <br>
-        <div class="References">
-            <div class="row header">
-                <h3> References</h3>
-            </div>
-            <hr class="line">
-            <div>
-                Available on Request
-            </div>
-        </div>
+        
     </div>
 </body>
 
