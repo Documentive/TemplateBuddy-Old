@@ -41,6 +41,7 @@
     <!---------LEFT COLUMN---------------------------------->
     <div class="col-md-7 left">
         <!------------EXPERIENCE--------------------------->
+        {% if (start_dates_exp|length) > 0 %}
         <div class="card-box p-2 exp">
             <h2 class="head">EXPERIENCE</h2>
             {% for i in range(start_dates_exp|length) %}
@@ -61,9 +62,11 @@
 
          
         </div>
+        {% endif %}
 
 
         <!---------------------------PROJECT----------------------------->
+        {% if (project_title|length) > 0 %}
         <div class="card-box p-2 project">
             <h2 class="head">PROJECTS</h2>
             {% for i in range(project_title|length) %}
@@ -85,10 +88,11 @@
             </div>
             {% endfor %}    
         </div>
+        {% endif %}
 
 
 <!--------CERTIFICATES-------------->
-
+        {% if (certificate_title|length) > 0 %}
         <div class="card-box p-2 certificate">
             <h2 class="head">CERTIFICATES</h2>
             {% for i in range(certificate_title|length) %}
@@ -107,25 +111,28 @@
             </div>
 {% endfor %}
         </div>
+        {% endif %}
     </div>
     <!-----------END OF LEFT COLUMN------>
     <!------------RIGHT COLUMN------------------------------------------>
 
     <div class="col-md-4 right">
+        {% if (skill_names|length) > 0 %}
         <!-------------SOFTSKILLS--------------------->
         <div class="card-box p-2 soft-skill">
-            <h2 class="head">SOFTSKILLS</h2>
-            {% for i in range(softskill|length) %}
+            <h2 class="head">SKILLS</h2>
+            {% for i in range(skill_names|length) %}
 
             <div class="content mt-2 p-2 ">
-           <h5 href="" class="blue button m-1">{{softskill[i]}}</h5>
+            <h5 href="" class="blue button m-1">{{skill_names[i]}}</h5>
 
             </div>
             {% endfor %}
         </div>
+        {% endif %}
 
 <!------------------------------STRENGTH-------------------------->
-        <div class="card-box p-2 strength">
+        <!-- <div class="card-box p-2 strength">
             <h2 class="head">STRENGTHS</h2>
             {% for i in range(strength_title|length) %}
 
@@ -139,11 +146,11 @@
                  
                  {% endfor %}
 
-        </div>
+        </div> -->
 
 
 
-
+        % if (degrees|length) > 0 %}
 <!--------------------------------EDUCATION------------------------------>
         <div class="card-box p-2 education">
             <h2 class="head">EDUCATION</h2>
@@ -161,9 +168,10 @@
             </div>
             {% endfor %}
         </div>
+        {% endif %}
 
 <!--------languages-->
-        <div class="card-box p-2 languages">
+        <!-- <div class="card-box p-2 languages">
             <h2 class="head">LANGUAGES</h2>
             {% for i in range(lang|length) %}
 
@@ -183,17 +191,17 @@
             </div>
             {% endfor %}
 
-        </div>
+        </div> -->
 
 
 <!--------------------OTHERS---------------------->
 
-<div class="card-box p-2 others">
+<!-- <div class="card-box p-2 others">
     <h2 class="head">OTHERS</h2>
     <div class="content mt-2 p-2 ">
       <li class="blue">{{other_details}}</li>
     </div>
-</div>
+</div> -->
 
 
 
