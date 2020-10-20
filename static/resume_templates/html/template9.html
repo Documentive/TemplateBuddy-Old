@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template9</title>
+    <link rel="stylesheet" href="../css/template9.css">
+    <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h2>{{firstname}} {{middlename}} {{lastname}}</h2>
+            <h4 class="color">{{headline}}</h4>
+            <div class="image">
+                {{profile_picture}}
+            </div>
+            <div>
+                <span>
+                    <i class="fa fa-at"></i>
+                    {{email}} &nbsp;&nbsp;&nbsp;
+                </span>
+                <span>
+                    <i class="fa fa-phone"></i>
+                    {{mobile}} &nbsp;&nbsp;&nbsp;
+                </span>
+                <span>
+                    <i class="fa fa-envelope"></i>
+                    {{address_1}} &nbsp;&nbsp;&nbsp;
+                </span>
+            </div>
+            <div>
+                <span>
+                    <i class="fa fa-map-marker"></i>
+                    {{address_2}} &nbsp;&nbsp;&nbsp;
+                </span>
+                <span>
+                    <i class="fa fa-globe"></i>
+                    {{website}} &nbsp;&nbsp;&nbsp;
+                </span>
+                <span>
+                    <i class="fa fa-twitter"></i>
+                    {{twitter}} &nbsp;&nbsp;&nbsp;
+                </span>
+                <span>
+                    <i class="fa fa-linkedin-square"></i>
+                    {{linkedin}} &nbsp;&nbsp;&nbsp;
+                </span>
+                <span>
+                    <i class="fa fa-github-square"></i>
+                    {{github}} &nbsp;&nbsp;&nbsp;
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="header">
+                    <h2>EXPERIENCE</h2>
+                    <hr class="line">
+                </div>
+                <div class="jobs">
+                    {% for i in range(job_titles|length) %}
+                    <div class="job_title">
+                        {{job_title}}
+                    </div>
+                    <div class="company color">
+                        {{companies[i]}}
+                    </div>
+                    <div class="duration">
+                        <span>
+                            <i class="fa fa-calendar"></i>
+                            {{start_dates_exp[i]}} - {{end_dates_exp[i]}}
+                        </span>
+                        <span>
+                            <i class="fa fa-map-marker"></i>
+                            {{countries_exp[i]}}
+                        </span>
+                    </div>
+                    <div class="description">
+                        <ul class="list">
+                            {% for i in range(description|length) %}
+                            <li>
+                                {{description[i]}}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <hr class="endline">
+                    {% endfor %}
+                </div>
+                <div class="header">
+                    <h2>PROJECTS</h2>
+                    <hr class="line">
+                </div>
+                <div class="projects">
+                    {% for i in range(project_title|length) %}
+                    <div class="name">
+                        {{project_title[i]}}
+                    </div>
+                    <div class="funding">
+                        <small>Funding agency/institution</small>
+                    </div>
+                    <div class="duration">
+                        <i class="fa fa-calendar"></i>
+                        {{start_dates_proj[i]}} - {{end_dates_proj[i]}}
+                    </div>
+                    <div class="details">
+                        {{description_proj[i]}}
+                    </div>
+                    <hr class="endline">
+                    {% endfor %}
+                </div>
+                <div class="header">
+                    <h2>A DAY OF MY LIFE</h2>
+                    <hr class="line">
+                </div>
+                <div class="day">
+                    <div class="pie">Pie Chart</div>
+                </div>
+                <div class="header">
+                    <h2>PUBLICATIONS</h2>
+                    <hr class="line">
+                </div>
+                <div class="publications">
+                    {% for i in range(publications|length) %}
+                    <div>
+                        <i class="fa fa-book"></i>
+                        Books
+                    </div>
+                    <ul class="list">
+                        <li>
+                            {{paper_titles}}, {{publications[i]}}, ({{published_on_dates}})
+                        </li>
+                    </ul>
+                    {% endfor %}
+                    <hr class="endline">
+                </div>
+            </div>
+            <div class="col">
+                <div class="header">
+                    <h2>MY LIFE PHILOSOPHY</h2>
+                    <hr class="line">
+                </div>
+                <div class="philospihy">
+                    <i>
+                        "{{summary}}"
+                    </i>
+                </div>
+                <div class="header">
+                    <h2>MOST PROUD OF</h2>
+                    <hr class="line">
+                </div>
+                <div class="achievement">
+                    <div>
+                        <i class="fa fa-trophy"></i>
+                        Fantastic Achievement
+                    </div>
+                    <div>
+                        <small>and some details about it</small>
+                    </div>
+                    <hr class="endline">
+                </div>
+                <div class="header">
+                    <h2>STRENGTHS</h2>
+                    <hr class="line">
+                </div>
+                <div class="strengths">
+                    {% for i in (skill_names|length) %}
+                    <span class="skills">
+                        {{skill_names}}
+                    </span>
+                    {% endfor %}
+                </div>
+                <div class="header">
+                    <h2>LANGUAGES</h2>
+                    <hr class="line">
+                </div>
+                <div class="languages">
+                    <div>
+                        English
+                        <span class="level">
+                            <i class="fa fa-circle"></i>
+                            <i class="fa fa-circle"></i>
+                            <i class="fa fa-circle"></i>
+                            <i class="fa fa-circle"></i>
+                            <i class="fa fa-circle"></i>
+                        </span>
+                    </div>
+                    <hr class="endline">
+                    <div>
+                        Spanish
+                        <span class="level">
+                            <i class="fa fa-circle"></i>
+                            <i class="fa fa-circle"></i>
+                            <i class="fa fa-circle"></i>
+                            <i class="fa fa-circle"></i>
+                            <i class="far fa-circle"></i>
+                        </span>
+                    </div>
+                    <hr class="endline">
+                    <div>
+                        German
+                        <span class="level">
+                            <i class="fa fa-circle"></i>
+                            <i class="fa fa-circle"></i>
+                            <i class="fa fa-circle"></i>
+                            <i class="far fa-circle"></i>
+                            <i class="far fa-circle"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="header">
+                    <h2>EDUCATION</h2>
+                    <hr class="line">
+                </div>
+                <div class="education">
+                    {% for i in range(institute_names|length) %}
+                    <div class="field">
+                        {{fields_of_study[i]}}
+                    </div>
+                    <div class="university">
+                        <small>{{institute_names[i]}}</small>
+                    </div>
+                    <div class="duration">
+                        <i class="fa fa-calendar"></i>
+                        {{start_dates[i]}} - {{end_dates[i]}}
+                    </div>
+                    <div class="title">
+                        <small>Thesies title</small>
+                    </div>
+                    <hr class="emdline">
+                    {% endfor %}
+                </div>
+                <div class="header">
+                    <h2>REFEREES</h2>
+                    <hr class="line">
+                </div>
+                <div class="referance">
+                    <div class="name">
+                        Prof. Alpha Beta
+                    </div>
+                    <div class="institute_name">
+                        <i class="fa fa-at"></i>
+                        Institute
+                    </div>
+                    <div class="mail">
+                        <i class="fa fa-envelope"></i>
+                        a.beta@university.edu
+                    </div>
+                    <div class="address">
+                        <div class="line1">
+                            Addess Line 1
+                        </div>
+                        <div class="line2">
+                            Address line 2
+                        </div>
+                    </div>
+                    <hr class="endline">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
