@@ -1,0 +1,59 @@
+.container {
+  margin: 100px;
+}
+
+.image {
+  position: absolute;
+  right: 150px;
+  width: 200px;
+  height: 120px;
+  /* border: 3px solid green; */
+}
+
+.col {
+  float: left;
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.endline {
+  border: 0.2px dotted grey;
+  width: 90%;
+  margin-left: 0px;
+}
+
+.list {
+  margin-left: -30px;
+  margin-top: -1px;
+}
+
+.skills {
+  border: 1px solid grey;
+  border-radius: 25px;
+}
+
+.level {
+  position: absolute;
+  right: 150px;
+  width: 100px;
+  height: 120px;
+}
+
+.color,
+i,
+small {
+  color: maroon;
+}
+
+.line {
+  border: 1px solid #e1ad01;
+  margin-top: -20px;
+  width: 90%;
+  margin-left: 0px;
+  background-color: #e1ad01;
+}
