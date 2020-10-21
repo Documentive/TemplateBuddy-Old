@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template22</title>
+    <link rel="stylesheet" href="../css/template22.css">
+    <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="picture">
+                {{profile_picture}}
+            </div>
+            <div class="name">
+                <h1>
+                    {{firstname}} {{middlename}} {{lastname}}
+                </h1>
+            </div>
+        </div>
+        <hr>
+        <div class="title">
+            <h2>{{headline}}</h2>
+        </div>
+        <div class="row">
+            <div class="summary">
+                <i>
+                    <center>"{{summary}}"</center>
+                </i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row2">
+                <div class="col2 left">
+                    <hr class="side">
+                </div>
+                <div class="col2 right">
+                    Work Experience
+                </div>
+            </div>
+            <div class="experience">
+                <div class="row2">
+                    {% for i range(companies|length) %}
+                    <div class="col2 left">
+                        {{start_dates_exp[i]}} - {{end_dates_exp[i]}}
+                    </div>
+                    <div class="col2 right">
+                        <b>{{companies[i]}}</b> {{cities_exp[i]}} {{countries_exp[i]}}
+                        <div class="job_title">
+                            <small>
+                                {{job_titles[i]}}
+                            </small>
+                        </div>
+                        {% for i range(description|length) %}
+                        <ul>
+                            <li>
+                                {{description[i]}}
+                            </li>
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <br>
+        </div>
+        <div class="row">
+            <div class="row2">
+                <div class="col2 left">
+                    <hr class="side">
+                </div>
+                <div class="col2 right">
+                    Education
+                </div>
+
+            </div>
+            <div class="education">
+                <div class="row2">
+                    {% for i range(institute_names|length) %}
+                    <div class="col2 left">
+                        {{start_dates[i]}} - {{end_dates[i]}}
+                    </div>
+                    <div class="col2 right">
+                        <b>{{degrees[i]}}</b> {{institute_names[i]}}, {{grade_types[i]}} {{grades[i]}}
+                        <small>
+                            {{fields_of_study[i]}}
+                        </small>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row2">
+                <div class="col2 left">
+                    <hr class="side">
+                </div>
+                <div class="col2 right">
+                    Publications
+                </div>
+
+            </div>
+            <div class="publications">
+                <div class="row">
+                    {% for i range(publications|length) %}
+                    <div class="col2 left">
+                        {{published_on_dates[i]}}
+                    </div>
+                    <div class="col2 right">
+                        <b>{{paper_titles[i]}}</b>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row2">
+                <div class="col2 left">
+                    <hr class="side">
+                </div>
+                <div class="col2 right">
+                    Academic Projects
+                </div>
+            </div>
+            <div class="projects">
+                <div class="row2">
+                    {% for i range(project_title|length) %}
+                    <div class="col2 left">
+                        Mtech
+                    </div>
+                    <div class="col2 right">
+                        <b>{{project_title[i]}}</b>
+                        <small>
+                            {{description_proj[i]}}
+                        </small>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row2">
+                <div class="col2 left">
+                    <hr class="side">
+                </div>
+                <div class="col2 right">
+                    Skills
+                    <div>
+                        <small class="program">
+                            Programming Languages/Frameworks
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row2">
+                <div class="col2 left">
+                    <hr class="side">
+                </div>
+                <div class="col2 right">
+                    Personal Skills
+                    <div class="row">
+                        - Efficient time Managaement
+                        - Good problem Solving Skills
+                        - Team Player
+                        - Quick Learner
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="row2">
+                <div class="col2 left">
+                    <hr class="side">
+                </div>
+                <div class="col2 right">
+                    Area Of Interest
+                    <div class="row">
+                        - Blockchain dvelopment
+                        - Web Designing
+                        - Network related works
+                        - Full Stack Development
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="row2">
+                <div class="col2 left">
+                    <hr class="side">
+                </div>
+                <div class="col2 right">
+
+                    Languages
+                    <div>
+                        <b>
+                            English
+                        </b>
+                        <span class="level"><i>Read, Write, Speak</i></span>
+                    </div>
+                    <div>
+                        <b>
+                            Malyalam
+                        </b>
+                        <span class="level"><i>(Mother Tongue) Read, Write, Speak</i></span>
+                    </div>
+                    <div>
+                        <b>
+                            Hindi
+                        </b>
+                        <span class="level"><i>Read, Write, Speak</i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row2">
+                <div class="col2 left">
+                    <hr class="side">
+                </div>
+                <div class="col2 right">
+                    Interests
+                    <div class="row">
+                        - Reading books - Writing
+                        - Philately - Numismatics
+                        - Listening to music - Internet Surfing
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="row2">
+                <div class="col2 left">
+                    <hr class="side">
+                    <div class="last">
+                        DOB -
+                    </div>
+                    <div class="last">
+                        Father -
+                    </div>
+                    <div class="last">
+                        Address -
+                    </div>
+                    <div class="last">
+                        Nationality -
+                    </div>
+                </div>
+                <div class="col2 right">
+                    Personal Details
+                    <div>
+                        8th March 1992
+                    </div>
+                    <div>
+                        XYZ
+                    </div>
+                    <div>
+                        {{address_1}} {{addess_2}}
+                    </div>
+                    <div>
+                        Indian
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="address">
+                <center>
+                    <i>
+                        {{address_1}} {{address_2}}
+                    </i>
+                </center>
+            </div>
+            <div class="details">
+                <center>
+                    <i>
+                        <span>
+                            {{mobile}}
+                        </span>
+                        <span>
+
+                            {{email}}
+                        </span>
+                    </i>
+                </center>
+            </div>
+            <div class="linkedin">
+                <span>
+                    <center>
+                        <i>
+                            {{linkedin}}
+                        </i>
+                    </center>
+                </span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
