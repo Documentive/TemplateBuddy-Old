@@ -1,0 +1,52 @@
+body{
+    font-family: poppins;
+}
+
+.container{
+    margin: 20px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+#name{
+    text-transform: uppercase;
+    font-size: 32px;
+}
+
+#info{
+    display: flex;
+    justify-content: space-between;
+    vertical-align: baseline;
+}
+
+.pp{
+    width: 125px;
+    height: 125px;
+    border-radius: 100%;
+    margin-top: 10px;
+    margin-right: 80px;
+}
+
+main{
+    
+}
+
+.left-section{
+    float: left;
+    width: 60%;
+    /* margin-right: 25px; */
+}
+
+.right-section{
+    float: right;
+    width: 35%;
+}
+
+.section_title{
+    font-size: 22px;
+    color: #333333;
+    border-bottom: 4px solid #333333;
+}
