@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template29</title>
+    <link rel="stylesheet" href="../css/template29.css">
+    <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <h1 id="name">{{firstname}} {{middlename}} {{lastname}}</h1>
+                <h3>{{headline}}</h3>
+
+                <div id="info">
+                    <p class="info"><span class="icon"><i class="fa fa-at"></i></span>{{email}}</p>
+                    <p class="info"><span class="icon"><i class="fa fa-phone"></i></span>{{mobile}}</p>
+                    <p class="info"><span class="icon"><i class="fa fa-map-marker"></i></span>{{address_1}}</p>
+                    <p class="info"><span class="icon"><i class="fa fa-linkedin"></i></span>{{linkedin}}</p>
+                </div>
+            </div>
+            <div class="image">
+                <img class="pp" href="{{profile_picture}}">
+            </div>
+        </header>
+
+        <main>
+            <div class="left-section">
+                <div class="experience">
+                    <h3 class="section_title">EXPERIENCE</h3>
+                    <div class="jobs">
+                        {% for i in range(job_titles|length) %}
+                        <div class="job_title">
+                            {{job_title}}
+                        </div>
+                        <div class="company color">
+                            {{companies[i]}}
+                        </div>
+                        <div class="duration">
+                            <span>
+                                <i class="fa fa-calendar"></i>
+                                {{start_dates_exp[i]}} - {{end_dates_exp[i]}}
+                            </span>
+                            <span>
+                                &nbsp;&nbsp;
+                                <i class="fa fa-map-marker"></i>
+                                {{countries_exp[i]}}
+                            </span>
+                        </div>
+                        <div class="description">
+                            <ul class="list">
+                                {% for i in range(description|length) %}
+                                <li>
+                                    {{description[i]}}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <br>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="study">
+                    <h3 class="section_title">STUDY</h3>
+                    <div class="education">
+                        {% for i in range(institute_names|length) %}
+                        <div class="field">
+                            {{fields_of_study[i]}}
+                        </div>
+                        <div class="university">
+                            <small>{{institute_names[i]}}</small>
+                        </div>
+                        <div class="duration">
+                            <i class="fa fa-calendar"></i>
+                            {{start_dates[i]}} - {{end_dates[i]}}
+                            &nbsp;&nbsp;
+                            <i class="fa fa-map-marker"></i>
+                            {{countries_exp[i]}}
+                        </div>
+                        <br>
+                        {% endfor %}
+                    </div>
+                    
+                </div>
+
+                <div class="courses">
+                    <h3 class="section_title">COURSES</h3>
+                    <div class="course">
+                        {% for i in range(course_names|length) %}
+                        <div class="course_name">
+                            {{course_names[i]}}
+                        </div>
+                        <div class="issuer">
+                            <small>{{issuers[i]}}</small>
+                        </div>
+                        <div class="issues_on_date">
+                            <i class="fa fa-calendar"></i>
+                            {{issues_on_dates[i]}}
+                        </div>
+                        <br>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-section">
+                <div class="recognitions">
+                    <h3 class="section_title">RECOGNITIONS</h3>
+                    <div class="honor">
+                        {% for i in range(honor_titles|length) %}
+                        <div class="honor_titles">
+                            <i class="fa fa-trophy"></i>{{honor_titles[i]}}
+                        </div>
+                        <div class="honor_issuers">
+                            <small>{{honor_issuers[i]}}</small>&nbsp;&nbsp;{{honor_issued_dates[i]}}
+                        </div>
+                        <br>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="strengths">
+                    <h3 class="section_title">SKILLS</h3>
+                    <ul>
+                        {% for i in range(skill_names|length) %}
+
+                            <li>{{skill_names[i]}}</li>
+
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="projects">
+                    <h3 class="section_title">PROJECTS</h3>
+                    <div class="project">
+                        {% for i in range(project_title|length) %}
+                        <div class="project_title">
+                            {{project_title[i]}}
+                        </div>
+                        <div class="description">
+                            <small>{{description_proj[i]}}</small>
+                        </div>
+                        <div class="duration">
+                            <i class="fa fa-calendar"></i>
+                            {{start_dates_proj[i]}} - {{end_dates_proj[i]}}
+                        </div>
+                        <br>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- <div class="references">
+                    <h3 class="section_title">REFERENCES</h3>
+                    
+                </div> -->
+            </div>
+        </main>
+    </div>
+</body>
+</html>
