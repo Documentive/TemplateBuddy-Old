@@ -1,0 +1,71 @@
+.container {
+  margin: 100px;
+}
+
+.name {
+  margin-left: 350px;
+  color: grey;
+}
+
+.title {
+  margin-left: 800px;
+  color: grey;
+}
+
+.bottom {
+  color: grey;
+}
+
+.summary {
+  margin: auto;
+  margin-left: 0px;
+  color: #009ACD;
+}
+
+.side {
+  width: 140px;
+  text-align: left;
+  margin-left: 0px;
+  border: 3px solid #009ACD;
+  background-color: #009ACD;
+}
+
+.inline{
+  display: inline-block;
+}
+
+ul {
+  margin-left: -30px;
+  margin-top: 0px;
+}
+
+.col2 {
+  float: left;
+}
+
+.left {
+  width: 20%;
+}
+
+.right {
+  right: 80%;
+}
+
+.row2:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.level {
+  position: absolute;
+  right: 150px;
+}
+
+.last{
+  margin-left: 80px;
+}
+
+.program{
+  color: #009ACD;
+}
