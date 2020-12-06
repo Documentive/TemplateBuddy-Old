@@ -220,6 +220,7 @@ footer p {
     -webkit-animation: pound .35s infinite alternate;
 }
 
+
 /*The heart beat animation*/
 @keyframes pound{
     to{
