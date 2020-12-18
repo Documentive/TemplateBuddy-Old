@@ -71,7 +71,7 @@ Before moving further please go through the rules in [CONTRIBUTING.md](./CONTRIB
 
 ## License
 
-Pygeneses is licensed under GNU GPL v3 [LICENSE](./LICENSE)
+TemplateBuddy is licensed under GNU GPL v3 [LICENSE](./LICENSE)
 
 ## The Team
 
