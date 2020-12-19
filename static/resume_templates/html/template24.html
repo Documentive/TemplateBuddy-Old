@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="template24.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;900&display=swap" rel="stylesheet">
+
+    <!--<style>
+        body{
+            font-family: Roboto, 'Segoe UI', Tahoma, sans-serif;
+        }
+        #name {
+            font-family: Roboto, 'Segoe UI', Tahoma, sans-serif;
+            font-size: 81.25%; 
+            color: var(--primary-text-color);
+            line-height: 154%;
+        }
+    </style>-->
+</head>
+
+<body>
+    
+    <div id="header">
+        <p id="name"><b>{{firstname}} {{middlename}} {{lastname}}</b></p>
+        <p id="address">{{address_1}} <br>{{address_2}}<br>{{city}}{{state}}{{zip}}
+        </p>
+        <p id="address"><i style="font-size:24px" class="fa fa-mobile-phone"><!--&#xf10b;--></i> {{mobile}} &nbsp;&nbsp;•&nbsp;&nbsp; <i style="font-size:24px" class="fa fa-mobile-phone"><!--&#xf10b;--></i> {{mobile}}<br>
+            <i class="fa fa-envelope" style="font-size:14px"></i> {{email}}
+        </p><br><br>
+        <p id="headline">{{headline}}
+        </p><br>
+    </div>
+    
+    <div id="employment">
+        <h2 style="color: steelblue"><b>Previous Employment</b><hr style="height:0%;margin-top:0%"></h2>
+        <ul style="list-style-type:circle">
+            <li>
+                <p class="subheading"><b>{{companies[i]}}</b></p><p class="cities"><b>{{cities_exp[i]}}{{state}}</b></p>
+                <p class="subheading"><i>{{job_titles[i]}}</i></p><p class="dates"><i>{{start_dates_exp[i]}}-{{end_dates_exp[i]}}</i></p>
+                <p style="color: black">{{description}}</p>
+            </li>
+            <li>
+                <p class="subheading"><b>{{companies[i]}}</b></p><p class="cities"><b>{{cities_exp[i]}}{{state}}</b></p>
+                <p class="subheading"><i>{{job_titles[i]}}</i></p><p class="dates"><i>{{start_dates_exp[i]}}-{{end_dates_exp[i]}}</i></p>
+                <p style="color: black">{{description}}</p>
+            </li>
+            <li>
+                <p class="subheading"><b>{{companies[i]}}</b></p><p class="cities"><b>{{cities_exp[i]}{{state}}</b></p>
+                <p class="subheading"><i>{{job_titles[i]}}</i></p><p class="dates"><i>{{start_dates_exp[i]}}-{{end_dates_exp[i]}}</i></p>
+                <p style="color: black">{{description}}</p>
+            </li>
+        </ul>
+    </div>
+
+
+    <div id="education">
+        <h2 style="color: steelblue"><b>Education</b><hr style="height:0%;margin-top:0%"></h2>
+        <div id="subheading1">Academic Qualifications<hr style="width:86%;float:right;border-style:dotted;"></div>
+        <ul style="list-style-type:circle">
+            <li>
+                <p class="subheading"><b>{{degrees[i]}}</b></p><p class="cities"><b>{{start_dates[i]}}-{{end_dates[i]}}</b></p>
+                <p class="subheading"><i>{{institute_names[i]}}{{cities[i]}}</i></p><p class="dates"><i>{{grades[i]}}{{grade_types[i]}}</i></p>
+            </li><br>
+            <li>
+                <p class="subheading"><b>{{degrees[i]}}</b></p><p class="cities"><b>{{start_dates[i]}}-{{end_dates[i]}}</b></p>
+                <p class="subheading"><i>{{institute_names[i]}}{{cities[i]}}</i></p><p class="dates"><i>{{grades[i]}}{{grade_types[i]}}</i></p>
+            </li><br>
+            <li>
+                <p class="subheading"><b>{{degrees[i]}}</b></p><p class="cities"><b>{{start_dates[i]}}-{{end_dates[i]}}</b></p>
+                <p class="subheading"><i>{{institute_names[i]}}{{cities[i]}}</i></p><p class="dates"><i>{{grades[i]}}{{grade_types[i]}}</i></p>
+            </li><br>
+            <li>
+                <p class="subheading"><b>{{degrees[i]}}</b></p><p class="cities"><b>{{start_dates[i]}}-{{end_dates[i]}}</b></p>
+                <p class="subheading"><i>{{institute_names[i]}}{{cities[i]}}</i></p><p class="dates"><i>{{grades[i]}}{{grade_types[i]}}</i></p>
+            </li><br>
+        </ul><br>
+        <div id="subheading1">Academic Projects<hr style="width:89%;float:right;border-style:dotted;height:0%"></div>
+        <ul style="list-style-type:circle">
+            <li>
+                <div id="subsub"><b>{{project_title[i]}} :</b><i> "{{fields_of_study[i]}}"</i><br><br>
+                    {{description_proj[i]}}</div>
+            </li><br>
+            <li>
+                <div id="subsub"><b>{{project_title[i]}} :</b><i> "{{fields_of_study[i]}}"</i><br><br>
+                {{description_proj[i]}}</div>
+            </li><br>
+            <li>
+                <div id="subsub"><b>{{project_title[i]}} :</b><i> "{{fields_of_study[i]}}"</i><br><br>
+                {{description_proj[i]}}</div>
+            </li><br>
+        </ul>
+    </div>
+
+
+    <div id="skills">
+        <h2 style="color: steelblue"><b>Technical and Personal skills</b><hr style="border-color: steelblue;height:0%;margin-top:0%"></h2>
+        <ul style="list-style-type:circle">
+            <li>
+                <div id="subsub"><b>{{skill_names[i]}} :</b> {{description[i]}}</div>
+            </li>
+            <li>
+                <div id="subsub"><b>{{skill_names[i]}} :</b> {{description[i]}}</div>
+            </li>
+            <li>
+                <div id="subsub"><b>{{skill_names[i]}} :</b> {{description[i]}}</div>
+            </li>
+            <li>
+                <div id="subsub"><b>{{skill_names[i]}} :</b> {{description[i]}}</div>
+            </li>
+        </ul>
+    </div>
+
+
+    <div id="achieve">
+        <h2 style="color: steelblue"><b>Achievements and extra-curricular activities</b><hr style="border-color: steelblue;height:0%;margin-top:0%"></h2>
+        <ul style="list-style-type:circle">
+            <li>
+                <div id="subsub">{{honor_titles[i]}}{{honor_issuers[i]}}{{honor_issued_dates[i]}}</div>
+            </li>
+            <li>
+                <div id="subsub">{{honor_titles[i]}}{{honor_issuers[i]}}{{honor_issued_dates[i]}}</div>
+            </li>
+            <li>
+                <div id="subsub">{{honor_titles[i]}}{{honor_issuers[i]}}{{honor_issued_dates[i]}}</div>
+            </li>
+            <li>
+                <div id="subsub">{{honor_titles[i]}}{{honor_issuers[i]}}{{honor_issued_dates[i]}}</div>
+            </li>
+            <li>
+                <div id="subsub">{{honor_titles[i]}}{{honor_issuers[i]}}{{honor_issued_dates[i]}}</div>
+            </li>
+            <li>
+                <div id="subsub">{{honor_titles[i]}}{{honor_issuers[i]}}{{honor_issued_dates[i]}}</div>
+            </li>
+            <li>
+                <div id="subsub">{{honor_titles[i]}}{{honor_issuers[i]}}{{honor_issued_dates[i]}}</div>
+            </li>
+        </ul>
+    </div>
+
+
+    <div id="refer">
+        <h2 style="color: steelblue"><b>References</b><hr style="border-color: steelblue;height:0%;margin-top:0%"></h2>
+        <ul style="list-style-type:circle">
+            <li>
+                <div id="subsub">{{description[i]}}</div>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>

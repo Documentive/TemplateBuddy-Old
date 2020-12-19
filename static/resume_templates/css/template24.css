@@ -1,0 +1,89 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+.{
+    margin: 0;
+    padding: 0%;
+}
+
+#header {
+    
+    text-align: center;
+    
+}
+
+#header #name {
+    color: steelblue;
+    font-weight: 500;
+    font-size: 39px;
+}
+
+#header #address {
+    color: gray;
+    font-size: 18px;
+    
+}
+
+#header #headline {
+    color: black;
+    font-size: 20px;
+    font-weight:500;
+}
+
+
+
+.subheading {
+    color: black;
+    margin-bottom: 0%;
+    margin-top: 0%;
+}
+
+#education #subheading1 {
+    color: steelblue;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+#education #subsub {
+    color: black;
+}
+
+#skills #subsub {
+    color: black;
+}
+
+#achieve #subsub {
+    color: black;
+}
+
+#refer #subsub {
+    color: black;
+}
+
+
+ul li {
+    color: steelblue;
+    margin-block-start: 1%;
+
+}
+
+.cities {
+    color: black;
+    float: right;
+    margin-bottom: 0%;
+    margin-top: 0%;
+}
+
+.dates {
+    color: black;
+    float: right;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+hr {
+    margin-top: 20px;
+    border: 1px solid steelblue;
+}
