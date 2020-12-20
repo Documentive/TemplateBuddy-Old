@@ -1,0 +1,66 @@
+.{
+    margin: 0;
+    padding: 0%;
+}
+#header
+{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+#header .details{
+    
+    font-weight: 530;
+    color:#474a4a;
+}
+#header #name{
+    font-size: 39px;
+    color: #5d5d5d;
+    font-weight: 500;
+    margin-top: 29px;
+    margin-bottom:-20px;
+}
+#lastname
+{   color:rgb(37, 37, 37) !important;
+    font-family:  'Roboto', sans-serif; 
+    font-weight: 700;    
+}
+#heading{
+    font-family: 'Roboto', sans-serif;
+    font-size:25px;
+    color:rgb(37, 37, 37);
+}
+#heading span{
+    color: #0395de;
+}
+
+ .subheading{
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #474a4a;
+    font-size: 18px;
+}
+
+.subheading2{
+    color:#5d5d5d;
+}
+ul li{
+    color: #808080;
+}
+.cities{
+    color:#0395de;
+    float: right;
+    margin: 0;
+}
+.dates{
+    color: #808080;
+    float: right;
+    margin: 0;
+}
+#footer p{
+    color:#b6b8b8;
+    font-size:15px;
+   margin:auto;
+
+}
+hr{  margin-top:20px;
+     border-top: 2px solid #808080;
+}

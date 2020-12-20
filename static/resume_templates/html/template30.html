@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="template30.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,900;1,100&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <div id="header">
+        <p id="name">{{firstname}} {{middlename}}<span id="lastname"><b>{{lastname}}</b></span></p>
+        <p class="details"><i class="fa fa-mobile-phone" style="font-size:24px"></i>{{phone}}&nbsp | &nbsp <i class="fa fa-envelope"
+                style="font-size:20px"></i> {{email}}</p>
+
+    </div>
+    
+    <div id="Objectives">
+        <h3 id="heading"><span>Obj</span>ectives<hr  style="width: 90%; float:right"></h3>
+        <p class="subheading">{{job_titles[i]}} {{fields_of_study[i]}}</p>
+        <ul class="list">
+            <li>
+                {{description[i]}}
+            </li>
+            <li>
+                {{description[i]}}
+            </li>
+        </ul>
+    </div>
+    <div id="Education">
+        <h3 id="heading"><span>Edu</span>cation <hr  style="width: 90%; float:right"> </h3>
+        <p class="subheading"> <span id="div">{{institute_names[i]}}</span>, </p>
+        <ul class="list">
+            <li>
+                {{degrees[i]}}
+                <p > {{start_dates[i]}} - {{end_dates[i]}}</p>
+            </li>
+            <li>
+                {{grade_types[i]}}
+            
+                {{grades[i]}}
+               
+            </li>
+            <li>
+                {{course_names[i]}} {{fields_of_study[i]}}
+            </li>
+            <li>
+                {{paper_titles[i]}}
+                {{publications[i]}}
+                {{published_on_dates[i]}}
+            </li>
+        </ul>
+    </div>
+    <div id="Experience">
+        <h3 id="heading"><span>Exp</span>erience <hr  style="width: 89%; float:right"></h3>
+        <p class="subheading">{{companies[i]}} </p><p  class="cities">{{cities_exp[i]}} </p>
+        <p class="subheading2">{{job_titles[i]}}</p><p  class="dates">{{start_dates_exp[i]}}-{{end_dates_exp[i]}}</p>
+        <ul class="list">
+            <li>
+                {{description[i]}}
+            </li>
+            <li>
+                {{description[i]}}
+            </li>
+            <li> {{description[i]}}
+            </li>
+        </ul>
+        <p class="subheading">{{companies[i]}} </p><p  class="cities">{{cities_exp[i]}} </p>
+        <p class="subheading2">{{job_titles[i]}}</p><p  class="dates">{{start_dates_exp[i]}}-{{end_dates_exp[i]}}</p>
+        <ul class="list">
+            <li>
+                {{description[i]}}
+            </li>
+            <li>
+                {{description[i]}}
+            </li>
+            <li> {{description[i]}}
+            </li>
+        </ul>
+        <p class="subheading">{{companies[i]}} </p><p class="cities">{{cities_exp[i]}} </p>
+        <p class="subheading2">{{job_titles[i]}}</p><p class="dates">{{start_dates_exp[i]}}-{{end_dates_exp[i]}}</p>
+        <ul class="list">
+            <li>
+                {{description[i]}}
+            </li>
+            <li>
+                {{description[i]}}
+            </li>
+            <li> {{description[i]}}
+            </li>
+        </ul>
+        <p class="subheading">{{companies[i]}} </p><p  class="cities">{{cities_exp[i]}} </p>
+        <p class="subheading2">{{job_titles[i]}}</p><p class="dates">{{start_dates_exp[i]}}-{{end_dates_exp[i]}}</p>
+        <ul class="list">
+            <li>
+                {{description[i]}}
+            </li>
+            <li>
+                {{description[i]}}
+            </li>
+            <li> {{description[i]}}
+            </li>
+        </ul>
+
+        
+
+
+    </div>
+    <div id="Services and Leadership">
+        <h3 id="heading"><span>Ser</span>vices and Leadership <hr  style="width: 77%; float:right"></h3>
+        <p class="subheading">{{companies[i]}} </p>
+        <p class="subheading2"> {{job_titles[i]}}</p>
+        <ul class="list">
+            <li>
+                {{description[i]}}
+            </li>
+            <li>
+                {{description[i]}}
+            </li>
+        </ul>
+        <p class="subheading">{{companies[i]}} </p>
+        <p class="subheading2"> {{job_titles[i]}}</p>
+        <ul class="list">
+            <li>
+                {{description[i]}}
+            </li>
+            <li>
+                {{description[i]}}
+            </li>
+        </ul>
+        <p class="subheading">{{companies[i]}} </p>
+        <p class="subheading2"> {{job_titles[i]}}</p>
+        <ul class="list">
+            <li>
+                {{description[i]}}
+            </li>
+            <li>
+                {{description[i]}}
+            </li>
+        </ul>
+    </div>
+
+    <div id="footer">
+        <p id="left"> {{date}} &nbsp;{{firstname}} {{middlename}} {{lastname}} Resume</p>
+    </div>
+
+</body>
+
+</html>
