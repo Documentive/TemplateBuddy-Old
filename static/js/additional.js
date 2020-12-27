@@ -489,18 +489,32 @@ $("#honor-save").click(function() {
   var honor_issuers = get_inputs_by_classname("honor_issuers");
   var honor_issued_dates = get_inputs_by_classname("honor_issued_dates");
 
-  $.ajax({
-    url: "/honors",
-    type: "post",
-    data: {"honor_titles": honor_titles, "honor_issuers": honor_issuers, "honor_issued_dates": honor_issued_dates},
-    success: function(result) {
-      Swal.fire({
-        icon: result.icon,
-        title: result.title,
-        text: result.text
-      });
-    }
-  });
+  var errorString = "";
+
+  errorString = validate_entry(honor_titles, "honor title", errorString);
+  errorString = validate_entry(honor_issuers, "honor issuer", errorString);
+  errorString = validate_entry(honor_issued_dates, "honor issued on", errorString);
+
+  if(errorString) {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      html: errorString
+    });
+  } else {
+    $.ajax({
+      url: "/honors",
+      type: "post",
+      data: {"honor_titles": honor_titles, "honor_issuers": honor_issuers, "honor_issued_dates": honor_issued_dates},
+      success: function(result) {
+        Swal.fire({
+          icon: result.icon,
+          title: result.title,
+          text: result.text
+        });
+      }
+    });
+  }
 });
 
 $("#hobby-save").click(function() {
