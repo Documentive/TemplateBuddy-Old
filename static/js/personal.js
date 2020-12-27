@@ -17,6 +17,11 @@ function validate_entry(field, fieldName,  errorString) {
   return errorString;
 }
 
+function validateEmail(email) {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
 $("#personal-tab-submit").click(function() {
   var firstname = get_inputs_by_classname("firstname");
   var middlename = get_inputs_by_classname("middlename");
@@ -59,6 +64,18 @@ $("#personal-tab-submit").click(function() {
   errorString = validate_entry(dribble, "dribble", errorString);
   errorString = validate_entry(summary, "summary", errorString);
   errorString = validate_entry(profile_picture, "profile picture", errorString);
+
+  if(!validateEmail(email)) {
+    errorString += "Invalid email address<br>";
+  }
+
+  if(mobile.length != 10) {
+    errorString += "Invalid mobile number, should be 10 digits long<br>";
+  }
+
+  if(zip.length != 6) {
+    errorString += "Invalid zip code, should be 6 digits long<br>";
+  }
 
   if(errorString) {
     Swal.fire({
