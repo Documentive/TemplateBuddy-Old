@@ -76,28 +76,55 @@ addButton.addEventListener('click', check);
 
 function get_inputs_by_classname(classname) {
   var value = "";
-  $('.' + classname).each(function() {
-    value += $(this).val() + "~~~";
+  var isEmpty = false;
+  $('.' + classname).each(function(idx) {
+    if($(this).val().length == 0) {
+      value = idx;
+      isEmpty = true;
+    }
+    
+    if(!isEmpty)
+      value += $(this).val() + "~~~";
   });
 
   return value;
 }
 
+function validate_entry(field, fieldName,  errorString) {
+  if(typeof(field) == "number") {
+    errorString += "Empty " + fieldName + " at entry " + (field + 1) + "<br>";
+  }
+
+  return errorString;
+}
+
 $("#skill-save").click(function() {
   var skill_names = get_inputs_by_classname("skill_names");
 
-  $.ajax({
-    url: "/skills",
-    type: "post",
-    data: {"skill_names": skill_names},
-    success: function(result) {
-      Swal.fire({
-        icon: result.icon,
-        title: result.title,
-        text: result.text
-      });
-    }
-  });
+  var errorString = "";
+
+  errorString = validate_entry(skill_names, "skill name", errorString);
+
+  if(errorString) {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      html: errorString
+    });
+  } else {
+    $.ajax({
+      url: "/skills",
+      type: "post",
+      data: {"skill_names": skill_names},
+      success: function(result) {
+        Swal.fire({
+          icon: result.icon,
+          title: result.title,
+          text: result.text
+        });
+      }
+    });
+  }
 });
 
 $("#logout").click(function() {

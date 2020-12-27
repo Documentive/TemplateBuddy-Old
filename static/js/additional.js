@@ -394,23 +394,61 @@ function get_inputs_by_classname(classname) {
   return value;
 }
 
+function get_inputs_by_classname(classname) {
+  var value = "";
+  var isEmpty = false;
+  $('.' + classname).each(function(idx) {
+    if($(this).val().length == 0) {
+      value = idx;
+      isEmpty = true;
+    }
+    
+    if(!isEmpty)
+      value += $(this).val() + "~~~";
+  });
+
+  return value;
+}
+
+function validate_entry(field, fieldName,  errorString) {
+  if(typeof(field) == "number") {
+    errorString += "Empty " + fieldName + " at entry " + (field + 1) + "<br>";
+  }
+
+  return errorString;
+}
+
 $("#course-save").click(function() {
   var course_names = get_inputs_by_classname("course_names");
   var issuers = get_inputs_by_classname("issuers");
   var issues_on_dates = get_inputs_by_classname("issues_on_dates");
 
-  $.ajax({
-    url: "/courses",
-    type: "post",
-    data: {"course_names": course_names, "issuers": issuers, "issues_on_dates": issues_on_dates},
-    success: function(result) {
-      Swal.fire({
-        icon: result.icon,
-        title: result.title,
-        text: result.text
-      });
-    }
-  });
+  var errorString = "";
+
+  errorString = validate_entry(course_names, "course name", errorString);
+  errorString = validate_entry(issuers, "issuer", errorString);
+  errorString = validate_entry(issues_on_dates, "issued on", errorString);
+
+  if(errorString) {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      html: errorString
+    });
+  } else {
+    $.ajax({
+      url: "/courses",
+      type: "post",
+      data: {"course_names": course_names, "issuers": issuers, "issues_on_dates": issues_on_dates},
+      success: function(result) {
+        Swal.fire({
+          icon: result.icon,
+          title: result.title,
+          text: result.text
+        });
+      }
+    });
+  }
 });
 
 $("#publication-save").click(function() {
@@ -418,18 +456,32 @@ $("#publication-save").click(function() {
   var publications = get_inputs_by_classname("publications");
   var published_on_dates = get_inputs_by_classname("published_on_dates");
 
-  $.ajax({
-    url: "/publications",
-    type: "post",
-    data: {"paper_titles": paper_titles, "publications": publications, "published_on_dates": published_on_dates},
-    success: function(result) {
-      Swal.fire({
-        icon: result.icon,
-        title: result.title,
-        text: result.text
-      });
-    }
-  });
+  var errorString = "";
+
+  errorString = validate_entry(paper_titles, "paper title", errorString);
+  errorString = validate_entry(publications, "publication", errorString);
+  errorString = validate_entry(published_on_dates, "published on", errorString);
+
+  if(errorString) {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      html: errorString
+    });
+  } else {
+    $.ajax({
+      url: "/publications",
+      type: "post",
+      data: {"paper_titles": paper_titles, "publications": publications, "published_on_dates": published_on_dates},
+      success: function(result) {
+        Swal.fire({
+          icon: result.icon,
+          title: result.title,
+          text: result.text
+        });
+      }
+    });
+  }
 });
 
 $("#honor-save").click(function() {
@@ -437,35 +489,61 @@ $("#honor-save").click(function() {
   var honor_issuers = get_inputs_by_classname("honor_issuers");
   var honor_issued_dates = get_inputs_by_classname("honor_issued_dates");
 
-  $.ajax({
-    url: "/honors",
-    type: "post",
-    data: {"honor_titles": honor_titles, "honor_issuers": honor_issuers, "honor_issued_dates": honor_issued_dates},
-    success: function(result) {
-      Swal.fire({
-        icon: result.icon,
-        title: result.title,
-        text: result.text
-      });
-    }
-  });
+  var errorString = "";
+
+  errorString = validate_entry(honor_titles, "honor title", errorString);
+  errorString = validate_entry(honor_issuers, "honor issuer", errorString);
+  errorString = validate_entry(honor_issued_dates, "honor issued on", errorString);
+
+  if(errorString) {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      html: errorString
+    });
+  } else {
+    $.ajax({
+      url: "/honors",
+      type: "post",
+      data: {"honor_titles": honor_titles, "honor_issuers": honor_issuers, "honor_issued_dates": honor_issued_dates},
+      success: function(result) {
+        Swal.fire({
+          icon: result.icon,
+          title: result.title,
+          text: result.text
+        });
+      }
+    });
+  }
 });
 
 $("#hobby-save").click(function() {
   var hobbies = get_inputs_by_classname("hobbies");
 
-  $.ajax({
-    url: "/hobby",
-    type: "post",
-    data: {"hobbies": hobbies},
-    success: function(result) {
-      Swal.fire({
-        icon: result.icon,
-        title: result.title,
-        text: result.text
-      });
-    }
-  });
+  var errorString = "";
+
+  errorString = validate_entry(hobbies, "hobby", errorString);
+
+  if(errorString) {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      html: errorString
+    });
+  } else {
+    $.ajax({
+      url: "/hobby",
+      type: "post",
+      data: {"hobbies": hobbies},
+      success: function(result) {
+        Swal.fire({
+          icon: result.icon,
+          title: result.title,
+          text: result.text
+        });
+      }
+    });
+  }
 });
 
 $("#logout").click(function() {
