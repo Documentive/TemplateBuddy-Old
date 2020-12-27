@@ -520,18 +520,30 @@ $("#honor-save").click(function() {
 $("#hobby-save").click(function() {
   var hobbies = get_inputs_by_classname("hobbies");
 
-  $.ajax({
-    url: "/hobby",
-    type: "post",
-    data: {"hobbies": hobbies},
-    success: function(result) {
-      Swal.fire({
-        icon: result.icon,
-        title: result.title,
-        text: result.text
-      });
-    }
-  });
+  var errorString = "";
+
+  errorString = validate_entry(hobbies, "hobby", errorString);
+
+  if(errorString) {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      html: errorString
+    });
+  } else {
+    $.ajax({
+      url: "/hobby",
+      type: "post",
+      data: {"hobbies": hobbies},
+      success: function(result) {
+        Swal.fire({
+          icon: result.icon,
+          title: result.title,
+          text: result.text
+        });
+      }
+    });
+  }
 });
 
 $("#logout").click(function() {
