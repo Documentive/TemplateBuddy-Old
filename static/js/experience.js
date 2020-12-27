@@ -166,11 +166,26 @@ addButton.addEventListener('click', check);
 
 function get_inputs_by_classname(classname) {
   var value = "";
-  $('.' + classname).each(function() {
-    value += $(this).val() + "~~~";
+  var isEmpty = false;
+  $('.' + classname).each(function(idx) {
+    if($(this).val().length == 0) {
+      value = idx;
+      isEmpty = true;
+    }
+    
+    if(!isEmpty)
+      value += $(this).val() + "~~~";
   });
 
   return value;
+}
+
+function validate_entry(field, fieldName,  errorString) {
+  if(typeof(field) == "number") {
+    errorString += "Empty " + fieldName + " at entry " + (field + 1) + "<br>";
+  }
+
+  return errorString;
 }
 
 $("#experience-save").click(function() {
@@ -182,20 +197,38 @@ $("#experience-save").click(function() {
   var end_dates_exp = get_inputs_by_classname("end_dates_exp");
   var description = get_inputs_by_classname("description");
 
-  $.ajax({
-    url: "/experience",
-    type: "post",
-    data: {"job_titles": job_titles, "companies": companies, "cities_exp": cities_exp,
-           "countries_exp": countries_exp, "start_dates_exp": start_dates_exp,
-           "end_dates_exp": end_dates_exp, "description": description},
-    success: function(result) {
-      Swal.fire({
-        icon: result.icon,
-        title: result.title,
-        text: result.text
-      });
-    }
-  });
+  var errorString = "";
+
+  errorString = validate_entry(job_titles, "job title", errorString);
+  errorString = validate_entry(companies, "companies", errorString);
+  errorString = validate_entry(cities_exp, "city", errorString);
+  errorString = validate_entry(countries_exp, "country", errorString);
+  errorString = validate_entry(start_dates_exp, "start date", errorString);
+  errorString = validate_entry(end_dates_exp, "end date", errorString);
+  errorString = validate_entry(description, "description", errorString);
+
+  if(errorString) {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      html: errorString
+    });
+  } else {
+    $.ajax({
+      url: "/experience",
+      type: "post",
+      data: {"job_titles": job_titles, "companies": companies, "cities_exp": cities_exp,
+             "countries_exp": countries_exp, "start_dates_exp": start_dates_exp,
+             "end_dates_exp": end_dates_exp, "description": description},
+      success: function(result) {
+        Swal.fire({
+          icon: result.icon,
+          title: result.title,
+          text: result.text
+        });
+      }
+    });
+  }
 });
 
 $("#logout").click(function() {
