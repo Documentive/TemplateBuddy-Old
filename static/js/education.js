@@ -203,11 +203,26 @@ addButton.addEventListener('click', check);
 
 function get_inputs_by_classname(classname) {
   var value = "";
-  $('.' + classname).each(function() {
-    value += $(this).val() + "~~~";
+  var isEmpty = false;
+  $('.' + classname).each(function(idx) {
+    if($(this).val().length == 0) {
+      value = idx;
+      isEmpty = true;
+    }
+    
+    if(!isEmpty)
+      value += $(this).val() + "~~~";
   });
 
   return value;
+}
+
+function validate_entry(field, fieldName,  errorString) {
+  if(typeof(field) == "number") {
+    errorString += "Empty " + fieldName + " at entry " + (field + 1) + "<br>";
+  }
+
+  return errorString;
 }
 
 $("#education-save").click(function() {
@@ -221,20 +236,39 @@ $("#education-save").click(function() {
   var grade_types = get_inputs_by_classname("grade_types");
   var grades = get_inputs_by_classname("grades");
 
-  $.ajax({
-    url: "/education",
-    type: "post",
-    data: {"institute_names": institute_names, "cities": cities, "countries": countries, "degrees": degrees,
-           "fields_of_study": fields_of_study, "start_dates": start_dates, "end_dates": end_dates, "grade_types": grade_types,
-           "grades": grades},
-    success: function(result) {
-      Swal.fire({
-        icon: result.icon,
-        title: result.title,
-        text: result.text
-      });
-    }
-  });
+  var errorString = "";
+
+  errorString = validate_entry(institute_names, "institute name", errorString);
+  errorString = validate_entry(cities, "city", errorString);
+  errorString = validate_entry(countries, "country", errorString);
+  errorString = validate_entry(degrees, "degree", errorString);
+  errorString = validate_entry(fields_of_study, "field of study", errorString);
+  errorString = validate_entry(start_dates, "start date", errorString);
+  errorString = validate_entry(end_dates, "end date", errorString);
+  errorString = validate_entry(grades, "grade", errorString);
+  
+  if(errorString) {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      html: errorString
+    });
+  } else {
+    $.ajax({
+      url: "/education",
+      type: "post",
+      data: {"institute_names": institute_names, "cities": cities, "countries": countries, "degrees": degrees,
+            "fields_of_study": fields_of_study, "start_dates": start_dates, "end_dates": end_dates, "grade_types": grade_types,
+            "grades": grades},
+      success: function(result) {
+        Swal.fire({
+          icon: result.icon,
+          title: result.title,
+          text: result.text
+        });
+      }
+    });
+  }
 });
 
 $("#logout").click(function() {
