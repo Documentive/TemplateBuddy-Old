@@ -456,18 +456,32 @@ $("#publication-save").click(function() {
   var publications = get_inputs_by_classname("publications");
   var published_on_dates = get_inputs_by_classname("published_on_dates");
 
-  $.ajax({
-    url: "/publications",
-    type: "post",
-    data: {"paper_titles": paper_titles, "publications": publications, "published_on_dates": published_on_dates},
-    success: function(result) {
-      Swal.fire({
-        icon: result.icon,
-        title: result.title,
-        text: result.text
-      });
-    }
-  });
+  var errorString = "";
+
+  errorString = validate_entry(paper_titles, "paper title", errorString);
+  errorString = validate_entry(publications, "publication", errorString);
+  errorString = validate_entry(published_on_dates, "published on", errorString);
+
+  if(errorString) {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      html: errorString
+    });
+  } else {
+    $.ajax({
+      url: "/publications",
+      type: "post",
+      data: {"paper_titles": paper_titles, "publications": publications, "published_on_dates": published_on_dates},
+      success: function(result) {
+        Swal.fire({
+          icon: result.icon,
+          title: result.title,
+          text: result.text
+        });
+      }
+    });
+  }
 });
 
 $("#honor-save").click(function() {
