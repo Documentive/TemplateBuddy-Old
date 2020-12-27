@@ -145,5 +145,18 @@
 
     <script src="../static/js/projects.js"></script>
 
+    <script>
+
+        function disableFunc() {
+            var checkBox = document.getElementById("myCheck");
+            if (checkBox.checked == true){
+                document.getElementById("edate").disabled = true;
+              } else {
+                document.getElementById("edate").disabled = false;
+              }            
+          }
+
+    </script>
+
 </body>
 </html>
