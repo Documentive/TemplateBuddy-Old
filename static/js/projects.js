@@ -118,11 +118,26 @@ addButton.addEventListener('click', check);
 
 function get_inputs_by_classname(classname) {
   var value = "";
-  $('.' + classname).each(function() {
-    value += $(this).val() + "~~~";
+  var isEmpty = false;
+  $('.' + classname).each(function(idx) {
+    if($(this).val().length == 0) {
+      value = idx;
+      isEmpty = true;
+    }
+    
+    if(!isEmpty)
+      value += $(this).val() + "~~~";
   });
 
   return value;
+}
+
+function validate_entry(field, fieldName,  errorString) {
+  if(typeof(field) == "number") {
+    errorString += "Empty " + fieldName + " at entry " + (field + 1) + "<br>";
+  }
+
+  return errorString;
 }
 
 $("#project-save").click(function() {
@@ -131,19 +146,34 @@ $("#project-save").click(function() {
   var start_dates_proj = get_inputs_by_classname("start_dates_proj");
   var end_dates_proj = get_inputs_by_classname("end_dates_proj");
 
-  $.ajax({
-    url: "/projects",
-    type: "post",
-    data: {"project_title": project_title, "description_proj": description_proj,
-           "start_dates_proj": start_dates_proj, "end_dates_proj": end_dates_proj},
-    success: function(result) {
-      Swal.fire({
-        icon: result.icon,
-        title: result.title,
-        text: result.text
-      });
-    }
-  });
+  var errorString = "";
+
+  errorString = validate_entry(project_title, "project title", errorString);
+  errorString = validate_entry(description_proj, "project description", errorString);
+  errorString = validate_entry(start_dates_proj, "start date of project", errorString);
+  errorString = validate_entry(end_dates_proj, "end date of project", errorString);
+
+  if(errorString) {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      html: errorString
+    });
+  } else {
+    $.ajax({
+      url: "/projects",
+      type: "post",
+      data: {"project_title": project_title, "description_proj": description_proj,
+            "start_dates_proj": start_dates_proj, "end_dates_proj": end_dates_proj},
+      success: function(result) {
+        Swal.fire({
+          icon: result.icon,
+          title: result.title,
+          text: result.text
+        });
+      }
+    });
+  }
 });
 
 $("#logout").click(function() {
