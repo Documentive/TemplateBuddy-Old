@@ -93,6 +93,8 @@
                             <div class="form-group col-md-6">
                             <label for="edate">End Date</label>
                             <input type="date" class="form-control end_dates" id="edate">
+                            <hr>
+                            <p>Studying*  <input type="checkbox" onclick = "disableFunc()" id="myCheck"> </p>
                             </div>
 
                         </div>
@@ -224,6 +226,19 @@
 
     <!-- JS for Personal Details Page -->
     <script src="../static/js/education.js"></script>
+
+    <script>
+
+        function disableFunc() {
+            var checkBox = document.getElementById("myCheck");
+            if (checkBox.checked == true){
+                document.getElementById("edate").disabled = true;
+              } else {
+                document.getElementById("edate").disabled = false;
+              }            
+          }
+          
+    </script>
 
 </body>
 </html>
