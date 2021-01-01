@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap');
+
 /* Global Settings */
 
 *, *::before, *::after {
@@ -38,8 +40,9 @@ header button {
     width: 150px;
     background: #ffffff;
     border: 1px #ffffff solid;
-    border-radius: 18px;
+    border-radius: 10px;
     cursor: pointer;
+    box-shadow: 1px 1px 5px 0 black;
 }
 
 /* All content goes here */
@@ -67,14 +70,15 @@ header button {
     background-color:#e7717d;
     padding: 9px 9px;
     font-size: large;
-    border-radius: 18px;
+    border-radius: 9px;
     width: 150px;
     text-align: center;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .tabs a:hover {
-    transform: scale(1.2);
+    transform: scale(1.05);
     background: turquoise;
 }
 
